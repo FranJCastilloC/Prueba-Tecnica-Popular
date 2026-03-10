@@ -1,0 +1,1858 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EDA Dashboard - Transacciones Financieras</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg-top: #fbfaf7;
+  --bg-bottom: #eef6f4;
+  --ink: #18332c;
+  --muted: #6a7c79;
+  --muted-strong: #536560;
+  --surface: rgba(255, 255, 255, 0.74);
+  --surface-strong: rgba(255, 255, 255, 0.9);
+  --surface-soft: rgba(255, 255, 255, 0.58);
+  --border: rgba(24, 51, 44, 0.08);
+  --border-strong: rgba(24, 51, 44, 0.14);
+  --shadow: 0 24px 60px rgba(77, 99, 92, 0.12);
+  --shadow-soft: 0 14px 36px rgba(77, 99, 92, 0.08);
+  --blue: #5d8ef7;
+  --blue-soft: #adc8ff;
+  --blue-alpha: rgba(93, 142, 247, 0.16);
+  --mint: #6bc7b0;
+  --mint-soft: #b8eadb;
+  --mint-alpha: rgba(107, 199, 176, 0.18);
+  --amber: #f1b66d;
+  --amber-soft: #f7d7b0;
+  --amber-alpha: rgba(241, 182, 109, 0.18);
+  --coral: #ef8e80;
+  --coral-soft: #f6c5bc;
+  --coral-alpha: rgba(239, 142, 128, 0.18);
+  --teal: #56b8b1;
+  --teal-soft: #b6e7e3;
+  --teal-alpha: rgba(86, 184, 177, 0.18);
+  --red: #d96d66;
+  --radius-xl: 32px;
+  --radius-lg: 24px;
+  --radius-md: 18px;
+  --radius-sm: 14px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  min-height: 100vh;
+  font-family: "Manrope", system-ui, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 8% 8%, rgba(93, 142, 247, 0.16), transparent 22%),
+    radial-gradient(circle at 85% 12%, rgba(107, 199, 176, 0.18), transparent 22%),
+    linear-gradient(180deg, var(--bg-top) 0%, #f5efe8 52%, var(--bg-bottom) 100%);
+  overflow-x: hidden;
+  padding: 24px;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.35) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.35) 1px, transparent 1px);
+  background-size: 42px 42px;
+  opacity: 0.24;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-shell {
+  max-width: 1480px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.glass {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px 22px;
+  border-radius: var(--radius-xl);
+  position: sticky;
+  top: 16px;
+  z-index: 100;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-mark {
+  width: 50px;
+  height: 50px;
+  border-radius: 18px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.4)),
+    linear-gradient(135deg, var(--blue), var(--mint));
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.8), 0 10px 24px rgba(93, 142, 247, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Sora", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.brand-copy small {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.brand-copy strong {
+  display: block;
+  font-family: "Sora", sans-serif;
+  font-size: 1rem;
+  letter-spacing: -0.03em;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.top-metric {
+  min-width: 108px;
+  padding: 10px 14px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.48);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+}
+
+.top-metric span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 3px;
+}
+
+.top-metric strong {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  gap: 22px;
+  margin: 24px 0 20px;
+}
+
+.hero-panel,
+.hero-aside,
+.nav,
+.card,
+.kpi,
+.story-card,
+.insight,
+.summary-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.hero-panel,
+.hero-aside {
+  border-radius: var(--radius-xl);
+  padding: 28px;
+}
+
+.hero-panel {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-panel::before {
+  content: "";
+  position: absolute;
+  inset: auto -60px -90px auto;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(93, 142, 247, 0.2), transparent 70%);
+  pointer-events: none;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted-strong);
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 32px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--blue), transparent);
+}
+
+.hero h1,
+.section-copy h2 {
+  font-family: "Sora", sans-serif;
+  letter-spacing: -0.05em;
+}
+
+.hero h1 {
+  max-width: 10.5ch;
+  font-size: clamp(2.25rem, 4.2vw, 4.5rem);
+  line-height: 0.96;
+  margin: 16px 0 14px;
+}
+
+.hero p {
+  max-width: 58ch;
+  color: var(--muted-strong);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.hero-badge {
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.48);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  color: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.hero-aside {
+  display: grid;
+  gap: 14px;
+}
+
+.summary-card {
+  border-radius: 24px;
+  padding: 20px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.62));
+  box-shadow: none;
+}
+
+.summary-card span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.summary-card strong {
+  display: block;
+  font-family: "Sora", sans-serif;
+  font-size: 1.35rem;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+  margin-bottom: 10px;
+}
+
+.summary-card small {
+  display: block;
+  color: var(--muted-strong);
+  line-height: 1.7;
+  font-size: 0.9rem;
+}
+
+.nav-wrap {
+  margin-bottom: 26px;
+}
+
+.nav {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 24px;
+  overflow-x: auto;
+}
+
+.nav::-webkit-scrollbar {
+  height: 0;
+}
+
+.nav button {
+  appearance: none;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  padding: 12px 16px;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: flex-start;
+  min-width: 150px;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  font-family: inherit;
+}
+
+.nav button:hover {
+  transform: translateY(-1px);
+  border-color: rgba(24, 51, 44, 0.1);
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.nav button small {
+  color: var(--muted);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.nav button span {
+  color: var(--ink);
+  font-weight: 800;
+  font-size: 0.92rem;
+}
+
+.nav button.active {
+  background: linear-gradient(135deg, rgba(93, 142, 247, 0.16), rgba(107, 199, 176, 0.16));
+  border-color: rgba(93, 142, 247, 0.2);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.container {
+  padding-bottom: 28px;
+}
+
+.loader {
+  min-height: 52vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 3px solid rgba(24, 51, 44, 0.1);
+  border-top-color: var(--blue);
+  animation: spin 0.9s linear infinite;
+}
+
+.loader p {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.section {
+  display: none;
+  animation: rise 0.35s ease;
+}
+
+.section.active {
+  display: block;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+
+.page-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.section-copy {
+  padding: 10px 2px;
+}
+
+.section-copy h2 {
+  font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+  margin: 14px 0 12px;
+  max-width: 14ch;
+  line-height: 1.05;
+}
+
+.section-copy p {
+  max-width: 60ch;
+  color: var(--muted-strong);
+  line-height: 1.8;
+}
+
+.story-card {
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  position: relative;
+  overflow: hidden;
+}
+
+.story-card::before {
+  content: "";
+  position: absolute;
+  inset: -20% auto auto 60%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(241, 182, 109, 0.2), transparent 70%);
+  pointer-events: none;
+}
+
+.story-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  font-size: 0.74rem;
+  color: var(--muted);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.story-label::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue), var(--mint));
+  box-shadow: 0 0 0 6px rgba(93, 142, 247, 0.1);
+}
+
+.story-card strong {
+  display: block;
+  max-width: 18ch;
+  font-family: "Sora", sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+  margin-bottom: 10px;
+}
+
+.story-card p {
+  color: var(--muted-strong);
+  line-height: 1.75;
+  max-width: 36ch;
+}
+
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.kpi {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  padding: 22px 20px;
+}
+
+.kpi::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
+.kpi::after {
+  content: "";
+  position: absolute;
+  right: -38px;
+  bottom: -44px;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.kpi[data-tone="blue"]::before { background: linear-gradient(90deg, var(--blue), var(--blue-soft)); }
+.kpi[data-tone="blue"]::after { background: radial-gradient(circle, rgba(93, 142, 247, 0.2), transparent 70%); }
+.kpi[data-tone="blue"] .value { color: var(--blue); }
+
+.kpi[data-tone="mint"]::before { background: linear-gradient(90deg, var(--mint), var(--mint-soft)); }
+.kpi[data-tone="mint"]::after { background: radial-gradient(circle, rgba(107, 199, 176, 0.2), transparent 70%); }
+.kpi[data-tone="mint"] .value { color: #2f9078; }
+
+.kpi[data-tone="amber"]::before { background: linear-gradient(90deg, var(--amber), var(--amber-soft)); }
+.kpi[data-tone="amber"]::after { background: radial-gradient(circle, rgba(241, 182, 109, 0.2), transparent 70%); }
+.kpi[data-tone="amber"] .value { color: #b97d30; }
+
+.kpi[data-tone="coral"]::before { background: linear-gradient(90deg, var(--coral), var(--coral-soft)); }
+.kpi[data-tone="coral"]::after { background: radial-gradient(circle, rgba(239, 142, 128, 0.2), transparent 70%); }
+.kpi[data-tone="coral"] .value { color: #cf6e60; }
+
+.kpi[data-tone="teal"]::before { background: linear-gradient(90deg, var(--teal), var(--teal-soft)); }
+.kpi[data-tone="teal"]::after { background: radial-gradient(circle, rgba(86, 184, 177, 0.2), transparent 70%); }
+.kpi[data-tone="teal"] .value { color: #2f8f89; }
+
+.value {
+  font-family: "Sora", sans-serif;
+  font-size: 1.55rem;
+  line-height: 1.1;
+  letter-spacing: -0.05em;
+  margin-bottom: 8px;
+}
+
+.label {
+  color: var(--muted);
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.kpi-note {
+  max-width: 20ch;
+  color: var(--muted-strong);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.insight-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.insight {
+  border-radius: 22px;
+  padding: 18px 18px 16px;
+}
+
+.insight span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.insight strong {
+  display: block;
+  font-family: "Sora", sans-serif;
+  font-size: 1.05rem;
+  letter-spacing: -0.04em;
+  margin-bottom: 8px;
+}
+
+.insight p {
+  color: var(--muted-strong);
+  line-height: 1.65;
+  font-size: 0.9rem;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.grid-full {
+  margin-top: 20px;
+}
+
+.card {
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-strong);
+  box-shadow: 0 28px 60px rgba(77, 99, 92, 0.14);
+}
+
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.num {
+  width: 28px;
+  height: 28px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(93, 142, 247, 0.16), rgba(107, 199, 176, 0.18));
+  color: var(--blue);
+  font-size: 0.74rem;
+  font-weight: 800;
+}
+
+.card-title-text {
+  font-family: "Sora", sans-serif;
+  font-size: 0.98rem;
+  letter-spacing: -0.03em;
+}
+
+.card-question {
+  color: var(--muted-strong);
+  line-height: 1.7;
+  font-size: 0.9rem;
+  max-width: 54ch;
+}
+
+.card-tag {
+  flex-shrink: 0;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.68);
+  color: var(--muted-strong);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.chart {
+  min-height: 330px;
+}
+
+.chart.tall {
+  min-height: 380px;
+}
+
+@media (max-width: 1180px) {
+  .hero,
+  .page-intro,
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .kpis {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  body {
+    padding: 16px;
+  }
+
+  .topbar {
+    position: static;
+    padding: 18px;
+  }
+
+  .topbar-right {
+    justify-content: flex-start;
+  }
+
+  .hero-panel,
+  .hero-aside,
+  .card,
+  .story-card,
+  .kpi,
+  .insight {
+    padding: 18px;
+  }
+
+  .kpis,
+  .insight-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .nav button {
+    min-width: 136px;
+  }
+}
+
+@media (max-width: 620px) {
+  .hero h1 {
+    max-width: none;
+    font-size: 2.35rem;
+  }
+
+  .kpis,
+  .insight-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .top-metric {
+    min-width: calc(50% - 5px);
+  }
+
+  .nav button {
+    min-width: 124px;
+    padding: 11px 14px;
+  }
+}
+</style>
+</head>
+<body>
+<div class="page-shell">
+  <header class="topbar glass">
+    <div class="brand">
+      <div class="brand-mark">PP</div>
+      <div class="brand-copy">
+        <small>Financial dashboard</small>
+        <strong>Transacciones Financieras</strong>
+      </div>
+    </div>
+    <div class="topbar-right" id="topbar-meta">
+      <div class="top-metric"><span>Clientes</span><strong>100</strong></div>
+      <div class="top-metric"><span>Productos</span><strong>10</strong></div>
+      <div class="top-metric"><span>Transacciones</span><strong>500</strong></div>
+      <div class="top-metric"><span>Periodo</span><strong>2023-2024</strong></div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-panel">
+      <span class="eyebrow">Vision ejecutiva</span>
+      <h1>Lectura ejecutiva del negocio sin ruido visual.</h1>
+      <p>
+        Rediseno del dashboard con una interfaz mas ligera, clara y contemporanea para recorrer
+        concentracion, crecimiento, geografia y rentabilidad desde una misma narrativa.
+      </p>
+      <div class="hero-badges" id="hero-badges">
+        <span class="hero-badge">80% del volumen en pocos clientes</span>
+        <span class="hero-badge">Mix por segmentos</span>
+        <span class="hero-badge">Foco en rentabilidad</span>
+      </div>
+    </div>
+
+    <aside class="hero-aside">
+      <div class="summary-card">
+        <span>Volumen procesado</span>
+        <strong id="hero-volume">$0</strong>
+        <small>Base consolidada para la lectura actual del negocio.</small>
+      </div>
+      <div class="summary-card">
+        <span>Enfoque</span>
+        <strong>Concentracion, tendencia y mix</strong>
+        <small>La nueva estructura prioriza señales rapidas antes de entrar al detalle visual.</small>
+      </div>
+    </aside>
+  </section>
+
+  <div class="nav-wrap">
+    <div class="nav" id="nav"></div>
+  </div>
+
+  <main class="container" id="app">
+    <div class="loader">
+      <div class="spinner"></div>
+      <p>Cargando datos del dashboard...</p>
+    </div>
+  </main>
+</div>
+
+<script>
+const TABS = [
+  { id: "overview", label: "Panorama", kicker: "Overview" },
+  { id: "tier1", label: "Criticos", kicker: "Tier 1" },
+  { id: "tier2", label: "Importantes", kicker: "Tier 2" },
+  { id: "tier3", label: "Complementarios", kicker: "Tier 3" },
+  { id: "rentabilidad", label: "Rentabilidad", kicker: "Focus" },
+];
+
+const PLOTLY_LAYOUT = {
+  paper_bgcolor: "transparent",
+  plot_bgcolor: "transparent",
+  font: { color: "#5d6d69", family: "Manrope, sans-serif", size: 12 },
+  hoverlabel: {
+    bgcolor: "rgba(255,255,255,0.96)",
+    bordercolor: "rgba(24,51,44,0.08)",
+    font: { color: "#18332c", family: "Manrope, sans-serif", size: 12 },
+  },
+  margin: { l: 56, r: 18, t: 24, b: 50 },
+  xaxis: {
+    gridcolor: "rgba(24,51,44,0.07)",
+    zerolinecolor: "rgba(24,51,44,0.08)",
+    linecolor: "rgba(24,51,44,0.08)",
+    tickfont: { color: "#5d6d69" },
+    titlefont: { color: "#334743" },
+  },
+  yaxis: {
+    gridcolor: "rgba(24,51,44,0.07)",
+    zerolinecolor: "rgba(24,51,44,0.08)",
+    linecolor: "rgba(24,51,44,0.08)",
+    tickfont: { color: "#5d6d69" },
+    titlefont: { color: "#334743" },
+  },
+};
+
+const PLOTLY_CFG = { responsive: true, displayModeBar: false };
+
+const PALETTE = {
+  ink: "#18332c",
+  blue: "#5d8ef7",
+  blueAlpha: "rgba(93,142,247,0.16)",
+  mint: "#6bc7b0",
+  mintAlpha: "rgba(107,199,176,0.18)",
+  amber: "#f1b66d",
+  amberAlpha: "rgba(241,182,109,0.18)",
+  coral: "#ef8e80",
+  coralAlpha: "rgba(239,142,128,0.18)",
+  teal: "#56b8b1",
+  tealAlpha: "rgba(86,184,177,0.18)",
+  slate: "#6d7f8f",
+  red: "#d96d66",
+  seg: {
+    Retail: "#5d8ef7",
+    PYME: "#6bc7b0",
+    Corporativo: "#f1b66d",
+    Corporate: "#f1b66d",
+  },
+};
+
+const numberFmt = new Intl.NumberFormat("es-DO", { maximumFractionDigits: 0 });
+const percentFmt = new Intl.NumberFormat("es-DO", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+const currencyFmt = new Intl.NumberFormat("es-DO", {
+  style: "currency",
+  currency: "USD",
+  maximumFractionDigits: 0,
+});
+const currencyPreciseFmt = new Intl.NumberFormat("es-DO", {
+  style: "currency",
+  currency: "USD",
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2,
+});
+
+function ly(overrides = {}) {
+  return {
+    ...PLOTLY_LAYOUT,
+    ...overrides,
+    xaxis: { ...PLOTLY_LAYOUT.xaxis, ...(overrides.xaxis || {}) },
+    yaxis: { ...PLOTLY_LAYOUT.yaxis, ...(overrides.yaxis || {}) },
+  };
+}
+
+function fmt(n) {
+  return numberFmt.format(n);
+}
+
+function fmtUSD(n, precise = false) {
+  return precise ? currencyPreciseFmt.format(n) : currencyFmt.format(n);
+}
+
+function fmtPct(n) {
+  return `${percentFmt.format(n)}%`;
+}
+
+function quarterLabel(value) {
+  const [year, quarter] = value.split("Q");
+  return `Q${quarter} ${year}`;
+}
+
+function monthLabel(value) {
+  const [year, month] = value.split("-").map(Number);
+  return new Intl.DateTimeFormat("es-DO", { month: "short", year: "numeric" }).format(new Date(year, month - 1, 1));
+}
+
+let DATA;
+let HIGHLIGHTS;
+
+function getHighlights() {
+  const pareto = DATA.pareto.clientes.pct_acum;
+  const i80 = pareto.findIndex(v => v >= 80) + 1;
+
+  const trimestral = DATA.trimestral;
+  const bestQuarterIdx = trimestral.volumen.indexOf(Math.max(...trimestral.volumen));
+
+  const treemap = DATA.treemap;
+  const topCountryIdx = treemap.volumen.indexOf(Math.max(...treemap.volumen));
+
+  const segmentData = DATA.donut_segmentos;
+  const topSegmentIdx = segmentData.volumen.indexOf(Math.max(...segmentData.volumen));
+
+  const ranking = DATA.ranking_productos;
+  const topProductIdx = ranking.volumen.indexOf(Math.max(...ranking.volumen));
+
+  const monthly = DATA.mensual;
+  const bestMonthIdx = monthly.volumen.indexOf(Math.max(...monthly.volumen));
+  const lowMonthIdx = monthly.volumen.indexOf(Math.min(...monthly.volumen));
+
+  const productDepth = DATA.productos_por_cliente;
+  const totalClients = Object.values(productDepth).reduce((sum, count) => sum + count, 0);
+  const avgProducts = Object.entries(productDepth).reduce((sum, [n, count]) => sum + Number(n) * count, 0) / totalClients;
+  const modalProducts = Number(Object.keys(productDepth).sort((a, b) => productDepth[b] - productDepth[a])[0]);
+
+  const countryScatter = DATA.scatter_paises;
+  const topCountryClientsIdx = countryScatter.n_clientes.indexOf(Math.max(...countryScatter.n_clientes));
+
+  const bubble = DATA.bubble_productos;
+  const highestRateIdx = bubble.tasa_pct.indexOf(Math.max(...bubble.tasa_pct));
+
+  return {
+    i80,
+    bestQuarter: trimestral.trimestre[bestQuarterIdx],
+    topCountry: treemap.pais[topCountryIdx],
+    topCountryShare: (treemap.volumen[topCountryIdx] / DATA.kpis.volumen_total) * 100,
+    topSegment: segmentData.segmento[topSegmentIdx],
+    topSegmentShare: (segmentData.volumen[topSegmentIdx] / DATA.kpis.volumen_total) * 100,
+    topProduct: ranking.nombre_producto[topProductIdx],
+    topProductShare: (ranking.volumen[topProductIdx] / DATA.kpis.volumen_total) * 100,
+    topClientId: DATA.top_clientes.id_cliente[0],
+    topClientShare: (DATA.top_clientes.volumen[0] / DATA.kpis.volumen_total) * 100,
+    bestMonth: monthly.mes[bestMonthIdx],
+    lowMonth: monthly.mes[lowMonthIdx],
+    avgProducts,
+    modalProducts,
+    topCountryByClients: countryScatter.pais[topCountryClientsIdx],
+    highestRateProduct: bubble.nombre_producto[highestRateIdx],
+    highestRate: bubble.tasa_pct[highestRateIdx],
+  };
+}
+
+function updateShellMetrics() {
+  const k = DATA.kpis;
+  document.getElementById("topbar-meta").innerHTML = `
+    <div class="top-metric"><span>Clientes</span><strong>${fmt(k.n_clientes)}</strong></div>
+    <div class="top-metric"><span>Productos</span><strong>${fmt(k.n_productos)}</strong></div>
+    <div class="top-metric"><span>Transacciones</span><strong>${fmt(k.n_transacciones)}</strong></div>
+    <div class="top-metric"><span>Periodo</span><strong>${monthLabel(DATA.mensual.mes[0])} - ${monthLabel(DATA.mensual.mes[DATA.mensual.mes.length - 1])}</strong></div>
+  `;
+
+  document.getElementById("hero-volume").textContent = fmtUSD(k.volumen_total);
+  document.getElementById("hero-badges").innerHTML = `
+    <span class="hero-badge">Pareto 80% en ${HIGHLIGHTS.i80} clientes</span>
+    <span class="hero-badge">${HIGHLIGHTS.topSegment} lidera el mix</span>
+    <span class="hero-badge">${HIGHLIGHTS.topCountry} es el pais #1</span>
+    <span class="hero-badge">${HIGHLIGHTS.topProduct} destaca en rentabilidad</span>
+  `;
+}
+
+async function init() {
+  const res = await fetch("data.json");
+  DATA = await res.json();
+  HIGHLIGHTS = getHighlights();
+  updateShellMetrics();
+  buildNav();
+  showTab("overview");
+}
+
+function buildNav() {
+  const nav = document.getElementById("nav");
+  nav.innerHTML = "";
+
+  TABS.forEach(tab => {
+    const button = document.createElement("button");
+    button.dataset.tab = tab.id;
+    button.innerHTML = `<small>${tab.kicker}</small><span>${tab.label}</span>`;
+    button.onclick = () => showTab(tab.id);
+    nav.appendChild(button);
+  });
+}
+
+function showTab(id) {
+  document.querySelectorAll(".nav button").forEach(button => {
+    button.classList.toggle("active", button.dataset.tab === id);
+  });
+
+  const app = document.getElementById("app");
+  app.innerHTML = "";
+
+  const section = document.createElement("div");
+  section.className = "section active";
+  app.appendChild(section);
+
+  const renderers = {
+    overview: renderOverview,
+    tier1: renderTier1,
+    tier2: renderTier2,
+    tier3: renderTier3,
+    rentabilidad: renderRentabilidad,
+  };
+
+  renderers[id](section);
+}
+
+function sectionIntro({ eyebrow, title, description, highlightLabel, highlightText, detail }) {
+  return `
+    <div class="page-intro">
+      <div class="section-copy">
+        <span class="eyebrow">${eyebrow}</span>
+        <h2>${title}</h2>
+        <p>${description}</p>
+      </div>
+      <div class="story-card">
+        <span class="story-label">${highlightLabel}</span>
+        <strong>${highlightText}</strong>
+        <p>${detail}</p>
+      </div>
+    </div>
+  `;
+}
+
+function kpiCard({ value, label, note, tone }) {
+  return `
+    <article class="kpi" data-tone="${tone}">
+      <div class="value">${value}</div>
+      <div class="label">${label}</div>
+      <div class="kpi-note">${note}</div>
+    </article>
+  `;
+}
+
+function insightStrip(items) {
+  return `
+    <div class="insight-strip">
+      ${items.map(item => `
+        <article class="insight">
+          <span>${item.label}</span>
+          <strong>${item.value}</strong>
+          <p>${item.text}</p>
+        </article>
+      `).join("")}
+    </div>
+  `;
+}
+
+function panelCard({ num = "", title, question, id, tag, tall = false }) {
+  return `
+    <article class="card">
+      <div class="card-header">
+        <div>
+          <div class="card-title">
+            ${num ? `<span class="num">${num}</span>` : ""}
+            <span class="card-title-text">${title}</span>
+          </div>
+          ${question ? `<div class="card-question">${question}</div>` : ""}
+        </div>
+        <span class="card-tag">${tag}</span>
+      </div>
+      <div class="chart${tall ? " tall" : ""}" id="${id}"></div>
+    </article>
+  `;
+}
+
+function renderOverview(el) {
+  const k = DATA.kpis;
+
+  el.innerHTML = `
+    ${sectionIntro({
+      eyebrow: "General",
+      title: "Radiografia del negocio",
+      description: "Un resumen ejecutivo del volumen, la actividad y los patrones que explican el negocio antes de entrar al detalle.",
+      highlightLabel: "senal principal",
+      highlightText: `${HIGHLIGHTS.i80} clientes concentran el 80% del volumen`,
+      detail: `${quarterLabel(HIGHLIGHTS.bestQuarter)} fue el trimestre mas fuerte y ${HIGHLIGHTS.topCountry} aporta ${fmtPct(HIGHLIGHTS.topCountryShare)} del total analizado.`,
+    })}
+
+    <div class="kpis">
+      ${kpiCard({ value: fmtUSD(k.volumen_total), label: "Volumen total", note: `${HIGHLIGHTS.topCountry} lidera con ${fmtPct(HIGHLIGHTS.topCountryShare)}`, tone: "blue" })}
+      ${kpiCard({ value: fmt(k.n_transacciones), label: "Transacciones", note: `Pico reciente en ${quarterLabel(HIGHLIGHTS.bestQuarter)}`, tone: "mint" })}
+      ${kpiCard({ value: fmt(k.n_clientes), label: "Clientes activos", note: `${HIGHLIGHTS.i80} explican el 80% del negocio`, tone: "amber" })}
+      ${kpiCard({ value: fmt(k.n_productos), label: "Productos", note: `Promedio de ${HIGHLIGHTS.avgProducts.toFixed(1)} por cliente`, tone: "coral" })}
+      ${kpiCard({ value: fmtUSD(k.ticket_promedio, true), label: "Ticket promedio", note: `Mix dominante: ${HIGHLIGHTS.topSegment}`, tone: "teal" })}
+    </div>
+
+    ${insightStrip([
+      { label: "Trimestre lider", value: quarterLabel(HIGHLIGHTS.bestQuarter), text: "Periodo con el mayor volumen consolidado." },
+      { label: "Producto estrella", value: HIGHLIGHTS.topProduct, text: `Aporta ${fmtPct(HIGHLIGHTS.topProductShare)} del volumen total.` },
+      { label: "Mercado principal", value: HIGHLIGHTS.topCountry, text: `Concentra ${fmtPct(HIGHLIGHTS.topCountryShare)} del volumen del portafolio.` },
+    ])}
+
+    <div class="grid-2">
+      ${panelCard({
+        title: "Curva de Pareto",
+        question: "Cuantos clientes explican la mayor parte del negocio?",
+        id: "ov-pareto",
+        tag: "Concentracion",
+        tall: true,
+      })}
+      ${panelCard({
+        title: "Tendencia trimestral",
+        question: "Como se mueven volumen y actividad a lo largo del tiempo?",
+        id: "ov-trend",
+        tag: "Momentum",
+        tall: true,
+      })}
+    </div>
+
+    <div class="grid-2 grid-full">
+      ${panelCard({
+        title: "Distribucion geografica",
+        question: "Que paises concentran la operacion y donde hay mayor peso actual?",
+        id: "ov-tree",
+        tag: "Geografia",
+      })}
+      ${panelCard({
+        title: "Top 15 clientes por volumen",
+        question: "Quienes son los clientes con mayor aporte en la cartera actual?",
+        id: "ov-top",
+        tag: "Clientes",
+      })}
+    </div>
+  `;
+
+  chartPareto("ov-pareto");
+  chartTrend("ov-trend");
+  chartTreemap("ov-tree");
+  chartTopClientes("ov-top");
+}
+
+function renderTier1(el) {
+  el.innerHTML = `
+    ${sectionIntro({
+      eyebrow: "Tier 1",
+      title: "Lectura critica para decisiones rapidas",
+      description: "Las cuatro vistas que mejor explican concentracion, crecimiento, rentabilidad y distribucion geografica.",
+      highlightLabel: "foco ejecutivo",
+      highlightText: `${HIGHLIGHTS.i80} clientes, ${HIGHLIGHTS.topCountry} y ${HIGHLIGHTS.topProduct} lideran la lectura`,
+      detail: `Aqui estan las visualizaciones de mayor impacto para priorizar cartera, expansion y rentabilidad.`,
+    })}
+
+    ${insightStrip([
+      { label: "Cliente top", value: `Cliente ${HIGHLIGHTS.topClientId}`, text: `Representa ${fmtPct(HIGHLIGHTS.topClientShare)} del volumen consolidado.` },
+      { label: "Pais dominante", value: HIGHLIGHTS.topCountry, text: "Es la geografia con mayor peso dentro del negocio actual." },
+      { label: "Mejor trimestre", value: quarterLabel(HIGHLIGHTS.bestQuarter), text: "Marca el mejor momento de actividad dentro de la serie." },
+    ])}
+
+    <div class="grid-2">
+      ${panelCard({
+        num: "1",
+        title: "Pareto de clientes",
+        question: "Donde se concentra realmente el negocio?",
+        id: "t1-pareto",
+        tag: "Critico",
+      })}
+      ${panelCard({
+        num: "2",
+        title: "Tendencia trimestral",
+        question: "Hay aceleracion, estabilidad o caida en el periodo?",
+        id: "t1-trend",
+        tag: "Critico",
+      })}
+      ${panelCard({
+        num: "3",
+        title: "Rentabilidad por producto",
+        question: "Que productos combinan mejor tasa, volumen y actividad?",
+        id: "t1-bubble",
+        tag: "Critico",
+      })}
+      ${panelCard({
+        num: "4",
+        title: "Mapa geografico",
+        question: "Que paises sostienen el negocio hoy y donde expandir?",
+        id: "t1-tree",
+        tag: "Critico",
+      })}
+    </div>
+  `;
+
+  chartPareto("t1-pareto");
+  chartTrend("t1-trend");
+  chartBubble("t1-bubble");
+  chartTreemap("t1-tree");
+}
+
+function renderTier2(el) {
+  el.innerHTML = `
+    ${sectionIntro({
+      eyebrow: "Tier 2",
+      title: "Segmentacion y potencial de crecimiento",
+      description: "Graficos orientados a entender profundidad de relacion, afinidad por segmento y oportunidad comercial.",
+      highlightLabel: "hallazgo clave",
+      highlightText: `${HIGHLIGHTS.topSegment} lidera el mix con ${fmtPct(HIGHLIGHTS.topSegmentShare)}`,
+      detail: `La combinacion entre profundidad de productos y segmento ayuda a detectar oportunidades reales de cross-sell.`,
+    })}
+
+    ${insightStrip([
+      { label: "Profundidad media", value: `${HIGHLIGHTS.avgProducts.toFixed(1)} productos`, text: "Promedio de productos activos por cliente en la base." },
+      { label: "Patron mas comun", value: `${HIGHLIGHTS.modalProducts} productos`, text: "Es la profundidad con mayor frecuencia dentro del portafolio." },
+      { label: "Segmento lider", value: HIGHLIGHTS.topSegment, text: "Es el grupo con mayor aporte economico actual." },
+    ])}
+
+    <div class="grid-2">
+      ${panelCard({
+        num: "5",
+        title: "Productos por cliente",
+        question: "Hay espacio para profundizar relacion y cross-sell?",
+        id: "t2-hist",
+        tag: "Mix",
+      })}
+      ${panelCard({
+        num: "6",
+        title: "Heatmap producto x segmento",
+        question: "Que categorias funcionan mejor en cada segmento?",
+        id: "t2-heat",
+        tag: "Mix",
+      })}
+      ${panelCard({
+        num: "7",
+        title: "Composicion por segmentos",
+        question: "Como se reparte el volumen entre los grupos comerciales?",
+        id: "t2-donut",
+        tag: "Mix",
+      })}
+      ${panelCard({
+        num: "8",
+        title: "Productos vs volumen",
+        question: "Existe relacion entre profundidad de cartera y valor generado?",
+        id: "t2-scatter",
+        tag: "Mix",
+      })}
+    </div>
+  `;
+
+  chartHistogram("t2-hist");
+  chartHeatmap("t2-heat");
+  chartDonut("t2-donut");
+  chartScatterReg("t2-scatter");
+}
+
+function renderTier3(el) {
+  el.innerHTML = `
+    ${sectionIntro({
+      eyebrow: "Tier 3",
+      title: "Contexto complementario del comportamiento",
+      description: "Vistas adicionales para leer estacionalidad, eficiencia geografica, diferencias por segmento y dispersion de montos.",
+      highlightLabel: "senal temporal",
+      highlightText: `El pico mensual aparece en ${monthLabel(HIGHLIGHTS.bestMonth)} y el piso en ${monthLabel(HIGHLIGHTS.lowMonth)}`,
+      detail: `${HIGHLIGHTS.topCountryByClients} es el pais con mayor base de clientes y la serie mensual muestra una lectura util para detectar variaciones.`,
+    })}
+
+    ${insightStrip([
+      { label: "Mes mas fuerte", value: monthLabel(HIGHLIGHTS.bestMonth), text: "Mayor volumen mensual dentro de toda la serie." },
+      { label: "Mes mas debil", value: monthLabel(HIGHLIGHTS.lowMonth), text: "Punto minimo del periodo analizado." },
+      { label: "Base mas amplia", value: HIGHLIGHTS.topCountryByClients, text: "Es la geografia con mayor cantidad de clientes." },
+    ])}
+
+    <div class="grid-2">
+      ${panelCard({
+        num: "9",
+        title: "Evolucion mensual",
+        question: "Existen patrones o cambios en la cadencia mensual?",
+        id: "t3-area",
+        tag: "Contexto",
+      })}
+      ${panelCard({
+        num: "10",
+        title: "Eficiencia por pais",
+        question: "Que mercados combinan mejor base de clientes y ticket promedio?",
+        id: "t3-pais",
+        tag: "Contexto",
+      })}
+      ${panelCard({
+        num: "11",
+        title: "Radar por segmentos",
+        question: "En que dimensiones se diferencian los segmentos clave?",
+        id: "t3-radar",
+        tag: "Contexto",
+      })}
+      ${panelCard({
+        num: "12",
+        title: "Distribucion y outliers",
+        question: "Hay comportamientos atipicos o dispersion relevante?",
+        id: "t3-box",
+        tag: "Contexto",
+      })}
+    </div>
+  `;
+
+  chartArea("t3-area");
+  chartScatterPais("t3-pais");
+  chartRadar("t3-radar");
+  chartBoxplots("t3-box");
+}
+
+function renderRentabilidad(el) {
+  el.innerHTML = `
+    ${sectionIntro({
+      eyebrow: "Rentabilidad",
+      title: "Vista dedicada al portafolio de productos",
+      description: "Un dashboard centrado en los productos que mejor combinan volumen, tasa, segmento y participacion.",
+      highlightLabel: "producto lider",
+      highlightText: `${HIGHLIGHTS.topProduct} lidera con ${fmtPct(HIGHLIGHTS.topProductShare)} del volumen total`,
+      detail: `${HIGHLIGHTS.highestRateProduct} tiene la tasa mas alta del portafolio con ${fmtPct(HIGHLIGHTS.highestRate)} y ${HIGHLIGHTS.topSegment} domina el mix por segmento.`,
+    })}
+
+    ${insightStrip([
+      { label: "Producto top", value: HIGHLIGHTS.topProduct, text: "Es el producto con mayor impacto actual en volumen." },
+      { label: "Tasa mas alta", value: HIGHLIGHTS.highestRateProduct, text: `Registra ${fmtPct(HIGHLIGHTS.highestRate)} de tasa dentro del portafolio.` },
+      { label: "Segmento dominante", value: HIGHLIGHTS.topSegment, text: "El segmento con mayor volumen en la mezcla total." },
+    ])}
+
+    <div class="grid-2">
+      ${panelCard({
+        title: "Rentabilidad por producto",
+        question: "Que productos se posicionan mejor por tasa, volumen y actividad?",
+        id: "r-bubble",
+        tag: "Producto",
+      })}
+      ${panelCard({
+        title: "Heatmap producto x segmento",
+        question: "Que combinaciones producto-segmento resultan mas potentes?",
+        id: "r-heat",
+        tag: "Producto",
+      })}
+      ${panelCard({
+        title: "Ranking por volumen",
+        question: "Cuales son los productos con mayor aporte absoluto?",
+        id: "r-rank",
+        tag: "Producto",
+      })}
+      ${panelCard({
+        title: "Participacion por producto",
+        question: "Como se reparte el portafolio entre los productos actuales?",
+        id: "r-pie",
+        tag: "Producto",
+      })}
+    </div>
+  `;
+
+  chartBubble("r-bubble");
+  chartHeatmap("r-heat");
+  chartRanking("r-rank");
+  chartPieProductos("r-pie");
+}
+
+function chartPareto(id) {
+  const d = DATA.pareto.clientes;
+  const x = d.id_cliente.map((_, i) => i + 1);
+  const i80 = d.pct_acum.findIndex(v => v >= 80) + 1;
+
+  Plotly.newPlot(id, [
+    {
+      x,
+      y: d.pct_acum,
+      type: "scatter",
+      mode: "lines",
+      fill: "tozeroy",
+      line: { color: PALETTE.blue, width: 3, shape: "spline" },
+      fillcolor: PALETTE.blueAlpha,
+      name: "% acumulado",
+      hovertemplate: "Cliente #%{x}<br>%{y:.1f}% acumulado<extra></extra>",
+    },
+    {
+      x: [x[0], x[x.length - 1]],
+      y: [80, 80],
+      type: "scatter",
+      mode: "lines",
+      line: { color: PALETTE.coral, dash: "dash", width: 1.8 },
+      name: "80%",
+    },
+    {
+      x: [i80],
+      y: [80],
+      type: "scatter",
+      mode: "markers+text",
+      marker: { color: PALETTE.coral, size: 10 },
+      text: [`${i80} clientes`],
+      textposition: "top right",
+      textfont: { color: PALETTE.coral, size: 11, family: "Manrope" },
+      showlegend: false,
+    },
+  ], ly({
+    xaxis: { title: "Clientes ordenados por volumen" },
+    yaxis: { title: "% acumulado", range: [0, 105] },
+    legend: { x: 0, y: 1.08, orientation: "h", bgcolor: "transparent" },
+  }), PLOTLY_CFG);
+}
+
+function chartTrend(id) {
+  const d = DATA.trimestral;
+
+  Plotly.newPlot(id, [
+    {
+      x: d.trimestre,
+      y: d.n_transacciones,
+      type: "bar",
+      name: "# Transacciones",
+      marker: {
+        color: PALETTE.blueAlpha,
+        line: { color: PALETTE.blue, width: 1.2 },
+      },
+      yaxis: "y2",
+      hovertemplate: "%{x}<br>%{y} transacciones<extra></extra>",
+    },
+    {
+      x: d.trimestre,
+      y: d.volumen,
+      type: "scatter",
+      mode: "lines+markers",
+      name: "Volumen",
+      line: { color: PALETTE.mint, width: 3 },
+      marker: { size: 8, color: PALETTE.mint },
+      hovertemplate: "%{x}<br>$%{y:,.0f}<extra></extra>",
+    },
+  ], ly({
+    yaxis: { title: "Volumen (USD)" },
+    yaxis2: {
+      title: "# Transacciones",
+      overlaying: "y",
+      side: "right",
+      showgrid: false,
+      zerolinecolor: "transparent",
+      tickfont: { color: "#5d6d69" },
+      titlefont: { color: "#334743" },
+    },
+    legend: { x: 0, y: 1.08, orientation: "h", bgcolor: "transparent" },
+  }), PLOTLY_CFG);
+}
+
+function chartBubble(id) {
+  const d = DATA.bubble_productos;
+  const tipos = [...new Set(d.tipo_producto)];
+  const colors = [PALETTE.blue, PALETTE.mint, PALETTE.amber, PALETTE.coral, PALETTE.teal];
+
+  const traces = tipos.map((tipo, i) => {
+    const idx = d.tipo_producto.map((value, j) => value === tipo ? j : -1).filter(j => j >= 0);
+    return {
+      x: idx.map(j => d.tasa_pct[j]),
+      y: idx.map(j => d.volumen[j]),
+      text: idx.map(j => d.nombre_producto[j]),
+      mode: "markers+text",
+      textposition: "top center",
+      textfont: { size: 9, color: "#60706c", family: "Manrope" },
+      marker: {
+        size: idx.map(j => Math.max(d.n_transacciones[j] * 0.7, 14)),
+        color: colors[i % colors.length],
+        opacity: 0.82,
+        line: { color: "rgba(24,51,44,0.12)", width: 1.2 },
+      },
+      name: tipo,
+      type: "scatter",
+      hovertemplate: "%{text}<br>Tasa: %{x:.1f}%<br>Volumen: $%{y:,.0f}<extra></extra>",
+    };
+  });
+
+  Plotly.newPlot(id, traces, ly({
+    xaxis: { title: "Tasa de interes (%)" },
+    yaxis: { title: "Volumen (USD)" },
+    legend: { x: 0, y: 1.12, orientation: "h", bgcolor: "transparent" },
+  }), PLOTLY_CFG);
+}
+
+function chartTreemap(id) {
+  const d = DATA.treemap;
+  const colors = [PALETTE.blue, PALETTE.mint, PALETTE.amber, PALETTE.coral, PALETTE.teal];
+
+  Plotly.newPlot(id, [{
+    type: "treemap",
+    labels: d.pais,
+    parents: d.pais.map(() => ""),
+    values: d.volumen,
+    text: d.pais.map((pais, i) =>
+      `<b>${pais}</b><br>Volumen: ${fmtUSD(d.volumen[i])}<br>Ticket promedio: ${fmtUSD(d.ticket_promedio[i], true)}`
+    ),
+    hoverinfo: "text",
+    textinfo: "label+percent root",
+    marker: {
+      colors: colors.slice(0, d.pais.length),
+      line: { width: 3, color: "rgba(255,255,255,0.7)" },
+    },
+    textfont: { size: 14, color: "#18332c", family: "Manrope" },
+  }], ly({ margin: { l: 6, r: 6, t: 6, b: 6 } }), PLOTLY_CFG);
+}
+
+function chartHistogram(id) {
+  const d = DATA.productos_por_cliente;
+  const x = Object.keys(d).map(Number);
+  const y = Object.values(d);
+  const mean = x.reduce((sum, value, i) => sum + value * y[i], 0) / y.reduce((a, b) => a + b, 0);
+
+  Plotly.newPlot(id, [
+    {
+      x,
+      y,
+      type: "bar",
+      marker: {
+        color: x.map(value => value >= mean ? PALETTE.blue : PALETTE.blueAlpha),
+        line: { color: PALETTE.blue, width: 1.2 },
+      },
+      hovertemplate: "%{x} productos: %{y} clientes<extra></extra>",
+    },
+    {
+      x: [mean, mean],
+      y: [0, Math.max(...y) * 1.1],
+      type: "scatter",
+      mode: "lines",
+      line: { color: PALETTE.amber, dash: "dash", width: 2.2 },
+      name: `Media: ${mean.toFixed(1)}`,
+      showlegend: true,
+    },
+  ], ly({
+    xaxis: { title: "# productos por cliente", dtick: 1 },
+    yaxis: { title: "Frecuencia" },
+    legend: { x: 0.65, y: 1.08, bgcolor: "transparent" },
+  }), PLOTLY_CFG);
+}
+
+function chartHeatmap(id) {
+  const h = DATA.heatmap;
+
+  Plotly.newPlot(id, [{
+    z: h.valores,
+    x: h.segmentos,
+    y: h.tipos,
+    type: "heatmap",
+    colorscale: [
+      [0, "#f8fbfa"],
+      [0.2, "#edf4ff"],
+      [0.45, "#dce7ff"],
+      [0.7, "#a9c4f8"],
+      [1, "#5d8ef7"],
+    ],
+    text: h.valores.map(row => row.map(value => fmtUSD(value))),
+    texttemplate: "%{text}",
+    textfont: { size: 11, color: "#18332c", family: "Manrope" },
+    hovertemplate: "%{y} / %{x}<br>%{text}<extra></extra>",
+    colorbar: {
+      tickfont: { color: "#5d6d69" },
+      outlinecolor: "rgba(24,51,44,0.08)",
+    },
+  }], ly({ margin: { l: 140, r: 20, t: 18, b: 56 } }), PLOTLY_CFG);
+}
+
+function chartDonut(id) {
+  const d = DATA.donut_segmentos;
+
+  Plotly.newPlot(id, [{
+    labels: d.segmento,
+    values: d.volumen,
+    type: "pie",
+    hole: 0.58,
+    textinfo: "label+percent",
+    textfont: { size: 12, color: "#18332c", family: "Manrope" },
+    marker: {
+      colors: d.segmento.map(segmento => PALETTE.seg[segmento] || "#96a4a0"),
+      line: { color: "rgba(255,255,255,0.85)", width: 3 },
+    },
+    hovertemplate: "<b>%{label}</b><br>Volumen: $%{value:,.0f}<br>%{percent}<extra></extra>",
+  }], ly({
+    showlegend: true,
+    legend: { x: 0.98, y: 0.95, xanchor: "right", bgcolor: "transparent" },
+    annotations: [{
+      text: `<b>${fmtUSD(d.volumen.reduce((a, b) => a + b, 0))}</b><br>Total`,
+      showarrow: false,
+      font: { size: 13, color: "#18332c", family: "Manrope" },
+    }],
+  }), PLOTLY_CFG);
+}
+
+function chartScatterReg(id) {
+  const d = DATA.scatter_regresion;
+  const segs = [...new Set(d.segmento)];
+
+  const traces = segs.map(segmento => {
+    const idx = d.segmento.map((value, j) => value === segmento ? j : -1).filter(j => j >= 0);
+    return {
+      x: idx.map(j => d.n_productos[j]),
+      y: idx.map(j => d.volumen[j]),
+      mode: "markers",
+      name: segmento,
+      type: "scatter",
+      marker: {
+        color: PALETTE.seg[segmento] || "#96a4a0",
+        size: 8,
+        opacity: 0.74,
+        line: { color: "rgba(24,51,44,0.12)", width: 1 },
+      },
+      hovertemplate: `<b>${segmento}</b><br>Productos: %{x}<br>Volumen: $%{y:,.0f}<extra></extra>`,
+    };
+  });
+
+  const x = d.n_productos;
+  const y = d.volumen;
+  const n = x.length;
+  const sx = x.reduce((a, b) => a + b, 0);
+  const sy = y.reduce((a, b) => a + b, 0);
+  const sxy = x.reduce((a, value, i) => a + value * y[i], 0);
+  const sxx = x.reduce((a, value) => a + value * value, 0);
+  const syy = y.reduce((a, value) => a + value * value, 0);
+  const slope = (n * sxy - sx * sy) / (n * sxx - sx * sx);
+  const intercept = (sy - slope * sx) / n;
+  const r2num = (n * sxy - sx * sy) ** 2;
+  const r2den = (n * sxx - sx * sx) * (n * syy - sy * sy);
+  const r2 = r2den ? (r2num / r2den) : 0;
+  const xr = [Math.min(...x), Math.max(...x)];
+
+  traces.push({
+    x: xr,
+    y: xr.map(value => slope * value + intercept),
+    mode: "lines",
+    line: { color: "rgba(57,74,96,0.5)", dash: "dash", width: 2.2 },
+    name: `R2 = ${r2.toFixed(3)}`,
+    type: "scatter",
+  });
+
+  Plotly.newPlot(id, traces, ly({
+    xaxis: { title: "# productos" },
+    yaxis: { title: "Volumen (USD)" },
+    legend: { x: 0, y: 1.12, orientation: "h", bgcolor: "transparent" },
+  }), PLOTLY_CFG);
+}
+
+function chartArea(id) {
+  const d = DATA.mensual;
+  const ma3 = d.volumen.map((_, i) => {
+    const start = Math.max(0, i - 2);
+    const slice = d.volumen.slice(start, i + 1);
+    return slice.reduce((a, b) => a + b, 0) / slice.length;
+  });
+
+  Plotly.newPlot(id, [
+    {
+      x: d.mes,
+      y: d.volumen,
+      type: "scatter",
+      fill: "tozeroy",
+      fillcolor: PALETTE.blueAlpha,
+      line: { color: PALETTE.blue, width: 2.2 },
+      name: "Volumen",
+      hovertemplate: "%{x}<br>$%{y:,.0f}<extra></extra>",
+    },
+    {
+      x: d.mes,
+      y: ma3,
+      type: "scatter",
+      mode: "lines",
+      line: { color: PALETTE.coral, width: 2.8 },
+      name: "MA 3 meses",
+      hovertemplate: "%{x}<br>MA: $%{y:,.0f}<extra></extra>",
+    },
+  ], ly({
+    xaxis: { tickangle: 40 },
+    yaxis: { title: "Volumen (USD)" },
+    legend: { x: 0, y: 1.08, orientation: "h", bgcolor: "transparent" },
+  }), PLOTLY_CFG);
+}
+
+function chartScatterPais(id) {
+  const d = DATA.scatter_paises;
+  const maxVol = Math.max(...d.volumen);
+  const colors = [PALETTE.blue, PALETTE.mint, PALETTE.amber, PALETTE.coral, PALETTE.teal];
+
+  Plotly.newPlot(id, [{
+    x: d.n_clientes,
+    y: d.ticket_promedio,
+    text: d.pais,
+    mode: "markers+text",
+    textposition: "top center",
+    textfont: { size: 12, color: "#18332c", family: "Manrope" },
+    marker: {
+      size: d.volumen.map(value => Math.max((value / maxVol) * 65, 22)),
+      color: colors.slice(0, d.pais.length),
+      opacity: 0.78,
+      line: { color: "rgba(24,51,44,0.12)", width: 1.2 },
+    },
+    type: "scatter",
+    hovertemplate: "<b>%{text}</b><br>Clientes: %{x}<br>Ticket promedio: $%{y:,.0f}<extra></extra>",
+  }], ly({
+    xaxis: { title: "# clientes" },
+    yaxis: { title: "Ticket promedio por transaccion (USD)" },
+  }), PLOTLY_CFG);
+}
+
+function chartRadar(id) {
+  const r = DATA.radar;
+  const lineColors = [PALETTE.blue, PALETTE.mint, PALETTE.amber];
+  const fillColors = [PALETTE.blueAlpha, PALETTE.mintAlpha, PALETTE.amberAlpha];
+
+  const traces = r.segmentos.map((segmento, i) => ({
+    type: "scatterpolar",
+    r: [...r.valores[i], r.valores[i][0]],
+    theta: [...r.dimensiones, r.dimensiones[0]],
+    fill: "toself",
+    fillcolor: fillColors[i] || "rgba(150,150,150,0.14)",
+    name: segmento,
+    line: { color: lineColors[i] || "#96a4a0", width: 2.5 },
+    marker: { size: 4 },
+  }));
+
+  Plotly.newPlot(id, traces, {
+    ...PLOTLY_LAYOUT,
+    polar: {
+      bgcolor: "transparent",
+      radialaxis: {
+        gridcolor: "rgba(24,51,44,0.08)",
+        linecolor: "rgba(24,51,44,0.08)",
+        range: [0, 1.1],
+        tickfont: { size: 9, color: "#5d6d69" },
+      },
+      angularaxis: {
+        gridcolor: "rgba(24,51,44,0.08)",
+        linecolor: "rgba(24,51,44,0.08)",
+        tickfont: { color: "#5d6d69" },
+      },
+    },
+    legend: { x: 0.78, y: 1.08, bgcolor: "transparent" },
+  }, PLOTLY_CFG);
+}
+
+function chartBoxplots(id) {
+  const groups = [
+    { data: DATA.boxplot.tipo_transaccion },
+    { data: DATA.boxplot.pais },
+    { data: DATA.boxplot.segmento },
+  ];
+  const allColors = [PALETTE.blue, PALETTE.mint, PALETTE.amber, PALETTE.coral, PALETTE.teal, PALETTE.red];
+  const traces = [];
+  let colorIndex = 0;
+
+  groups.forEach(group => {
+    Object.entries(group.data).forEach(([key, values]) => {
+      traces.push({
+        y: values,
+        type: "box",
+        name: key,
+        marker: { color: allColors[colorIndex % allColors.length], outliercolor: PALETTE.red },
+        boxpoints: "outliers",
+        line: { width: 1.5 },
+      });
+      colorIndex += 1;
+    });
+  });
+
+  Plotly.newPlot(id, traces, ly({
+    showlegend: false,
+    yaxis: { title: "Monto (USD)" },
+  }), PLOTLY_CFG);
+}
+
+function chartTopClientes(id) {
+  const d = DATA.top_clientes;
+  const labels = d.id_cliente.map(cliente => `Cliente ${cliente}`).reverse();
+  const values = [...d.volumen].reverse();
+
+  Plotly.newPlot(id, [{
+    y: labels,
+    x: values,
+    type: "bar",
+    orientation: "h",
+    marker: {
+      color: values.map((_, i) => `rgba(93, 142, 247, ${0.35 + (i / Math.max(values.length - 1, 1)) * 0.55})`),
+      line: { color: PALETTE.blue, width: 0.7 },
+    },
+    hovertemplate: "%{y}<br>Volumen: $%{x:,.0f}<extra></extra>",
+  }], ly({
+    margin: { l: 112, r: 24, t: 16, b: 48 },
+    xaxis: { title: "Volumen (USD)" },
+    height: 420,
+  }), PLOTLY_CFG);
+}
+
+function chartRanking(id) {
+  const d = DATA.ranking_productos;
+  const labels = [...d.nombre_producto].reverse();
+  const values = [...d.volumen].reverse();
+
+  Plotly.newPlot(id, [{
+    y: labels,
+    x: values,
+    type: "bar",
+    orientation: "h",
+    marker: {
+      color: values.map((_, i) => `hsl(${192 + i * 10}, 58%, 70%)`),
+      line: { color: "rgba(24,51,44,0.08)", width: 0.7 },
+    },
+    hovertemplate: "%{y}<br>Volumen: $%{x:,.0f}<extra></extra>",
+  }], ly({
+    margin: { l: 146, r: 24, t: 16, b: 48 },
+    xaxis: { title: "Volumen (USD)" },
+  }), PLOTLY_CFG);
+}
+
+function chartPieProductos(id) {
+  const d = DATA.ranking_productos;
+
+  Plotly.newPlot(id, [{
+    labels: d.nombre_producto,
+    values: d.volumen,
+    type: "pie",
+    textinfo: "label+percent",
+    textfont: { size: 10, color: "#18332c", family: "Manrope" },
+    marker: {
+      colors: d.nombre_producto.map((_, i) => `hsl(${192 + i * 12}, 58%, 70%)`),
+      line: { color: "rgba(255,255,255,0.85)", width: 2.4 },
+    },
+    hovertemplate: "<b>%{label}</b><br>Volumen: $%{value:,.0f}<br>%{percent}<extra></extra>",
+  }], ly({
+    showlegend: false,
+  }), PLOTLY_CFG);
+}
+
+init();
+</script>
+</body>
+</html>

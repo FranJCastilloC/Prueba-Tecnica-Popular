@@ -1,0 +1,11 @@
+id_producto,nombre_producto,tipo_producto,tasa_interes,moneda
+1,Producto_1,Tarjeta de Crédito,0.14,EUR
+2,Producto_2,Cuenta de Ahorros,0.15,COP
+3,Producto_3,Cuenta de Ahorros,0.23,USD
+4,Producto_4,Cuenta Corriente,0.24,USD
+5,Producto_5,Tarjeta de Crédito,0.04,USD
+6,Producto_6,Préstamo,0.05,COP
+7,Producto_7,Cuenta Corriente,0.16,EUR
+8,Producto_8,Tarjeta de Crédito,0.2,COP
+9,Producto_9,Cuenta de Ahorros,0.14,COP
+10,Producto_10,Tarjeta de Crédito,0.05,USD
