@@ -12,6 +12,7 @@ const TABS = [
   { id: "tier2",        label: "Importantes",   kicker: "Tier 2"    },
   { id: "tier3",        label: "Complementarios", kicker: "Tier 3"  },
   { id: "rentabilidad", label: "Rentabilidad",  kicker: "Focus"     },
+  { id: "analisis",     label: "Análisis ML",   kicker: "ML"        },
 ];
 
 let DATA;
@@ -126,6 +127,7 @@ function showTab(id) {
     tier2:        renderTier2,
     tier3:        renderTier3,
     rentabilidad: renderRentabilidad,
+    analisis:     renderAnalisis,
   };
 
   renderers[id](section);

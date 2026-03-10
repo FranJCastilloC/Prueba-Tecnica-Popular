@@ -491,3 +491,216 @@ function chartPieProductos(id) {
     hovertemplate: "<b>%{label}</b><br>Volumen: $%{value:,.0f}<br>%{percent}<extra></extra>",
   }], ly({ showlegend: false }), PLOTLY_CFG);
 }
+
+// ── Regresión ─────────────────────────────────────────────────────────────────
+
+function chartRegScatter(id) {
+  const r = DATA.regresion;
+  const min_v = Math.min(...r.y_real, ...r.y_pred);
+  const max_v = Math.max(...r.y_real, ...r.y_pred);
+
+  Plotly.newPlot(id, [
+    {
+      x: r.y_real,
+      y: r.y_pred,
+      mode: "markers",
+      type: "scatter",
+      name: "Clientes",
+      marker: { color: PALETTE.blue, size: 8, opacity: 0.7, line: { color: "rgba(255,255,255,0.6)", width: 1 } },
+      hovertemplate: "Real: $%{x:,.0f}<br>Pred: $%{y:,.0f}<extra></extra>",
+    },
+    {
+      x: [min_v, max_v],
+      y: [min_v, max_v],
+      mode: "lines",
+      type: "scatter",
+      name: "Pred. perfecta",
+      line: { color: PALETTE.red, width: 2, dash: "dash" },
+      hoverinfo: "skip",
+    },
+  ], ly({
+    xaxis: { title: "Volumen Real (USD)" },
+    yaxis: { title: "Volumen Predicho (USD)" },
+    legend: { x: 0, y: 1.08, orientation: "h", bgcolor: "transparent" },
+  }), PLOTLY_CFG);
+}
+
+function chartRegResiduos(id) {
+  const res = DATA.regresion.residuos;
+  Plotly.newPlot(id, [
+    {
+      x: res,
+      type: "histogram",
+      nbinsx: 22,
+      marker: { color: PALETTE.amber, opacity: 0.82, line: { color: "rgba(255,255,255,0.6)", width: 0.5 } },
+      name: "Residuos",
+      hovertemplate: "%{x:,.0f} — %{y} clientes<extra></extra>",
+    },
+    {
+      x: [0, 0],
+      y: [0, res.length * 0.22],
+      mode: "lines",
+      type: "scatter",
+      line: { color: PALETTE.red, width: 2, dash: "dash" },
+      name: "Media = 0",
+      hoverinfo: "skip",
+    },
+  ], ly({
+    xaxis: { title: "Residuo (USD)" },
+    yaxis: { title: "Frecuencia" },
+    legend: { x: 0, y: 1.08, orientation: "h", bgcolor: "transparent" },
+    barmode: "overlay",
+  }), PLOTLY_CFG);
+}
+
+function chartRegCoefs(id) {
+  const coefs = DATA.regresion.coeficientes;
+  const keys  = Object.keys(coefs).sort((a, b) => Math.abs(coefs[b].coef) - Math.abs(coefs[a].coef));
+
+  const vals    = keys.map(k => coefs[k].coef);
+  const errLow  = keys.map(k => coefs[k].coef - coefs[k].ci_low);
+  const errHigh = keys.map(k => coefs[k].ci_high - coefs[k].coef);
+  const colors  = vals.map(v => v > 0 ? "#22c55e" : "#ef4444");
+  const sig     = keys.map(k => coefs[k].pvalue < 0.05 ? "★" : "");
+
+  Plotly.newPlot(id, [{
+    y: keys.map((k, i) => `${k} ${sig[i]}`),
+    x: vals,
+    type: "bar",
+    orientation: "h",
+    error_x: { type: "data", symmetric: false, array: errHigh, arrayminus: errLow, color: "rgba(24,51,44,0.45)", thickness: 1.5, width: 5 },
+    marker: { color: colors, opacity: 0.8 },
+    hovertemplate: "%{y}<br>Coef: %{x:,.1f}<extra></extra>",
+  }], ly({
+    xaxis: { title: "Coeficiente (★ p<0.05)", zeroline: true, zerolinecolor: "rgba(24,51,44,0.35)", zerolinewidth: 1.5 },
+    margin: { l: 148, r: 24, t: 24, b: 48 },
+    showlegend: false,
+  }), PLOTLY_CFG);
+}
+
+function chartRegQQ(id) {
+  const res = [...DATA.regresion.residuos].sort((a, b) => a - b);
+  const n   = res.length;
+  const mu  = res.reduce((s, v) => s + v, 0) / n;
+  const sd  = Math.sqrt(res.reduce((s, v) => s + (v - mu) ** 2, 0) / (n - 1));
+  const std = res.map(v => (v - mu) / sd);
+
+  // Theoretical quantiles from standard normal using probit approximation
+  const probit = p => {
+    const a = [2.515517, 0.802853, 0.010328];
+    const b = [1.432788, 0.189269, 0.001308];
+    const t = Math.sqrt(-2 * Math.log(Math.min(p, 1 - p)));
+    const num = a[0] + a[1] * t + a[2] * t * t;
+    const den = 1 + b[0] * t + b[1] * t * t + b[2] * t * t * t;
+    return p < 0.5 ? -(t - num / den) : t - num / den;
+  };
+  const theo = std.map((_, i) => probit((i + 0.5) / n));
+
+  // Reference line through 25th and 75th percentiles
+  const q1t = theo[Math.floor(n * 0.25)], q3t = theo[Math.floor(n * 0.75)];
+  const q1s = std[Math.floor(n * 0.25)],  q3s = std[Math.floor(n * 0.75)];
+  const slope = (q3s - q1s) / (q3t - q1t);
+  const intc  = q1s - slope * q1t;
+  const xLine = [theo[0], theo[n - 1]];
+
+  Plotly.newPlot(id, [
+    {
+      x: theo,
+      y: std,
+      mode: "markers",
+      type: "scatter",
+      marker: { color: PALETTE.mint, size: 7, opacity: 0.75, line: { color: "rgba(255,255,255,0.5)", width: 1 } },
+      name: "Residuos",
+      hovertemplate: "Teórico: %{x:.2f}<br>Muestral: %{y:.2f}<extra></extra>",
+    },
+    {
+      x: xLine,
+      y: xLine.map(x => slope * x + intc),
+      mode: "lines",
+      type: "scatter",
+      line: { color: PALETTE.red, width: 2 },
+      name: "Normal teórica",
+      hoverinfo: "skip",
+    },
+  ], ly({
+    xaxis: { title: "Cuantiles teóricos" },
+    yaxis: { title: "Cuantiles muestrales (std)" },
+    legend: { x: 0, y: 1.08, orientation: "h", bgcolor: "transparent" },
+  }), PLOTLY_CFG);
+}
+
+// ── Journey ───────────────────────────────────────────────────────────────────
+
+function chartJourneyVol(id, cid) {
+  const c = DATA.journey[String(cid)];
+  const yK = c.vol_acum_y.map(v => v / 1000); // en $K
+
+  Plotly.newPlot(id, [
+    {
+      x: c.vol_acum_x,
+      y: yK,
+      type: "scatter",
+      fill: "tozeroy",
+      fillcolor: PALETTE.blueAlpha,
+      line: { color: PALETTE.blue, width: 2.2 },
+      name: "Vol. acumulado",
+      hovertemplate: "Mes %{x}<br>$%{y:.1f}K<extra></extra>",
+    },
+    {
+      x: c.productos.map(p => p.mes),
+      y: c.productos.map(p => {
+        const idx = c.vol_acum_x.indexOf(p.mes);
+        return idx >= 0 ? yK[idx] : null;
+      }),
+      mode: "markers+text",
+      type: "scatter",
+      text: c.productos.map(p => p.label),
+      textposition: "top center",
+      textfont: { size: 10, color: PALETTE.ink },
+      marker: { color: PALETTE.red, size: 10, symbol: "circle" },
+      name: "Nuevo producto",
+      hovertemplate: "%{text}: %{customdata}<br>Mes %{x}<extra></extra>",
+      customdata: c.productos.map(p => p.nombre),
+    },
+  ], ly({
+    xaxis: { title: "Meses desde 1ra transacción", dtick: 1 },
+    yaxis: { title: "Volumen acumulado ($K)" },
+    legend: { x: 0, y: 1.08, orientation: "h", bgcolor: "transparent" },
+  }), PLOTLY_CFG);
+}
+
+function chartJourneyProd(id, cid) {
+  const c = DATA.journey[String(cid)];
+
+  Plotly.newPlot(id, [
+    {
+      x: c.step_x,
+      y: c.step_y,
+      type: "scatter",
+      mode: "lines+markers",
+      line: { color: PALETTE.mint, width: 2.4, shape: "hv" },
+      marker: { color: PALETTE.mint, size: 7 },
+      fill: "tozeroy",
+      fillcolor: PALETTE.mintAlpha,
+      name: "Productos",
+      hovertemplate: "Mes %{x}<br>%{y} producto(s)<extra></extra>",
+    },
+    ...c.productos.map(p => ({
+      x: [p.mes],
+      y: [c.step_y[p.mes] || 0],
+      mode: "markers+text",
+      type: "scatter",
+      text: [p.label],
+      textposition: "top center",
+      textfont: { size: 9, color: PALETTE.ink },
+      marker: { color: PALETTE.amber, size: 9, symbol: "diamond" },
+      name: p.label,
+      showlegend: false,
+      hovertemplate: `${p.label}: ${p.nombre}<extra></extra>`,
+    })),
+  ], ly({
+    xaxis: { title: "Meses desde 1ra transacción", dtick: 1 },
+    yaxis: { title: "Productos acumulados", dtick: 1 },
+    legend: { x: 0, y: 1.08, orientation: "h", bgcolor: "transparent" },
+  }), PLOTLY_CFG);
+}

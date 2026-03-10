@@ -173,3 +173,98 @@ function renderRentabilidad(el) {
   chartRanking("r-rank");
   chartPieProductos("r-pie");
 }
+
+// ── Análisis ML ───────────────────────────────────────────────────────────────
+
+function renderAnalisis(el) {
+  const r = DATA.regresion;
+  const firstId = Object.keys(DATA.journey)[0];
+
+  el.innerHTML = `
+    ${sectionIntro({
+      eyebrow: "ML · OLS",
+      title: "Regresión multivariable del volumen",
+      description: "Modelo OLS con 12 variables que explica el volumen del cliente. Incluye transacciones, ticket, antigüedad, volatilidad, segmento, país y género.",
+      highlightLabel: "ajuste del modelo",
+      highlightText: `R² = ${r.r2} · R² adj = ${r.r2_adj}`,
+      detail: `El modelo explica el ${(r.r2 * 100).toFixed(1)}% de la varianza del volumen en ${r.n_obs} clientes. La variable más predictiva es n_transacciones.`,
+    })}
+
+    <div class="kpis" style="grid-template-columns: repeat(3, minmax(0,1fr)); max-width: 680px;">
+      ${kpiCard({ value: r.r2.toFixed(3),     label: "R²",           note: "Varianza explicada por el modelo",          tone: "blue"  })}
+      ${kpiCard({ value: r.r2_adj.toFixed(3), label: "R² ajustado",  note: "Penaliza por número de predictores",        tone: "mint"  })}
+      ${kpiCard({ value: fmt(r.n_obs),        label: "Observaciones",note: "Clientes incluidos en el ajuste OLS",       tone: "amber" })}
+    </div>
+
+    <div class="grid-2">
+      ${panelCard({ title: "Predicho vs Real", question: "¿Qué tan bien ajusta el modelo a los datos reales?",         id: "an-scatter", tag: `R²=${r.r2}`, tall: true })}
+      ${panelCard({ title: "Coeficientes con IC 95%", question: "¿Qué variables tienen mayor impacto y cuáles son significativas?", id: "an-coefs", tag: "Regresión", tall: true })}
+    </div>
+
+    <div class="grid-2" style="margin-top: 20px;">
+      ${panelCard({ title: "Distribución de residuos", question: "¿Los errores del modelo son aproximadamente normales y centrados en cero?",  id: "an-resid", tag: "Diagnóstico" })}
+      ${panelCard({ title: "QQ-Plot de residuos", question: "¿Se cumple el supuesto de normalidad en los residuos del modelo?",               id: "an-qq",    tag: "Diagnóstico" })}
+    </div>
+
+    <div class="section-divider"></div>
+
+    <div class="page-intro" style="margin-top: 28px;">
+      <div class="section-copy">
+        <span class="eyebrow">Journey</span>
+        <h2>Trayectoria del cliente</h2>
+        <p>Evolución temporal de volumen acumulado y adopción de productos para los top 10 clientes por volumen.</p>
+      </div>
+      <div class="journey-selector-wrap story-card">
+        <span class="story-label">Seleccionar cliente</span>
+        <select id="journey-select" onchange="updateJourney(this.value)">
+          ${Object.entries(DATA.journey).map(([id, c]) =>
+            `<option value="${id}">Cliente ${id} — ${fmtUSD(c.volumen_total)}</option>`
+          ).join("")}
+        </select>
+        <div id="journey-ficha"></div>
+      </div>
+    </div>
+
+    <div class="grid-2" id="journey-charts">
+      ${panelCard({ title: "Volumen acumulado", question: "¿Cómo crece el volumen del cliente a lo largo del tiempo?",          id: "an-journey-vol",  tag: "Trayectoria", tall: true })}
+      ${panelCard({ title: "Adopción de productos", question: "¿Cuándo y en qué orden el cliente incorporó cada producto?",     id: "an-journey-prod", tag: "Trayectoria", tall: true })}
+    </div>
+  `;
+
+  // Regresión charts
+  chartRegScatter("an-scatter");
+  chartRegCoefs("an-coefs");
+  chartRegResiduos("an-resid");
+  chartRegQQ("an-qq");
+
+  // Journey inicial
+  updateJourney(firstId);
+}
+
+function updateJourney(cid) {
+  const c = DATA.journey[String(cid)];
+  if (!c) return;
+
+  const ficha = document.getElementById("journey-ficha");
+  if (ficha) {
+    ficha.innerHTML = `
+      <div class="journey-kpi-row">
+        <span><strong>${fmtUSD(c.volumen_total)}</strong><small>Volumen total</small></span>
+        <span><strong>${fmt(c.n_transacciones)}</strong><small>Transacciones</small></span>
+        <span><strong>${c.n_productos}</strong><small>Productos</small></span>
+        <span><strong>${fmtUSD(c.ticket_prom)}</strong><small>Ticket prom.</small></span>
+        <span><strong>${c.antiguedad_dias}d</strong><small>Antigüedad</small></span>
+        <span><strong>${c.pais}</strong><small>${c.segmento}</small></span>
+      </div>
+    `;
+  }
+
+  // Re-render journey charts (Plotly purge prevents ghost traces)
+  const volEl  = document.getElementById("an-journey-vol");
+  const prodEl = document.getElementById("an-journey-prod");
+  if (volEl)  Plotly.purge("an-journey-vol");
+  if (prodEl) Plotly.purge("an-journey-prod");
+
+  chartJourneyVol("an-journey-vol", cid);
+  chartJourneyProd("an-journey-prod", cid);
+}
