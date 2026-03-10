@@ -4157,6 +4157,7389 @@
           "nombre": "Producto_6"
         }
       ]
+    },
+    "1029": {
+      "id_cliente": 1029,
+      "pais": "Chile",
+      "genero": "M",
+      "segmento": "PYME",
+      "volumen_total": 46747.18,
+      "n_transacciones": 9,
+      "n_productos": 6,
+      "ticket_prom": 5194.13,
+      "antiguedad_dias": 401,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "vol_acum_y": [
+        15356.93,
+        27480.55,
+        27480.55,
+        30320.98,
+        36792.95,
+        36792.95,
+        36792.95,
+        36792.95,
+        36792.95,
+        36792.95,
+        36792.95,
+        36792.95,
+        36792.95,
+        46747.18
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "step_y": [
+        2,
+        4,
+        4,
+        5,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_3"
+        },
+        {
+          "label": "P2",
+          "mes": 0,
+          "nombre": "Producto_5"
+        },
+        {
+          "label": "P3",
+          "mes": 1,
+          "nombre": "Producto_4"
+        },
+        {
+          "label": "P4",
+          "mes": 1,
+          "nombre": "Producto_7"
+        },
+        {
+          "label": "P5",
+          "mes": 3,
+          "nombre": "Producto_9"
+        },
+        {
+          "label": "P6",
+          "mes": 4,
+          "nombre": "Producto_6"
+        }
+      ]
+    },
+    "1025": {
+      "id_cliente": 1025,
+      "pais": "Chile",
+      "genero": "F",
+      "segmento": "Corporativo",
+      "volumen_total": 46367.81,
+      "n_transacciones": 6,
+      "n_productos": 5,
+      "ticket_prom": 7727.97,
+      "antiguedad_dias": 402,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "vol_acum_y": [
+        9435.93,
+        19202.44,
+        19202.44,
+        19202.44,
+        19202.44,
+        28960.2,
+        28960.2,
+        28960.2,
+        28960.2,
+        37027.21,
+        37027.21,
+        39828.94,
+        39828.94,
+        46367.81
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "step_y": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        4,
+        4,
+        5
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_8"
+        },
+        {
+          "label": "P2",
+          "mes": 1,
+          "nombre": "Producto_7"
+        },
+        {
+          "label": "P3",
+          "mes": 9,
+          "nombre": "Producto_4"
+        },
+        {
+          "label": "P4",
+          "mes": 11,
+          "nombre": "Producto_9"
+        },
+        {
+          "label": "P5",
+          "mes": 13,
+          "nombre": "Producto_3"
+        }
+      ]
+    },
+    "1074": {
+      "id_cliente": 1074,
+      "pais": "Chile",
+      "genero": "F",
+      "segmento": "Retail",
+      "volumen_total": 43706.85,
+      "n_transacciones": 6,
+      "n_productos": 5,
+      "ticket_prom": 7284.47,
+      "antiguedad_dias": 352,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "vol_acum_y": [
+        15922.83,
+        15922.83,
+        15922.83,
+        15922.83,
+        24669.25,
+        24669.25,
+        24669.25,
+        27914.07,
+        27914.07,
+        27914.07,
+        36595.82,
+        43706.85
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "step_y": [
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        5,
+        5
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_3"
+        },
+        {
+          "label": "P2",
+          "mes": 0,
+          "nombre": "Producto_5"
+        },
+        {
+          "label": "P3",
+          "mes": 4,
+          "nombre": "Producto_10"
+        },
+        {
+          "label": "P4",
+          "mes": 7,
+          "nombre": "Producto_9"
+        },
+        {
+          "label": "P5",
+          "mes": 10,
+          "nombre": "Producto_1"
+        }
+      ]
+    },
+    "1084": {
+      "id_cliente": 1084,
+      "pais": "Colombia",
+      "genero": "M",
+      "segmento": "Retail",
+      "volumen_total": 42249.7,
+      "n_transacciones": 8,
+      "n_productos": 6,
+      "ticket_prom": 5281.21,
+      "antiguedad_dias": 463,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "vol_acum_y": [
+        7059.12,
+        9905.48,
+        9905.48,
+        9905.48,
+        17970.8,
+        21300.92,
+        26297.8,
+        26297.8,
+        26297.8,
+        26297.8,
+        35007.0,
+        35007.0,
+        35007.0,
+        35007.0,
+        35007.0,
+        42249.7
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "step_y": [
+        1,
+        2,
+        2,
+        2,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        6
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_4"
+        },
+        {
+          "label": "P2",
+          "mes": 1,
+          "nombre": "Producto_6"
+        },
+        {
+          "label": "P3",
+          "mes": 4,
+          "nombre": "Producto_10"
+        },
+        {
+          "label": "P4",
+          "mes": 5,
+          "nombre": "Producto_1"
+        },
+        {
+          "label": "P5",
+          "mes": 10,
+          "nombre": "Producto_5"
+        },
+        {
+          "label": "P6",
+          "mes": 15,
+          "nombre": "Producto_3"
+        }
+      ]
+    },
+    "1039": {
+      "id_cliente": 1039,
+      "pais": "México",
+      "genero": "M",
+      "segmento": "PYME",
+      "volumen_total": 40589.1,
+      "n_transacciones": 7,
+      "n_productos": 5,
+      "ticket_prom": 5798.44,
+      "antiguedad_dias": 250,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "vol_acum_y": [
+        18090.01,
+        26439.33,
+        26439.33,
+        26439.33,
+        26439.33,
+        26439.33,
+        26439.33,
+        26439.33,
+        40589.1
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "step_y": [
+        3,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_4"
+        },
+        {
+          "label": "P2",
+          "mes": 0,
+          "nombre": "Producto_7"
+        },
+        {
+          "label": "P3",
+          "mes": 0,
+          "nombre": "Producto_10"
+        },
+        {
+          "label": "P4",
+          "mes": 1,
+          "nombre": "Producto_3"
+        },
+        {
+          "label": "P5",
+          "mes": 1,
+          "nombre": "Producto_6"
+        }
+      ]
+    },
+    "1079": {
+      "id_cliente": 1079,
+      "pais": "Chile",
+      "genero": "F",
+      "segmento": "Corporativo",
+      "volumen_total": 39674.14,
+      "n_transacciones": 8,
+      "n_productos": 6,
+      "ticket_prom": 4959.27,
+      "antiguedad_dias": 454,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "vol_acum_y": [
+        5199.13,
+        5882.46,
+        5882.46,
+        5882.46,
+        5882.46,
+        9451.02,
+        9451.02,
+        18638.4,
+        18638.4,
+        18638.4,
+        18638.4,
+        18638.4,
+        18638.4,
+        23146.57,
+        30011.33,
+        39674.14
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "step_y": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        5,
+        5,
+        6
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_2"
+        },
+        {
+          "label": "P2",
+          "mes": 1,
+          "nombre": "Producto_9"
+        },
+        {
+          "label": "P3",
+          "mes": 5,
+          "nombre": "Producto_10"
+        },
+        {
+          "label": "P4",
+          "mes": 7,
+          "nombre": "Producto_7"
+        },
+        {
+          "label": "P5",
+          "mes": 13,
+          "nombre": "Producto_6"
+        },
+        {
+          "label": "P6",
+          "mes": 15,
+          "nombre": "Producto_5"
+        }
+      ]
+    },
+    "1052": {
+      "id_cliente": 1052,
+      "pais": "Argentina",
+      "genero": "M",
+      "segmento": "PYME",
+      "volumen_total": 38343.2,
+      "n_transacciones": 8,
+      "n_productos": 4,
+      "ticket_prom": 4792.9,
+      "antiguedad_dias": 413,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "vol_acum_y": [
+        5980.74,
+        13961.5,
+        15659.49,
+        15659.49,
+        18841.36,
+        18841.36,
+        18841.36,
+        25017.96,
+        28113.6,
+        28113.6,
+        28113.6,
+        28113.6,
+        36292.04,
+        36292.04,
+        38343.2
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "step_y": [
+        1,
+        1,
+        2,
+        2,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_3"
+        },
+        {
+          "label": "P2",
+          "mes": 2,
+          "nombre": "Producto_9"
+        },
+        {
+          "label": "P3",
+          "mes": 4,
+          "nombre": "Producto_4"
+        },
+        {
+          "label": "P4",
+          "mes": 7,
+          "nombre": "Producto_1"
+        }
+      ]
+    },
+    "1012": {
+      "id_cliente": 1012,
+      "pais": "México",
+      "genero": "M",
+      "segmento": "Retail",
+      "volumen_total": 37855.99,
+      "n_transacciones": 7,
+      "n_productos": 6,
+      "ticket_prom": 5408.0,
+      "antiguedad_dias": 383,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "vol_acum_y": [
+        9326.56,
+        19618.21,
+        19618.21,
+        19618.21,
+        19618.21,
+        19618.21,
+        20337.86,
+        20337.86,
+        20337.86,
+        20337.86,
+        24229.31,
+        30170.74,
+        30170.74,
+        37855.99
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "step_y": [
+        1,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        5,
+        5,
+        6
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_2"
+        },
+        {
+          "label": "P2",
+          "mes": 1,
+          "nombre": "Producto_3"
+        },
+        {
+          "label": "P3",
+          "mes": 1,
+          "nombre": "Producto_10"
+        },
+        {
+          "label": "P4",
+          "mes": 10,
+          "nombre": "Producto_4"
+        },
+        {
+          "label": "P5",
+          "mes": 11,
+          "nombre": "Producto_1"
+        },
+        {
+          "label": "P6",
+          "mes": 13,
+          "nombre": "Producto_6"
+        }
+      ]
+    },
+    "1017": {
+      "id_cliente": 1017,
+      "pais": "México",
+      "genero": "F",
+      "segmento": "Corporativo",
+      "volumen_total": 37465.85,
+      "n_transacciones": 6,
+      "n_productos": 4,
+      "ticket_prom": 6244.31,
+      "antiguedad_dias": 367,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "vol_acum_y": [
+        7802.72,
+        7802.72,
+        7802.72,
+        7802.72,
+        7802.72,
+        16830.68,
+        16830.68,
+        25594.15,
+        27642.38,
+        27642.38,
+        27642.38,
+        34259.01,
+        37465.85
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        4,
+        4
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_2"
+        },
+        {
+          "label": "P2",
+          "mes": 5,
+          "nombre": "Producto_6"
+        },
+        {
+          "label": "P3",
+          "mes": 8,
+          "nombre": "Producto_4"
+        },
+        {
+          "label": "P4",
+          "mes": 11,
+          "nombre": "Producto_9"
+        }
+      ]
+    },
+    "1030": {
+      "id_cliente": 1030,
+      "pais": "Colombia",
+      "genero": "M",
+      "segmento": "Corporativo",
+      "volumen_total": 36531.96,
+      "n_transacciones": 6,
+      "n_productos": 6,
+      "ticket_prom": 6088.66,
+      "antiguedad_dias": 410,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "vol_acum_y": [
+        1757.25,
+        1757.25,
+        1757.25,
+        1757.25,
+        1757.25,
+        1757.25,
+        11015.27,
+        20771.99,
+        26938.22,
+        26938.22,
+        26938.22,
+        26938.22,
+        30932.24,
+        30932.24,
+        36531.96
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        3,
+        4,
+        4,
+        4,
+        4,
+        5,
+        5,
+        6
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_8"
+        },
+        {
+          "label": "P2",
+          "mes": 6,
+          "nombre": "Producto_6"
+        },
+        {
+          "label": "P3",
+          "mes": 7,
+          "nombre": "Producto_3"
+        },
+        {
+          "label": "P4",
+          "mes": 8,
+          "nombre": "Producto_10"
+        },
+        {
+          "label": "P5",
+          "mes": 12,
+          "nombre": "Producto_7"
+        },
+        {
+          "label": "P6",
+          "mes": 14,
+          "nombre": "Producto_2"
+        }
+      ]
+    },
+    "1077": {
+      "id_cliente": 1077,
+      "pais": "Colombia",
+      "genero": "F",
+      "segmento": "Retail",
+      "volumen_total": 36309.96,
+      "n_transacciones": 8,
+      "n_productos": 4,
+      "ticket_prom": 4538.74,
+      "antiguedad_dias": 362,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "vol_acum_y": [
+        7120.53,
+        10022.45,
+        10022.45,
+        10022.45,
+        15957.72,
+        15957.72,
+        15957.72,
+        15957.72,
+        20288.84,
+        32268.91,
+        32268.91,
+        32268.91,
+        36309.96
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "step_y": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        4,
+        4,
+        4,
+        4
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_2"
+        },
+        {
+          "label": "P2",
+          "mes": 1,
+          "nombre": "Producto_6"
+        },
+        {
+          "label": "P3",
+          "mes": 8,
+          "nombre": "Producto_4"
+        },
+        {
+          "label": "P4",
+          "mes": 9,
+          "nombre": "Producto_5"
+        }
+      ]
+    },
+    "1056": {
+      "id_cliente": 1056,
+      "pais": "Argentina",
+      "genero": "M",
+      "segmento": "Corporativo",
+      "volumen_total": 35375.64,
+      "n_transacciones": 9,
+      "n_productos": 7,
+      "ticket_prom": 3930.63,
+      "antiguedad_dias": 459,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "vol_acum_y": [
+        363.29,
+        363.29,
+        363.29,
+        363.29,
+        363.29,
+        363.29,
+        363.29,
+        363.29,
+        13514.82,
+        20940.02,
+        20940.02,
+        23593.35,
+        26713.76,
+        26713.76,
+        29203.9,
+        35375.64
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        5,
+        5,
+        6,
+        7,
+        7,
+        7,
+        7
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_10"
+        },
+        {
+          "label": "P2",
+          "mes": 8,
+          "nombre": "Producto_1"
+        },
+        {
+          "label": "P3",
+          "mes": 8,
+          "nombre": "Producto_2"
+        },
+        {
+          "label": "P4",
+          "mes": 9,
+          "nombre": "Producto_3"
+        },
+        {
+          "label": "P5",
+          "mes": 9,
+          "nombre": "Producto_4"
+        },
+        {
+          "label": "P6",
+          "mes": 11,
+          "nombre": "Producto_7"
+        },
+        {
+          "label": "P7",
+          "mes": 12,
+          "nombre": "Producto_9"
+        }
+      ]
+    },
+    "1100": {
+      "id_cliente": 1100,
+      "pais": "Chile",
+      "genero": "F",
+      "segmento": "Retail",
+      "volumen_total": 35113.93,
+      "n_transacciones": 5,
+      "n_productos": 4,
+      "ticket_prom": 7022.79,
+      "antiguedad_dias": 440,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "vol_acum_y": [
+        13731.1,
+        13731.1,
+        13731.1,
+        13731.1,
+        13731.1,
+        13731.1,
+        13731.1,
+        13731.1,
+        21766.34,
+        21766.34,
+        27163.68,
+        27163.68,
+        27163.68,
+        27163.68,
+        27163.68,
+        35113.93
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "step_y": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_1"
+        },
+        {
+          "label": "P2",
+          "mes": 0,
+          "nombre": "Producto_9"
+        },
+        {
+          "label": "P3",
+          "mes": 10,
+          "nombre": "Producto_5"
+        },
+        {
+          "label": "P4",
+          "mes": 15,
+          "nombre": "Producto_6"
+        }
+      ]
+    },
+    "1071": {
+      "id_cliente": 1071,
+      "pais": "México",
+      "genero": "F",
+      "segmento": "Retail",
+      "volumen_total": 35090.51,
+      "n_transacciones": 6,
+      "n_productos": 4,
+      "ticket_prom": 5848.42,
+      "antiguedad_dias": 414,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "vol_acum_y": [
+        8123.56,
+        13949.38,
+        13949.38,
+        13949.38,
+        21881.32,
+        21881.32,
+        21881.32,
+        21881.32,
+        21881.32,
+        21881.32,
+        21881.32,
+        31238.5,
+        32059.97,
+        32059.97,
+        35090.51
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "step_y": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        4
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_6"
+        },
+        {
+          "label": "P2",
+          "mes": 1,
+          "nombre": "Producto_2"
+        },
+        {
+          "label": "P3",
+          "mes": 12,
+          "nombre": "Producto_3"
+        },
+        {
+          "label": "P4",
+          "mes": 14,
+          "nombre": "Producto_8"
+        }
+      ]
+    },
+    "1097": {
+      "id_cliente": 1097,
+      "pais": "México",
+      "genero": "F",
+      "segmento": "Corporativo",
+      "volumen_total": 34391.64,
+      "n_transacciones": 7,
+      "n_productos": 7,
+      "ticket_prom": 4913.09,
+      "antiguedad_dias": 444,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "vol_acum_y": [
+        2549.16,
+        2549.16,
+        2549.16,
+        2549.16,
+        3948.66,
+        3948.66,
+        7108.27,
+        7108.27,
+        7108.27,
+        10055.76,
+        10055.76,
+        10055.76,
+        10055.76,
+        19132.5,
+        26928.67,
+        34391.64
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        5,
+        6,
+        7
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_5"
+        },
+        {
+          "label": "P2",
+          "mes": 4,
+          "nombre": "Producto_10"
+        },
+        {
+          "label": "P3",
+          "mes": 6,
+          "nombre": "Producto_1"
+        },
+        {
+          "label": "P4",
+          "mes": 9,
+          "nombre": "Producto_8"
+        },
+        {
+          "label": "P5",
+          "mes": 13,
+          "nombre": "Producto_7"
+        },
+        {
+          "label": "P6",
+          "mes": 14,
+          "nombre": "Producto_4"
+        },
+        {
+          "label": "P7",
+          "mes": 15,
+          "nombre": "Producto_6"
+        }
+      ]
+    },
+    "1094": {
+      "id_cliente": 1094,
+      "pais": "México",
+      "genero": "M",
+      "segmento": "PYME",
+      "volumen_total": 34271.7,
+      "n_transacciones": 6,
+      "n_productos": 5,
+      "ticket_prom": 5711.95,
+      "antiguedad_dias": 193,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "vol_acum_y": [
+        8059.31,
+        8059.31,
+        13619.91,
+        21895.62,
+        22539.5,
+        22539.5,
+        29306.24,
+        34271.7
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "step_y": [
+        1,
+        1,
+        2,
+        3,
+        3,
+        3,
+        4,
+        5
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_8"
+        },
+        {
+          "label": "P2",
+          "mes": 2,
+          "nombre": "Producto_1"
+        },
+        {
+          "label": "P3",
+          "mes": 3,
+          "nombre": "Producto_5"
+        },
+        {
+          "label": "P4",
+          "mes": 6,
+          "nombre": "Producto_10"
+        },
+        {
+          "label": "P5",
+          "mes": 7,
+          "nombre": "Producto_6"
+        }
+      ]
+    },
+    "1057": {
+      "id_cliente": 1057,
+      "pais": "Chile",
+      "genero": "F",
+      "segmento": "Corporativo",
+      "volumen_total": 33712.26,
+      "n_transacciones": 7,
+      "n_productos": 5,
+      "ticket_prom": 4816.04,
+      "antiguedad_dias": 353,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "vol_acum_y": [
+        6504.48,
+        6504.48,
+        11504.65,
+        11504.65,
+        11504.65,
+        11504.65,
+        11504.65,
+        13315.18,
+        14397.31,
+        21581.04,
+        30061.14,
+        30061.14,
+        33712.26
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "step_y": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        4,
+        4,
+        4,
+        5
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_10"
+        },
+        {
+          "label": "P2",
+          "mes": 2,
+          "nombre": "Producto_4"
+        },
+        {
+          "label": "P3",
+          "mes": 8,
+          "nombre": "Producto_3"
+        },
+        {
+          "label": "P4",
+          "mes": 9,
+          "nombre": "Producto_1"
+        },
+        {
+          "label": "P5",
+          "mes": 12,
+          "nombre": "Producto_8"
+        }
+      ]
+    },
+    "1098": {
+      "id_cliente": 1098,
+      "pais": "México",
+      "genero": "M",
+      "segmento": "Retail",
+      "volumen_total": 33351.45,
+      "n_transacciones": 6,
+      "n_productos": 5,
+      "ticket_prom": 5558.58,
+      "antiguedad_dias": 376,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "vol_acum_y": [
+        9483.92,
+        9861.02,
+        9861.02,
+        15084.5,
+        15084.5,
+        15084.5,
+        15084.5,
+        15084.5,
+        23680.12,
+        33155.96,
+        33155.96,
+        33155.96,
+        33351.45
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "step_y": [
+        1,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        5,
+        5,
+        5,
+        5
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_10"
+        },
+        {
+          "label": "P2",
+          "mes": 1,
+          "nombre": "Producto_7"
+        },
+        {
+          "label": "P3",
+          "mes": 3,
+          "nombre": "Producto_9"
+        },
+        {
+          "label": "P4",
+          "mes": 8,
+          "nombre": "Producto_6"
+        },
+        {
+          "label": "P5",
+          "mes": 9,
+          "nombre": "Producto_3"
+        }
+      ]
+    },
+    "1078": {
+      "id_cliente": 1078,
+      "pais": "Chile",
+      "genero": "F",
+      "segmento": "PYME",
+      "volumen_total": 32911.04,
+      "n_transacciones": 6,
+      "n_productos": 5,
+      "ticket_prom": 5485.17,
+      "antiguedad_dias": 273,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "vol_acum_y": [
+        743.44,
+        743.44,
+        743.44,
+        743.44,
+        743.44,
+        743.44,
+        7310.69,
+        17253.57,
+        22018.61,
+        32911.04
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_8"
+        },
+        {
+          "label": "P2",
+          "mes": 6,
+          "nombre": "Producto_9"
+        },
+        {
+          "label": "P3",
+          "mes": 7,
+          "nombre": "Producto_6"
+        },
+        {
+          "label": "P4",
+          "mes": 8,
+          "nombre": "Producto_1"
+        },
+        {
+          "label": "P5",
+          "mes": 9,
+          "nombre": "Producto_7"
+        }
+      ]
+    },
+    "1063": {
+      "id_cliente": 1063,
+      "pais": "Colombia",
+      "genero": "F",
+      "segmento": "Retail",
+      "volumen_total": 32850.7,
+      "n_transacciones": 6,
+      "n_productos": 5,
+      "ticket_prom": 5475.12,
+      "antiguedad_dias": 345,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "vol_acum_y": [
+        9124.99,
+        9124.99,
+        9124.99,
+        9124.99,
+        9124.99,
+        17489.91,
+        17489.91,
+        23744.84,
+        23744.84,
+        23744.84,
+        26858.11,
+        32850.7
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "step_y": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        4,
+        4,
+        4,
+        5,
+        5
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_3"
+        },
+        {
+          "label": "P2",
+          "mes": 0,
+          "nombre": "Producto_8"
+        },
+        {
+          "label": "P3",
+          "mes": 5,
+          "nombre": "Producto_7"
+        },
+        {
+          "label": "P4",
+          "mes": 7,
+          "nombre": "Producto_9"
+        },
+        {
+          "label": "P5",
+          "mes": 10,
+          "nombre": "Producto_4"
+        }
+      ]
+    },
+    "1095": {
+      "id_cliente": 1095,
+      "pais": "México",
+      "genero": "F",
+      "segmento": "Corporativo",
+      "volumen_total": 32706.97,
+      "n_transacciones": 6,
+      "n_productos": 5,
+      "ticket_prom": 5451.16,
+      "antiguedad_dias": 361,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "vol_acum_y": [
+        1320.41,
+        14558.69,
+        14558.69,
+        21222.14,
+        21222.14,
+        21222.14,
+        21222.14,
+        21222.14,
+        21222.14,
+        25131.95,
+        25131.95,
+        25131.95,
+        32706.97
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "step_y": [
+        1,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        5,
+        5,
+        5,
+        5
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_6"
+        },
+        {
+          "label": "P2",
+          "mes": 1,
+          "nombre": "Producto_2"
+        },
+        {
+          "label": "P3",
+          "mes": 1,
+          "nombre": "Producto_4"
+        },
+        {
+          "label": "P4",
+          "mes": 3,
+          "nombre": "Producto_5"
+        },
+        {
+          "label": "P5",
+          "mes": 9,
+          "nombre": "Producto_1"
+        }
+      ]
+    },
+    "1005": {
+      "id_cliente": 1005,
+      "pais": "México",
+      "genero": "F",
+      "segmento": "PYME",
+      "volumen_total": 31255.36,
+      "n_transacciones": 6,
+      "n_productos": 5,
+      "ticket_prom": 5209.23,
+      "antiguedad_dias": 364,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "vol_acum_y": [
+        4057.31,
+        4268.47,
+        4268.47,
+        4268.47,
+        4268.47,
+        13978.06,
+        13978.06,
+        23758.15,
+        23758.15,
+        23758.15,
+        23758.15,
+        23758.15,
+        31255.36
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "step_y": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        5
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_5"
+        },
+        {
+          "label": "P2",
+          "mes": 1,
+          "nombre": "Producto_10"
+        },
+        {
+          "label": "P3",
+          "mes": 5,
+          "nombre": "Producto_4"
+        },
+        {
+          "label": "P4",
+          "mes": 7,
+          "nombre": "Producto_9"
+        },
+        {
+          "label": "P5",
+          "mes": 12,
+          "nombre": "Producto_8"
+        }
+      ]
+    },
+    "1064": {
+      "id_cliente": 1064,
+      "pais": "Colombia",
+      "genero": "F",
+      "segmento": "PYME",
+      "volumen_total": 30147.78,
+      "n_transacciones": 6,
+      "n_productos": 4,
+      "ticket_prom": 5024.63,
+      "antiguedad_dias": 223,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "vol_acum_y": [
+        10453.12,
+        10453.12,
+        12194.08,
+        20654.57,
+        20654.57,
+        20654.57,
+        20654.57,
+        30147.78
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "step_y": [
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_4"
+        },
+        {
+          "label": "P2",
+          "mes": 0,
+          "nombre": "Producto_7"
+        },
+        {
+          "label": "P3",
+          "mes": 2,
+          "nombre": "Producto_9"
+        },
+        {
+          "label": "P4",
+          "mes": 7,
+          "nombre": "Producto_8"
+        }
+      ]
+    },
+    "1022": {
+      "id_cliente": 1022,
+      "pais": "Colombia",
+      "genero": "M",
+      "segmento": "Retail",
+      "volumen_total": 30094.93,
+      "n_transacciones": 4,
+      "n_productos": 4,
+      "ticket_prom": 7523.73,
+      "antiguedad_dias": 254,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "vol_acum_y": [
+        3780.19,
+        3780.19,
+        12778.04,
+        12778.04,
+        12778.04,
+        12778.04,
+        12778.04,
+        12778.04,
+        30094.93
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "step_y": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        4
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_8"
+        },
+        {
+          "label": "P2",
+          "mes": 2,
+          "nombre": "Producto_5"
+        },
+        {
+          "label": "P3",
+          "mes": 8,
+          "nombre": "Producto_1"
+        },
+        {
+          "label": "P4",
+          "mes": 8,
+          "nombre": "Producto_3"
+        }
+      ]
+    },
+    "1013": {
+      "id_cliente": 1013,
+      "pais": "México",
+      "genero": "F",
+      "segmento": "Corporativo",
+      "volumen_total": 28464.65,
+      "n_transacciones": 5,
+      "n_productos": 4,
+      "ticket_prom": 5692.93,
+      "antiguedad_dias": 475,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "vol_acum_y": [
+        9833.36,
+        9833.36,
+        9833.36,
+        9833.36,
+        9833.36,
+        9833.36,
+        9833.36,
+        9833.36,
+        9833.36,
+        10739.2,
+        15248.46,
+        15248.46,
+        15248.46,
+        15248.46,
+        24754.09,
+        24754.09,
+        28464.65
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_6"
+        },
+        {
+          "label": "P2",
+          "mes": 9,
+          "nombre": "Producto_2"
+        },
+        {
+          "label": "P3",
+          "mes": 10,
+          "nombre": "Producto_7"
+        },
+        {
+          "label": "P4",
+          "mes": 14,
+          "nombre": "Producto_10"
+        }
+      ]
+    },
+    "1044": {
+      "id_cliente": 1044,
+      "pais": "México",
+      "genero": "M",
+      "segmento": "PYME",
+      "volumen_total": 28014.68,
+      "n_transacciones": 6,
+      "n_productos": 4,
+      "ticket_prom": 4669.11,
+      "antiguedad_dias": 372,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "vol_acum_y": [
+        2471.29,
+        2471.29,
+        2471.29,
+        2471.29,
+        2471.29,
+        5591.42,
+        5591.42,
+        5591.42,
+        14837.53,
+        22440.78,
+        22440.78,
+        22440.78,
+        28014.68
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        4
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_7"
+        },
+        {
+          "label": "P2",
+          "mes": 5,
+          "nombre": "Producto_10"
+        },
+        {
+          "label": "P3",
+          "mes": 8,
+          "nombre": "Producto_2"
+        },
+        {
+          "label": "P4",
+          "mes": 12,
+          "nombre": "Producto_5"
+        }
+      ]
+    },
+    "1088": {
+      "id_cliente": 1088,
+      "pais": "Colombia",
+      "genero": "F",
+      "segmento": "Corporativo",
+      "volumen_total": 27551.58,
+      "n_transacciones": 7,
+      "n_productos": 5,
+      "ticket_prom": 3935.94,
+      "antiguedad_dias": 419,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "vol_acum_y": [
+        8439.51,
+        8439.51,
+        8897.65,
+        8897.65,
+        8897.65,
+        17867.53,
+        17867.53,
+        17867.53,
+        17867.53,
+        18452.59,
+        18452.59,
+        18452.59,
+        24915.64,
+        24915.64,
+        27551.58
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "step_y": [
+        2,
+        2,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        5,
+        5,
+        5
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_5"
+        },
+        {
+          "label": "P2",
+          "mes": 0,
+          "nombre": "Producto_6"
+        },
+        {
+          "label": "P3",
+          "mes": 2,
+          "nombre": "Producto_1"
+        },
+        {
+          "label": "P4",
+          "mes": 5,
+          "nombre": "Producto_10"
+        },
+        {
+          "label": "P5",
+          "mes": 12,
+          "nombre": "Producto_9"
+        }
+      ]
+    },
+    "1073": {
+      "id_cliente": 1073,
+      "pais": "Argentina",
+      "genero": "M",
+      "segmento": "PYME",
+      "volumen_total": 27052.26,
+      "n_transacciones": 5,
+      "n_productos": 4,
+      "ticket_prom": 5410.45,
+      "antiguedad_dias": 257,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "vol_acum_y": [
+        7017.83,
+        7017.83,
+        7017.83,
+        11603.71,
+        11603.71,
+        16453.74,
+        16453.74,
+        16453.74,
+        24796.29,
+        27052.26
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        2,
+        2,
+        3,
+        3,
+        3,
+        4,
+        4
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_9"
+        },
+        {
+          "label": "P2",
+          "mes": 3,
+          "nombre": "Producto_2"
+        },
+        {
+          "label": "P3",
+          "mes": 5,
+          "nombre": "Producto_3"
+        },
+        {
+          "label": "P4",
+          "mes": 8,
+          "nombre": "Producto_10"
+        }
+      ]
+    },
+    "1091": {
+      "id_cliente": 1091,
+      "pais": "Argentina",
+      "genero": "F",
+      "segmento": "Corporativo",
+      "volumen_total": 26000.46,
+      "n_transacciones": 5,
+      "n_productos": 4,
+      "ticket_prom": 5200.09,
+      "antiguedad_dias": 156,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "vol_acum_y": [
+        4412.63,
+        5786.92,
+        10139.73,
+        17474.54,
+        17474.54,
+        26000.46
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "step_y": [
+        1,
+        2,
+        3,
+        4,
+        4,
+        4
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_5"
+        },
+        {
+          "label": "P2",
+          "mes": 1,
+          "nombre": "Producto_4"
+        },
+        {
+          "label": "P3",
+          "mes": 2,
+          "nombre": "Producto_3"
+        },
+        {
+          "label": "P4",
+          "mes": 3,
+          "nombre": "Producto_1"
+        }
+      ]
+    },
+    "1011": {
+      "id_cliente": 1011,
+      "pais": "Argentina",
+      "genero": "M",
+      "segmento": "Corporativo",
+      "volumen_total": 25732.37,
+      "n_transacciones": 7,
+      "n_productos": 6,
+      "ticket_prom": 3676.05,
+      "antiguedad_dias": 465,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "vol_acum_y": [
+        9948.56,
+        9948.56,
+        9948.56,
+        9948.56,
+        9948.56,
+        11911.18,
+        14321.85,
+        16946.91,
+        22770.83,
+        24066.3,
+        24066.3,
+        24066.3,
+        24066.3,
+        24066.3,
+        24066.3,
+        25732.37
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        3,
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        6
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_10"
+        },
+        {
+          "label": "P2",
+          "mes": 5,
+          "nombre": "Producto_1"
+        },
+        {
+          "label": "P3",
+          "mes": 6,
+          "nombre": "Producto_3"
+        },
+        {
+          "label": "P4",
+          "mes": 7,
+          "nombre": "Producto_6"
+        },
+        {
+          "label": "P5",
+          "mes": 9,
+          "nombre": "Producto_5"
+        },
+        {
+          "label": "P6",
+          "mes": 15,
+          "nombre": "Producto_7"
+        }
+      ]
+    },
+    "1006": {
+      "id_cliente": 1006,
+      "pais": "Chile",
+      "genero": "M",
+      "segmento": "Retail",
+      "volumen_total": 25724.2,
+      "n_transacciones": 5,
+      "n_productos": 5,
+      "ticket_prom": 5144.84,
+      "antiguedad_dias": 304,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "vol_acum_y": [
+        809.47,
+        809.47,
+        809.47,
+        809.47,
+        8108.57,
+        13333.79,
+        17189.16,
+        17189.16,
+        17189.16,
+        17189.16,
+        25724.2
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        3,
+        4,
+        4,
+        4,
+        4,
+        5
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_9"
+        },
+        {
+          "label": "P2",
+          "mes": 4,
+          "nombre": "Producto_8"
+        },
+        {
+          "label": "P3",
+          "mes": 5,
+          "nombre": "Producto_6"
+        },
+        {
+          "label": "P4",
+          "mes": 6,
+          "nombre": "Producto_3"
+        },
+        {
+          "label": "P5",
+          "mes": 10,
+          "nombre": "Producto_2"
+        }
+      ]
+    },
+    "1001": {
+      "id_cliente": 1001,
+      "pais": "Chile",
+      "genero": "F",
+      "segmento": "Retail",
+      "volumen_total": 25368.77,
+      "n_transacciones": 4,
+      "n_productos": 3,
+      "ticket_prom": 6342.19,
+      "antiguedad_dias": 424,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "vol_acum_y": [
+        9071.38,
+        9071.38,
+        9071.38,
+        9071.38,
+        9071.38,
+        17872.78,
+        18096.78,
+        18096.78,
+        18096.78,
+        18096.78,
+        18096.78,
+        18096.78,
+        18096.78,
+        18096.78,
+        25368.77
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_8"
+        },
+        {
+          "label": "P2",
+          "mes": 5,
+          "nombre": "Producto_2"
+        },
+        {
+          "label": "P3",
+          "mes": 6,
+          "nombre": "Producto_5"
+        }
+      ]
+    },
+    "1087": {
+      "id_cliente": 1087,
+      "pais": "Chile",
+      "genero": "F",
+      "segmento": "PYME",
+      "volumen_total": 24840.27,
+      "n_transacciones": 4,
+      "n_productos": 4,
+      "ticket_prom": 6210.07,
+      "antiguedad_dias": 333,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "vol_acum_y": [
+        4872.03,
+        4872.03,
+        4872.03,
+        4872.03,
+        11815.07,
+        11815.07,
+        11815.07,
+        19820.66,
+        19820.66,
+        19820.66,
+        19820.66,
+        24840.27
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        4
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_9"
+        },
+        {
+          "label": "P2",
+          "mes": 4,
+          "nombre": "Producto_7"
+        },
+        {
+          "label": "P3",
+          "mes": 7,
+          "nombre": "Producto_8"
+        },
+        {
+          "label": "P4",
+          "mes": 11,
+          "nombre": "Producto_6"
+        }
+      ]
+    },
+    "1096": {
+      "id_cliente": 1096,
+      "pais": "Argentina",
+      "genero": "M",
+      "segmento": "PYME",
+      "volumen_total": 24699.52,
+      "n_transacciones": 6,
+      "n_productos": 5,
+      "ticket_prom": 4116.59,
+      "antiguedad_dias": 135,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "vol_acum_y": [
+        665.95,
+        1584.58,
+        16334.55,
+        16334.55,
+        18899.4,
+        24699.52
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "step_y": [
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_8"
+        },
+        {
+          "label": "P2",
+          "mes": 1,
+          "nombre": "Producto_6"
+        },
+        {
+          "label": "P3",
+          "mes": 2,
+          "nombre": "Producto_1"
+        },
+        {
+          "label": "P4",
+          "mes": 4,
+          "nombre": "Producto_3"
+        },
+        {
+          "label": "P5",
+          "mes": 5,
+          "nombre": "Producto_5"
+        }
+      ]
+    },
+    "1003": {
+      "id_cliente": 1003,
+      "pais": "Argentina",
+      "genero": "M",
+      "segmento": "PYME",
+      "volumen_total": 24247.7,
+      "n_transacciones": 5,
+      "n_productos": 3,
+      "ticket_prom": 4849.54,
+      "antiguedad_dias": 151,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "vol_acum_y": [
+        989.34,
+        8084.65,
+        17323.65,
+        17323.65,
+        21321.1,
+        24247.7
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "step_y": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        3
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_6"
+        },
+        {
+          "label": "P2",
+          "mes": 1,
+          "nombre": "Producto_7"
+        },
+        {
+          "label": "P3",
+          "mes": 5,
+          "nombre": "Producto_4"
+        }
+      ]
+    },
+    "1049": {
+      "id_cliente": 1049,
+      "pais": "Chile",
+      "genero": "M",
+      "segmento": "PYME",
+      "volumen_total": 23484.46,
+      "n_transacciones": 5,
+      "n_productos": 5,
+      "ticket_prom": 4696.89,
+      "antiguedad_dias": 348,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "vol_acum_y": [
+        7066.78,
+        7066.78,
+        13658.09,
+        17692.77,
+        17692.77,
+        17692.77,
+        17692.77,
+        17692.77,
+        17692.77,
+        22068.04,
+        22068.04,
+        23484.46
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "step_y": [
+        1,
+        1,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        5
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_7"
+        },
+        {
+          "label": "P2",
+          "mes": 2,
+          "nombre": "Producto_4"
+        },
+        {
+          "label": "P3",
+          "mes": 3,
+          "nombre": "Producto_5"
+        },
+        {
+          "label": "P4",
+          "mes": 9,
+          "nombre": "Producto_2"
+        },
+        {
+          "label": "P5",
+          "mes": 11,
+          "nombre": "Producto_3"
+        }
+      ]
+    },
+    "1068": {
+      "id_cliente": 1068,
+      "pais": "México",
+      "genero": "M",
+      "segmento": "Corporativo",
+      "volumen_total": 22710.37,
+      "n_transacciones": 4,
+      "n_productos": 4,
+      "ticket_prom": 5677.59,
+      "antiguedad_dias": 491,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "vol_acum_y": [
+        14229.17,
+        14229.17,
+        14229.17,
+        14229.17,
+        14229.17,
+        14229.17,
+        14229.17,
+        14229.17,
+        14229.17,
+        14229.17,
+        14377.49,
+        14377.49,
+        14377.49,
+        14377.49,
+        14377.49,
+        14377.49,
+        22710.37
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "step_y": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_1"
+        },
+        {
+          "label": "P2",
+          "mes": 0,
+          "nombre": "Producto_5"
+        },
+        {
+          "label": "P3",
+          "mes": 10,
+          "nombre": "Producto_7"
+        },
+        {
+          "label": "P4",
+          "mes": 16,
+          "nombre": "Producto_6"
+        }
+      ]
+    },
+    "1089": {
+      "id_cliente": 1089,
+      "pais": "Colombia",
+      "genero": "M",
+      "segmento": "Corporativo",
+      "volumen_total": 22661.04,
+      "n_transacciones": 3,
+      "n_productos": 3,
+      "ticket_prom": 7553.68,
+      "antiguedad_dias": 370,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "vol_acum_y": [
+        7808.21,
+        7808.21,
+        7808.21,
+        7808.21,
+        7808.21,
+        7808.21,
+        7808.21,
+        15974.9,
+        15974.9,
+        15974.9,
+        15974.9,
+        15974.9,
+        22661.04
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_9"
+        },
+        {
+          "label": "P2",
+          "mes": 7,
+          "nombre": "Producto_7"
+        },
+        {
+          "label": "P3",
+          "mes": 12,
+          "nombre": "Producto_4"
+        }
+      ]
+    },
+    "1081": {
+      "id_cliente": 1081,
+      "pais": "Colombia",
+      "genero": "M",
+      "segmento": "Corporativo",
+      "volumen_total": 22002.29,
+      "n_transacciones": 6,
+      "n_productos": 4,
+      "ticket_prom": 3667.05,
+      "antiguedad_dias": 243,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "vol_acum_y": [
+        4247.36,
+        8831.36,
+        8831.36,
+        8831.36,
+        13066.6,
+        15872.15,
+        15872.15,
+        18413.78,
+        22002.29
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "step_y": [
+        1,
+        2,
+        2,
+        2,
+        3,
+        4,
+        4,
+        4,
+        4
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_3"
+        },
+        {
+          "label": "P2",
+          "mes": 1,
+          "nombre": "Producto_9"
+        },
+        {
+          "label": "P3",
+          "mes": 4,
+          "nombre": "Producto_10"
+        },
+        {
+          "label": "P4",
+          "mes": 5,
+          "nombre": "Producto_6"
+        }
+      ]
+    },
+    "1080": {
+      "id_cliente": 1080,
+      "pais": "México",
+      "genero": "F",
+      "segmento": "Corporativo",
+      "volumen_total": 21821.06,
+      "n_transacciones": 3,
+      "n_productos": 2,
+      "ticket_prom": 7273.69,
+      "antiguedad_dias": 123,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "vol_acum_y": [
+        9229.68,
+        14786.61,
+        14786.61,
+        14786.61,
+        21821.06
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_3"
+        },
+        {
+          "label": "P2",
+          "mes": 4,
+          "nombre": "Producto_10"
+        }
+      ]
+    },
+    "1059": {
+      "id_cliente": 1059,
+      "pais": "Colombia",
+      "genero": "F",
+      "segmento": "PYME",
+      "volumen_total": 21655.24,
+      "n_transacciones": 4,
+      "n_productos": 3,
+      "ticket_prom": 5413.81,
+      "antiguedad_dias": 304,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "vol_acum_y": [
+        484.85,
+        484.85,
+        12183.77,
+        12183.77,
+        12183.77,
+        12183.77,
+        12183.77,
+        12183.77,
+        12183.77,
+        12183.77,
+        21655.24
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "step_y": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_10"
+        },
+        {
+          "label": "P2",
+          "mes": 2,
+          "nombre": "Producto_3"
+        },
+        {
+          "label": "P3",
+          "mes": 10,
+          "nombre": "Producto_4"
+        }
+      ]
+    },
+    "1009": {
+      "id_cliente": 1009,
+      "pais": "Colombia",
+      "genero": "M",
+      "segmento": "Retail",
+      "volumen_total": 20835.01,
+      "n_transacciones": 4,
+      "n_productos": 4,
+      "ticket_prom": 5208.75,
+      "antiguedad_dias": 337,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "vol_acum_y": [
+        1859.08,
+        1859.08,
+        1981.75,
+        1981.75,
+        1981.75,
+        1981.75,
+        1981.75,
+        1981.75,
+        11193.2,
+        11193.2,
+        11193.2,
+        20835.01
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "step_y": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        4
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_4"
+        },
+        {
+          "label": "P2",
+          "mes": 2,
+          "nombre": "Producto_8"
+        },
+        {
+          "label": "P3",
+          "mes": 8,
+          "nombre": "Producto_10"
+        },
+        {
+          "label": "P4",
+          "mes": 11,
+          "nombre": "Producto_2"
+        }
+      ]
+    },
+    "1055": {
+      "id_cliente": 1055,
+      "pais": "México",
+      "genero": "M",
+      "segmento": "Retail",
+      "volumen_total": 20635.49,
+      "n_transacciones": 4,
+      "n_productos": 4,
+      "ticket_prom": 5158.87,
+      "antiguedad_dias": 430,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "vol_acum_y": [
+        2883.51,
+        9037.38,
+        9037.38,
+        9037.38,
+        9037.38,
+        9037.38,
+        9037.38,
+        9037.38,
+        9037.38,
+        9037.38,
+        18425.83,
+        18425.83,
+        18425.83,
+        18425.83,
+        20635.49
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "step_y": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        4
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_10"
+        },
+        {
+          "label": "P2",
+          "mes": 1,
+          "nombre": "Producto_4"
+        },
+        {
+          "label": "P3",
+          "mes": 10,
+          "nombre": "Producto_7"
+        },
+        {
+          "label": "P4",
+          "mes": 14,
+          "nombre": "Producto_5"
+        }
+      ]
+    },
+    "1051": {
+      "id_cliente": 1051,
+      "pais": "Argentina",
+      "genero": "M",
+      "segmento": "PYME",
+      "volumen_total": 20464.34,
+      "n_transacciones": 4,
+      "n_productos": 4,
+      "ticket_prom": 5116.09,
+      "antiguedad_dias": 411,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "vol_acum_y": [
+        5117.45,
+        5117.45,
+        5117.45,
+        5117.45,
+        5117.45,
+        5117.45,
+        5117.45,
+        5117.45,
+        5117.45,
+        10456.16,
+        10456.16,
+        10456.16,
+        10456.16,
+        18255.95,
+        20464.34
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        3,
+        4
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_7"
+        },
+        {
+          "label": "P2",
+          "mes": 9,
+          "nombre": "Producto_8"
+        },
+        {
+          "label": "P3",
+          "mes": 13,
+          "nombre": "Producto_1"
+        },
+        {
+          "label": "P4",
+          "mes": 14,
+          "nombre": "Producto_6"
+        }
+      ]
+    },
+    "1034": {
+      "id_cliente": 1034,
+      "pais": "Chile",
+      "genero": "M",
+      "segmento": "Retail",
+      "volumen_total": 20072.99,
+      "n_transacciones": 5,
+      "n_productos": 3,
+      "ticket_prom": 4014.6,
+      "antiguedad_dias": 210,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "vol_acum_y": [
+        3202.57,
+        3202.57,
+        3202.57,
+        3202.57,
+        3564.04,
+        3564.04,
+        11383.6,
+        20072.99
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        3
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_10"
+        },
+        {
+          "label": "P2",
+          "mes": 6,
+          "nombre": "Producto_2"
+        },
+        {
+          "label": "P3",
+          "mes": 7,
+          "nombre": "Producto_6"
+        }
+      ]
+    },
+    "1041": {
+      "id_cliente": 1041,
+      "pais": "Chile",
+      "genero": "M",
+      "segmento": "Retail",
+      "volumen_total": 19644.51,
+      "n_transacciones": 3,
+      "n_productos": 2,
+      "ticket_prom": 6548.17,
+      "antiguedad_dias": 397,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "vol_acum_y": [
+        4123.35,
+        4123.35,
+        4123.35,
+        4123.35,
+        4123.35,
+        4123.35,
+        4123.35,
+        10749.86,
+        10749.86,
+        10749.86,
+        10749.86,
+        10749.86,
+        10749.86,
+        19644.51
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_4"
+        },
+        {
+          "label": "P2",
+          "mes": 13,
+          "nombre": "Producto_8"
+        }
+      ]
+    },
+    "1067": {
+      "id_cliente": 1067,
+      "pais": "Argentina",
+      "genero": "F",
+      "segmento": "Retail",
+      "volumen_total": 19402.85,
+      "n_transacciones": 7,
+      "n_productos": 5,
+      "ticket_prom": 2771.84,
+      "antiguedad_dias": 448,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "vol_acum_y": [
+        2281.44,
+        6043.61,
+        10768.8,
+        10768.8,
+        10768.8,
+        13320.17,
+        13320.17,
+        13407.81,
+        13407.81,
+        16306.06,
+        16306.06,
+        16306.06,
+        16306.06,
+        16306.06,
+        19402.85
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "step_y": [
+        1,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        5
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_10"
+        },
+        {
+          "label": "P2",
+          "mes": 1,
+          "nombre": "Producto_4"
+        },
+        {
+          "label": "P3",
+          "mes": 2,
+          "nombre": "Producto_9"
+        },
+        {
+          "label": "P4",
+          "mes": 9,
+          "nombre": "Producto_6"
+        },
+        {
+          "label": "P5",
+          "mes": 14,
+          "nombre": "Producto_1"
+        }
+      ]
+    },
+    "1004": {
+      "id_cliente": 1004,
+      "pais": "México",
+      "genero": "F",
+      "segmento": "PYME",
+      "volumen_total": 18916.14,
+      "n_transacciones": 4,
+      "n_productos": 4,
+      "ticket_prom": 4729.03,
+      "antiguedad_dias": 457,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "vol_acum_y": [
+        5344.8,
+        5344.8,
+        5344.8,
+        5344.8,
+        5344.8,
+        5344.8,
+        5344.8,
+        5344.8,
+        5344.8,
+        5344.8,
+        5344.8,
+        10971.71,
+        10971.71,
+        10971.71,
+        10971.71,
+        18916.14
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        4
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_7"
+        },
+        {
+          "label": "P2",
+          "mes": 11,
+          "nombre": "Producto_8"
+        },
+        {
+          "label": "P3",
+          "mes": 15,
+          "nombre": "Producto_6"
+        },
+        {
+          "label": "P4",
+          "mes": 15,
+          "nombre": "Producto_10"
+        }
+      ]
+    },
+    "1031": {
+      "id_cliente": 1031,
+      "pais": "Colombia",
+      "genero": "M",
+      "segmento": "PYME",
+      "volumen_total": 18784.82,
+      "n_transacciones": 5,
+      "n_productos": 5,
+      "ticket_prom": 3756.96,
+      "antiguedad_dias": 323,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "vol_acum_y": [
+        5512.41,
+        5512.41,
+        5512.41,
+        9094.47,
+        11570.21,
+        11570.21,
+        11570.21,
+        11570.21,
+        16901.76,
+        16901.76,
+        16901.76,
+        18784.82
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        2,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        5
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_10"
+        },
+        {
+          "label": "P2",
+          "mes": 3,
+          "nombre": "Producto_2"
+        },
+        {
+          "label": "P3",
+          "mes": 4,
+          "nombre": "Producto_6"
+        },
+        {
+          "label": "P4",
+          "mes": 8,
+          "nombre": "Producto_5"
+        },
+        {
+          "label": "P5",
+          "mes": 11,
+          "nombre": "Producto_1"
+        }
+      ]
+    },
+    "1076": {
+      "id_cliente": 1076,
+      "pais": "México",
+      "genero": "F",
+      "segmento": "Corporativo",
+      "volumen_total": 18609.05,
+      "n_transacciones": 4,
+      "n_productos": 4,
+      "ticket_prom": 4652.26,
+      "antiguedad_dias": 291,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "vol_acum_y": [
+        851.29,
+        851.29,
+        851.29,
+        851.29,
+        851.29,
+        851.29,
+        851.29,
+        18155.4,
+        18155.4,
+        18609.05
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        3,
+        4
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_6"
+        },
+        {
+          "label": "P2",
+          "mes": 7,
+          "nombre": "Producto_7"
+        },
+        {
+          "label": "P3",
+          "mes": 7,
+          "nombre": "Producto_10"
+        },
+        {
+          "label": "P4",
+          "mes": 9,
+          "nombre": "Producto_4"
+        }
+      ]
+    },
+    "1061": {
+      "id_cliente": 1061,
+      "pais": "México",
+      "genero": "F",
+      "segmento": "Corporativo",
+      "volumen_total": 18302.92,
+      "n_transacciones": 4,
+      "n_productos": 4,
+      "ticket_prom": 4575.73,
+      "antiguedad_dias": 259,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "vol_acum_y": [
+        196.41,
+        196.41,
+        196.41,
+        196.41,
+        196.41,
+        196.41,
+        196.41,
+        6794.72,
+        18302.92
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        4
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_9"
+        },
+        {
+          "label": "P2",
+          "mes": 7,
+          "nombre": "Producto_4"
+        },
+        {
+          "label": "P3",
+          "mes": 8,
+          "nombre": "Producto_3"
+        },
+        {
+          "label": "P4",
+          "mes": 8,
+          "nombre": "Producto_8"
+        }
+      ]
+    },
+    "1066": {
+      "id_cliente": 1066,
+      "pais": "México",
+      "genero": "M",
+      "segmento": "PYME",
+      "volumen_total": 18204.78,
+      "n_transacciones": 3,
+      "n_productos": 3,
+      "ticket_prom": 6068.26,
+      "antiguedad_dias": 330,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "vol_acum_y": [
+        7274.31,
+        7274.31,
+        7274.31,
+        7274.31,
+        7274.31,
+        7274.31,
+        7274.31,
+        7274.31,
+        15843.84,
+        15843.84,
+        18204.78
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        3
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_4"
+        },
+        {
+          "label": "P2",
+          "mes": 8,
+          "nombre": "Producto_5"
+        },
+        {
+          "label": "P3",
+          "mes": 10,
+          "nombre": "Producto_6"
+        }
+      ]
+    },
+    "1010": {
+      "id_cliente": 1010,
+      "pais": "México",
+      "genero": "F",
+      "segmento": "PYME",
+      "volumen_total": 17981.65,
+      "n_transacciones": 5,
+      "n_productos": 5,
+      "ticket_prom": 3596.33,
+      "antiguedad_dias": 347,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "vol_acum_y": [
+        378.36,
+        378.36,
+        378.36,
+        378.36,
+        5661.57,
+        5661.57,
+        5661.57,
+        5661.57,
+        7582.1,
+        14281.08,
+        14281.08,
+        17981.65
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        3,
+        4,
+        4,
+        5
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_3"
+        },
+        {
+          "label": "P2",
+          "mes": 4,
+          "nombre": "Producto_6"
+        },
+        {
+          "label": "P3",
+          "mes": 8,
+          "nombre": "Producto_7"
+        },
+        {
+          "label": "P4",
+          "mes": 9,
+          "nombre": "Producto_1"
+        },
+        {
+          "label": "P5",
+          "mes": 11,
+          "nombre": "Producto_10"
+        }
+      ]
+    },
+    "1040": {
+      "id_cliente": 1040,
+      "pais": "Chile",
+      "genero": "M",
+      "segmento": "PYME",
+      "volumen_total": 17973.26,
+      "n_transacciones": 4,
+      "n_productos": 3,
+      "ticket_prom": 4493.31,
+      "antiguedad_dias": 168,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "vol_acum_y": [
+        12350.2,
+        12350.2,
+        12350.2,
+        14449.74,
+        14449.74,
+        17973.26
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        2,
+        2,
+        3
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_9"
+        },
+        {
+          "label": "P2",
+          "mes": 3,
+          "nombre": "Producto_3"
+        },
+        {
+          "label": "P3",
+          "mes": 5,
+          "nombre": "Producto_6"
+        }
+      ]
+    },
+    "1032": {
+      "id_cliente": 1032,
+      "pais": "Colombia",
+      "genero": "F",
+      "segmento": "Retail",
+      "volumen_total": 17845.57,
+      "n_transacciones": 3,
+      "n_productos": 2,
+      "ticket_prom": 5948.52,
+      "antiguedad_dias": 357,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "vol_acum_y": [
+        6871.86,
+        6871.86,
+        11994.44,
+        11994.44,
+        11994.44,
+        11994.44,
+        11994.44,
+        11994.44,
+        11994.44,
+        11994.44,
+        11994.44,
+        11994.44,
+        17845.57
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "step_y": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_10"
+        },
+        {
+          "label": "P2",
+          "mes": 2,
+          "nombre": "Producto_6"
+        }
+      ]
+    },
+    "1015": {
+      "id_cliente": 1015,
+      "pais": "Colombia",
+      "genero": "M",
+      "segmento": "PYME",
+      "volumen_total": 17833.38,
+      "n_transacciones": 3,
+      "n_productos": 3,
+      "ticket_prom": 5944.46,
+      "antiguedad_dias": 100,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "vol_acum_y": [
+        5706.82,
+        5706.82,
+        5706.82,
+        17833.38
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        3
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_8"
+        },
+        {
+          "label": "P2",
+          "mes": 3,
+          "nombre": "Producto_4"
+        },
+        {
+          "label": "P3",
+          "mes": 3,
+          "nombre": "Producto_9"
+        }
+      ]
+    },
+    "1026": {
+      "id_cliente": 1026,
+      "pais": "México",
+      "genero": "F",
+      "segmento": "Corporativo",
+      "volumen_total": 17473.49,
+      "n_transacciones": 4,
+      "n_productos": 3,
+      "ticket_prom": 4368.37,
+      "antiguedad_dias": 363,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "vol_acum_y": [
+        2379.32,
+        11719.41,
+        11719.41,
+        11719.41,
+        11719.41,
+        11719.41,
+        11719.41,
+        11719.41,
+        11719.41,
+        12559.49,
+        12559.49,
+        12559.49,
+        17473.49
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "step_y": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_7"
+        },
+        {
+          "label": "P2",
+          "mes": 1,
+          "nombre": "Producto_9"
+        },
+        {
+          "label": "P3",
+          "mes": 12,
+          "nombre": "Producto_10"
+        }
+      ]
+    },
+    "1047": {
+      "id_cliente": 1047,
+      "pais": "Argentina",
+      "genero": "M",
+      "segmento": "Retail",
+      "volumen_total": 17272.54,
+      "n_transacciones": 4,
+      "n_productos": 4,
+      "ticket_prom": 4318.14,
+      "antiguedad_dias": 398,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "vol_acum_y": [
+        5029.47,
+        5029.47,
+        5029.47,
+        5029.47,
+        5029.47,
+        5029.47,
+        6238.51,
+        6238.51,
+        6238.51,
+        6238.51,
+        6238.51,
+        10906.61,
+        10906.61,
+        17272.54
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        4
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_1"
+        },
+        {
+          "label": "P2",
+          "mes": 6,
+          "nombre": "Producto_7"
+        },
+        {
+          "label": "P3",
+          "mes": 11,
+          "nombre": "Producto_6"
+        },
+        {
+          "label": "P4",
+          "mes": 13,
+          "nombre": "Producto_9"
+        }
+      ]
+    },
+    "1014": {
+      "id_cliente": 1014,
+      "pais": "México",
+      "genero": "F",
+      "segmento": "Retail",
+      "volumen_total": 16757.11,
+      "n_transacciones": 5,
+      "n_productos": 4,
+      "ticket_prom": 3351.42,
+      "antiguedad_dias": 346,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "vol_acum_y": [
+        552.15,
+        552.15,
+        552.15,
+        552.15,
+        1034.01,
+        6680.79,
+        6680.79,
+        6680.79,
+        6680.79,
+        7963.72,
+        7963.72,
+        16757.11
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_1"
+        },
+        {
+          "label": "P2",
+          "mes": 4,
+          "nombre": "Producto_2"
+        },
+        {
+          "label": "P3",
+          "mes": 5,
+          "nombre": "Producto_10"
+        },
+        {
+          "label": "P4",
+          "mes": 9,
+          "nombre": "Producto_8"
+        }
+      ]
+    },
+    "1016": {
+      "id_cliente": 1016,
+      "pais": "Colombia",
+      "genero": "F",
+      "segmento": "Corporativo",
+      "volumen_total": 16557.1,
+      "n_transacciones": 5,
+      "n_productos": 4,
+      "ticket_prom": 3311.42,
+      "antiguedad_dias": 225,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "vol_acum_y": [
+        576.79,
+        576.79,
+        5242.53,
+        5242.53,
+        5242.53,
+        13608.29,
+        15142.88,
+        16557.1
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "step_y": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        3,
+        3,
+        4
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_10"
+        },
+        {
+          "label": "P2",
+          "mes": 2,
+          "nombre": "Producto_6"
+        },
+        {
+          "label": "P3",
+          "mes": 5,
+          "nombre": "Producto_7"
+        },
+        {
+          "label": "P4",
+          "mes": 7,
+          "nombre": "Producto_2"
+        }
+      ]
+    },
+    "1038": {
+      "id_cliente": 1038,
+      "pais": "Colombia",
+      "genero": "F",
+      "segmento": "PYME",
+      "volumen_total": 16296.4,
+      "n_transacciones": 4,
+      "n_productos": 4,
+      "ticket_prom": 4074.1,
+      "antiguedad_dias": 356,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "vol_acum_y": [
+        4599.85,
+        4599.85,
+        4599.85,
+        4599.85,
+        4599.85,
+        4599.85,
+        4599.85,
+        4599.85,
+        4599.85,
+        6069.68,
+        6069.68,
+        16296.4
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        4
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_3"
+        },
+        {
+          "label": "P2",
+          "mes": 9,
+          "nombre": "Producto_1"
+        },
+        {
+          "label": "P3",
+          "mes": 11,
+          "nombre": "Producto_5"
+        },
+        {
+          "label": "P4",
+          "mes": 11,
+          "nombre": "Producto_7"
+        }
+      ]
+    },
+    "1042": {
+      "id_cliente": 1042,
+      "pais": "Colombia",
+      "genero": "M",
+      "segmento": "PYME",
+      "volumen_total": 16070.48,
+      "n_transacciones": 3,
+      "n_productos": 3,
+      "ticket_prom": 5356.83,
+      "antiguedad_dias": 359,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "vol_acum_y": [
+        9787.31,
+        9787.31,
+        9787.31,
+        9787.31,
+        9787.31,
+        9787.31,
+        9787.31,
+        9787.31,
+        9787.31,
+        9787.31,
+        9787.31,
+        13898.29,
+        16070.48
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        3
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_6"
+        },
+        {
+          "label": "P2",
+          "mes": 11,
+          "nombre": "Producto_3"
+        },
+        {
+          "label": "P3",
+          "mes": 12,
+          "nombre": "Producto_2"
+        }
+      ]
+    },
+    "1046": {
+      "id_cliente": 1046,
+      "pais": "Chile",
+      "genero": "M",
+      "segmento": "Corporativo",
+      "volumen_total": 15800.64,
+      "n_transacciones": 5,
+      "n_productos": 4,
+      "ticket_prom": 3160.13,
+      "antiguedad_dias": 326,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "vol_acum_y": [
+        1539.59,
+        1539.59,
+        1539.59,
+        1539.59,
+        1539.59,
+        1539.59,
+        1539.59,
+        10751.13,
+        13965.69,
+        13965.69,
+        15800.64
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        3,
+        3,
+        4
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_7"
+        },
+        {
+          "label": "P2",
+          "mes": 7,
+          "nombre": "Producto_1"
+        },
+        {
+          "label": "P3",
+          "mes": 8,
+          "nombre": "Producto_9"
+        },
+        {
+          "label": "P4",
+          "mes": 10,
+          "nombre": "Producto_3"
+        }
+      ]
+    },
+    "1043": {
+      "id_cliente": 1043,
+      "pais": "México",
+      "genero": "F",
+      "segmento": "Retail",
+      "volumen_total": 15655.18,
+      "n_transacciones": 4,
+      "n_productos": 3,
+      "ticket_prom": 3913.8,
+      "antiguedad_dias": 250,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "vol_acum_y": [
+        6443.78,
+        7004.33,
+        7004.33,
+        7004.33,
+        7004.33,
+        7004.33,
+        7004.33,
+        8496.89,
+        8496.89,
+        15655.18
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "step_y": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_10"
+        },
+        {
+          "label": "P2",
+          "mes": 1,
+          "nombre": "Producto_4"
+        },
+        {
+          "label": "P3",
+          "mes": 7,
+          "nombre": "Producto_9"
+        }
+      ]
+    },
+    "1092": {
+      "id_cliente": 1092,
+      "pais": "Colombia",
+      "genero": "F",
+      "segmento": "Corporativo",
+      "volumen_total": 15519.84,
+      "n_transacciones": 2,
+      "n_productos": 2,
+      "ticket_prom": 7759.92,
+      "antiguedad_dias": 80,
+      "vol_acum_x": [
+        0,
+        1,
+        2
+      ],
+      "vol_acum_y": [
+        9796.98,
+        9796.98,
+        15519.84
+      ],
+      "step_x": [
+        0,
+        1,
+        2
+      ],
+      "step_y": [
+        1,
+        1,
+        2
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_1"
+        },
+        {
+          "label": "P2",
+          "mes": 2,
+          "nombre": "Producto_6"
+        }
+      ]
+    },
+    "1048": {
+      "id_cliente": 1048,
+      "pais": "México",
+      "genero": "F",
+      "segmento": "Corporativo",
+      "volumen_total": 15329.35,
+      "n_transacciones": 5,
+      "n_productos": 4,
+      "ticket_prom": 3065.87,
+      "antiguedad_dias": 257,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "vol_acum_y": [
+        2629.06,
+        2629.06,
+        12386.58,
+        12386.58,
+        13093.27,
+        13732.26,
+        13732.26,
+        13732.26,
+        13732.26,
+        15329.35
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "step_y": [
+        1,
+        1,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_7"
+        },
+        {
+          "label": "P2",
+          "mes": 2,
+          "nombre": "Producto_6"
+        },
+        {
+          "label": "P3",
+          "mes": 4,
+          "nombre": "Producto_10"
+        },
+        {
+          "label": "P4",
+          "mes": 9,
+          "nombre": "Producto_9"
+        }
+      ]
+    },
+    "1069": {
+      "id_cliente": 1069,
+      "pais": "Argentina",
+      "genero": "F",
+      "segmento": "Retail",
+      "volumen_total": 14337.21,
+      "n_transacciones": 2,
+      "n_productos": 2,
+      "ticket_prom": 7168.6,
+      "antiguedad_dias": 187,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "vol_acum_y": [
+        5887.8,
+        5887.8,
+        5887.8,
+        5887.8,
+        5887.8,
+        5887.8,
+        14337.21
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_5"
+        },
+        {
+          "label": "P2",
+          "mes": 6,
+          "nombre": "Producto_8"
+        }
+      ]
+    },
+    "1086": {
+      "id_cliente": 1086,
+      "pais": "Chile",
+      "genero": "F",
+      "segmento": "PYME",
+      "volumen_total": 14102.97,
+      "n_transacciones": 4,
+      "n_productos": 4,
+      "ticket_prom": 3525.74,
+      "antiguedad_dias": 329,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "vol_acum_y": [
+        5698.96,
+        5698.96,
+        5698.96,
+        5698.96,
+        5698.96,
+        5698.96,
+        5698.96,
+        10004.07,
+        10004.07,
+        10004.07,
+        10004.07,
+        14102.97
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        3,
+        3,
+        3,
+        4
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_3"
+        },
+        {
+          "label": "P2",
+          "mes": 7,
+          "nombre": "Producto_5"
+        },
+        {
+          "label": "P3",
+          "mes": 7,
+          "nombre": "Producto_6"
+        },
+        {
+          "label": "P4",
+          "mes": 11,
+          "nombre": "Producto_1"
+        }
+      ]
+    },
+    "1093": {
+      "id_cliente": 1093,
+      "pais": "México",
+      "genero": "F",
+      "segmento": "PYME",
+      "volumen_total": 14033.53,
+      "n_transacciones": 4,
+      "n_productos": 4,
+      "ticket_prom": 3508.38,
+      "antiguedad_dias": 318,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "vol_acum_y": [
+        6688.43,
+        6688.43,
+        6688.43,
+        6688.43,
+        6688.43,
+        10005.2,
+        11602.34,
+        11602.34,
+        11602.34,
+        11602.34,
+        11602.34,
+        14033.53
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_4"
+        },
+        {
+          "label": "P2",
+          "mes": 5,
+          "nombre": "Producto_10"
+        },
+        {
+          "label": "P3",
+          "mes": 6,
+          "nombre": "Producto_7"
+        },
+        {
+          "label": "P4",
+          "mes": 11,
+          "nombre": "Producto_9"
+        }
+      ]
+    },
+    "1050": {
+      "id_cliente": 1050,
+      "pais": "Argentina",
+      "genero": "M",
+      "segmento": "Retail",
+      "volumen_total": 13912.48,
+      "n_transacciones": 2,
+      "n_productos": 2,
+      "ticket_prom": 6956.24,
+      "antiguedad_dias": 152,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "vol_acum_y": [
+        6574.07,
+        6574.07,
+        6574.07,
+        6574.07,
+        6574.07,
+        13912.48
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_5"
+        },
+        {
+          "label": "P2",
+          "mes": 5,
+          "nombre": "Producto_1"
+        }
+      ]
+    },
+    "1090": {
+      "id_cliente": 1090,
+      "pais": "Argentina",
+      "genero": "F",
+      "segmento": "Retail",
+      "volumen_total": 13263.8,
+      "n_transacciones": 3,
+      "n_productos": 3,
+      "ticket_prom": 4421.27,
+      "antiguedad_dias": 356,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "vol_acum_y": [
+        7140.19,
+        8680.4,
+        8680.4,
+        8680.4,
+        8680.4,
+        8680.4,
+        8680.4,
+        8680.4,
+        8680.4,
+        8680.4,
+        8680.4,
+        8680.4,
+        13263.8
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "step_y": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_5"
+        },
+        {
+          "label": "P2",
+          "mes": 1,
+          "nombre": "Producto_1"
+        },
+        {
+          "label": "P3",
+          "mes": 12,
+          "nombre": "Producto_9"
+        }
+      ]
+    },
+    "1037": {
+      "id_cliente": 1037,
+      "pais": "Chile",
+      "genero": "F",
+      "segmento": "Retail",
+      "volumen_total": 12966.56,
+      "n_transacciones": 4,
+      "n_productos": 3,
+      "ticket_prom": 3241.64,
+      "antiguedad_dias": 295,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "vol_acum_y": [
+        6192.68,
+        9573.17,
+        9573.17,
+        9573.17,
+        9573.17,
+        9573.17,
+        9573.17,
+        9573.17,
+        9573.17,
+        9573.17,
+        12966.56
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "step_y": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_3"
+        },
+        {
+          "label": "P2",
+          "mes": 0,
+          "nombre": "Producto_5"
+        },
+        {
+          "label": "P3",
+          "mes": 10,
+          "nombre": "Producto_7"
+        }
+      ]
+    },
+    "1023": {
+      "id_cliente": 1023,
+      "pais": "Argentina",
+      "genero": "F",
+      "segmento": "Corporativo",
+      "volumen_total": 12956.76,
+      "n_transacciones": 3,
+      "n_productos": 2,
+      "ticket_prom": 4318.92,
+      "antiguedad_dias": 59,
+      "vol_acum_x": [
+        0,
+        1,
+        2
+      ],
+      "vol_acum_y": [
+        11963.28,
+        11963.28,
+        12956.76
+      ],
+      "step_x": [
+        0,
+        1,
+        2
+      ],
+      "step_y": [
+        2,
+        2,
+        2
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_4"
+        },
+        {
+          "label": "P2",
+          "mes": 0,
+          "nombre": "Producto_9"
+        }
+      ]
+    },
+    "1082": {
+      "id_cliente": 1082,
+      "pais": "Colombia",
+      "genero": "F",
+      "segmento": "PYME",
+      "volumen_total": 12714.52,
+      "n_transacciones": 4,
+      "n_productos": 4,
+      "ticket_prom": 3178.63,
+      "antiguedad_dias": 307,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "vol_acum_y": [
+        7293.82,
+        7293.82,
+        7917.26,
+        7917.26,
+        7917.26,
+        7917.26,
+        8229.48,
+        8229.48,
+        8229.48,
+        8229.48,
+        12714.52
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "step_y": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        4
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_3"
+        },
+        {
+          "label": "P2",
+          "mes": 2,
+          "nombre": "Producto_7"
+        },
+        {
+          "label": "P3",
+          "mes": 6,
+          "nombre": "Producto_8"
+        },
+        {
+          "label": "P4",
+          "mes": 10,
+          "nombre": "Producto_1"
+        }
+      ]
+    },
+    "1019": {
+      "id_cliente": 1019,
+      "pais": "Argentina",
+      "genero": "F",
+      "segmento": "PYME",
+      "volumen_total": 12680.79,
+      "n_transacciones": 2,
+      "n_productos": 2,
+      "ticket_prom": 6340.4,
+      "antiguedad_dias": 395,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "vol_acum_y": [
+        6205.17,
+        6205.17,
+        6205.17,
+        6205.17,
+        6205.17,
+        6205.17,
+        6205.17,
+        6205.17,
+        6205.17,
+        6205.17,
+        6205.17,
+        6205.17,
+        12680.79
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_2"
+        },
+        {
+          "label": "P2",
+          "mes": 12,
+          "nombre": "Producto_4"
+        }
+      ]
+    },
+    "1036": {
+      "id_cliente": 1036,
+      "pais": "Chile",
+      "genero": "M",
+      "segmento": "PYME",
+      "volumen_total": 11700.83,
+      "n_transacciones": 4,
+      "n_productos": 3,
+      "ticket_prom": 2925.21,
+      "antiguedad_dias": 320,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "vol_acum_y": [
+        5434.57,
+        5434.57,
+        5434.57,
+        10615.1,
+        10615.1,
+        10615.1,
+        10615.1,
+        10615.1,
+        11559.9,
+        11559.9,
+        11559.9,
+        11700.83
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_1"
+        },
+        {
+          "label": "P2",
+          "mes": 3,
+          "nombre": "Producto_5"
+        },
+        {
+          "label": "P3",
+          "mes": 8,
+          "nombre": "Producto_2"
+        }
+      ]
+    },
+    "1045": {
+      "id_cliente": 1045,
+      "pais": "Argentina",
+      "genero": "F",
+      "segmento": "Retail",
+      "volumen_total": 11689.1,
+      "n_transacciones": 3,
+      "n_productos": 3,
+      "ticket_prom": 3896.37,
+      "antiguedad_dias": 233,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "vol_acum_y": [
+        5518.78,
+        5518.78,
+        5518.78,
+        5518.78,
+        5518.78,
+        5518.78,
+        5518.78,
+        11689.1
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_7"
+        },
+        {
+          "label": "P2",
+          "mes": 7,
+          "nombre": "Producto_1"
+        },
+        {
+          "label": "P3",
+          "mes": 7,
+          "nombre": "Producto_2"
+        }
+      ]
+    },
+    "1027": {
+      "id_cliente": 1027,
+      "pais": "Colombia",
+      "genero": "F",
+      "segmento": "PYME",
+      "volumen_total": 10158.51,
+      "n_transacciones": 3,
+      "n_productos": 3,
+      "ticket_prom": 3386.17,
+      "antiguedad_dias": 187,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "vol_acum_y": [
+        100.85,
+        9529.35,
+        9529.35,
+        9529.35,
+        9529.35,
+        9529.35,
+        9529.35,
+        10158.51
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "step_y": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_3"
+        },
+        {
+          "label": "P2",
+          "mes": 1,
+          "nombre": "Producto_6"
+        },
+        {
+          "label": "P3",
+          "mes": 7,
+          "nombre": "Producto_9"
+        }
+      ]
+    },
+    "1020": {
+      "id_cliente": 1020,
+      "pais": "México",
+      "genero": "M",
+      "segmento": "Retail",
+      "volumen_total": 10080.68,
+      "n_transacciones": 3,
+      "n_productos": 3,
+      "ticket_prom": 3360.23,
+      "antiguedad_dias": 227,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "vol_acum_y": [
+        7196.02,
+        8221.21,
+        8221.21,
+        8221.21,
+        8221.21,
+        8221.21,
+        8221.21,
+        8221.21,
+        10080.68
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "step_y": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_10"
+        },
+        {
+          "label": "P2",
+          "mes": 1,
+          "nombre": "Producto_9"
+        },
+        {
+          "label": "P3",
+          "mes": 8,
+          "nombre": "Producto_3"
+        }
+      ]
+    },
+    "1035": {
+      "id_cliente": 1035,
+      "pais": "México",
+      "genero": "M",
+      "segmento": "Retail",
+      "volumen_total": 9602.12,
+      "n_transacciones": 1,
+      "n_productos": 1,
+      "ticket_prom": 9602.12,
+      "antiguedad_dias": 0,
+      "vol_acum_x": [
+        0
+      ],
+      "vol_acum_y": [
+        9602.12
+      ],
+      "step_x": [
+        0
+      ],
+      "step_y": [
+        1
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_9"
+        }
+      ]
+    },
+    "1058": {
+      "id_cliente": 1058,
+      "pais": "Chile",
+      "genero": "M",
+      "segmento": "PYME",
+      "volumen_total": 9242.75,
+      "n_transacciones": 3,
+      "n_productos": 2,
+      "ticket_prom": 3080.92,
+      "antiguedad_dias": 189,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "vol_acum_y": [
+        5915.63,
+        5915.63,
+        5915.63,
+        5915.63,
+        5915.63,
+        7949.48,
+        9242.75
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_4"
+        },
+        {
+          "label": "P2",
+          "mes": 6,
+          "nombre": "Producto_7"
+        }
+      ]
+    },
+    "1002": {
+      "id_cliente": 1002,
+      "pais": "Chile",
+      "genero": "M",
+      "segmento": "Corporativo",
+      "volumen_total": 9219.26,
+      "n_transacciones": 2,
+      "n_productos": 2,
+      "ticket_prom": 4609.63,
+      "antiguedad_dias": 174,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "vol_acum_y": [
+        3984.77,
+        3984.77,
+        3984.77,
+        3984.77,
+        3984.77,
+        3984.77,
+        9219.26
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_1"
+        },
+        {
+          "label": "P2",
+          "mes": 6,
+          "nombre": "Producto_6"
+        }
+      ]
+    },
+    "1018": {
+      "id_cliente": 1018,
+      "pais": "Colombia",
+      "genero": "M",
+      "segmento": "Retail",
+      "volumen_total": 9126.0,
+      "n_transacciones": 2,
+      "n_productos": 2,
+      "ticket_prom": 4563.0,
+      "antiguedad_dias": 45,
+      "vol_acum_x": [
+        0,
+        1
+      ],
+      "vol_acum_y": [
+        1861.72,
+        9126.0
+      ],
+      "step_x": [
+        0,
+        1
+      ],
+      "step_y": [
+        1,
+        2
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_1"
+        },
+        {
+          "label": "P2",
+          "mes": 1,
+          "nombre": "Producto_10"
+        }
+      ]
+    },
+    "1024": {
+      "id_cliente": 1024,
+      "pais": "Argentina",
+      "genero": "F",
+      "segmento": "Corporativo",
+      "volumen_total": 8670.95,
+      "n_transacciones": 2,
+      "n_productos": 2,
+      "ticket_prom": 4335.47,
+      "antiguedad_dias": 54,
+      "vol_acum_x": [
+        0,
+        1,
+        2
+      ],
+      "vol_acum_y": [
+        644.38,
+        644.38,
+        8670.95
+      ],
+      "step_x": [
+        0,
+        1,
+        2
+      ],
+      "step_y": [
+        1,
+        1,
+        2
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_5"
+        },
+        {
+          "label": "P2",
+          "mes": 2,
+          "nombre": "Producto_8"
+        }
+      ]
+    },
+    "1008": {
+      "id_cliente": 1008,
+      "pais": "México",
+      "genero": "F",
+      "segmento": "Retail",
+      "volumen_total": 6942.65,
+      "n_transacciones": 3,
+      "n_productos": 3,
+      "ticket_prom": 2314.22,
+      "antiguedad_dias": 181,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "vol_acum_y": [
+        1673.5,
+        1673.5,
+        1673.5,
+        1673.5,
+        1673.5,
+        4447.65,
+        6942.65
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        3
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_2"
+        },
+        {
+          "label": "P2",
+          "mes": 5,
+          "nombre": "Producto_4"
+        },
+        {
+          "label": "P3",
+          "mes": 6,
+          "nombre": "Producto_9"
+        }
+      ]
+    },
+    "1053": {
+      "id_cliente": 1053,
+      "pais": "Chile",
+      "genero": "F",
+      "segmento": "Retail",
+      "volumen_total": 6288.87,
+      "n_transacciones": 2,
+      "n_productos": 2,
+      "ticket_prom": 3144.44,
+      "antiguedad_dias": 248,
+      "vol_acum_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "vol_acum_y": [
+        6212.35,
+        6212.35,
+        6212.35,
+        6212.35,
+        6212.35,
+        6212.35,
+        6212.35,
+        6212.35,
+        6288.87
+      ],
+      "step_x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "step_y": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_4"
+        },
+        {
+          "label": "P2",
+          "mes": 8,
+          "nombre": "Producto_9"
+        }
+      ]
+    },
+    "1033": {
+      "id_cliente": 1033,
+      "pais": "Chile",
+      "genero": "M",
+      "segmento": "PYME",
+      "volumen_total": 5664.45,
+      "n_transacciones": 2,
+      "n_productos": 2,
+      "ticket_prom": 2832.22,
+      "antiguedad_dias": 67,
+      "vol_acum_x": [
+        0,
+        1,
+        2
+      ],
+      "vol_acum_y": [
+        4837.17,
+        4837.17,
+        5664.45
+      ],
+      "step_x": [
+        0,
+        1,
+        2
+      ],
+      "step_y": [
+        1,
+        1,
+        2
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_10"
+        },
+        {
+          "label": "P2",
+          "mes": 2,
+          "nombre": "Producto_4"
+        }
+      ]
+    },
+    "1007": {
+      "id_cliente": 1007,
+      "pais": "Colombia",
+      "genero": "M",
+      "segmento": "Corporativo",
+      "volumen_total": 5072.18,
+      "n_transacciones": 1,
+      "n_productos": 1,
+      "ticket_prom": 5072.18,
+      "antiguedad_dias": 0,
+      "vol_acum_x": [
+        0
+      ],
+      "vol_acum_y": [
+        5072.18
+      ],
+      "step_x": [
+        0
+      ],
+      "step_y": [
+        1
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_1"
+        }
+      ]
+    },
+    "1028": {
+      "id_cliente": 1028,
+      "pais": "México",
+      "genero": "F",
+      "segmento": "Corporativo",
+      "volumen_total": 2946.23,
+      "n_transacciones": 1,
+      "n_productos": 1,
+      "ticket_prom": 2946.23,
+      "antiguedad_dias": 0,
+      "vol_acum_x": [
+        0
+      ],
+      "vol_acum_y": [
+        2946.23
+      ],
+      "step_x": [
+        0
+      ],
+      "step_y": [
+        1
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_2"
+        }
+      ]
+    },
+    "1062": {
+      "id_cliente": 1062,
+      "pais": "Colombia",
+      "genero": "M",
+      "segmento": "Corporativo",
+      "volumen_total": 1048.73,
+      "n_transacciones": 1,
+      "n_productos": 1,
+      "ticket_prom": 1048.73,
+      "antiguedad_dias": 0,
+      "vol_acum_x": [
+        0
+      ],
+      "vol_acum_y": [
+        1048.73
+      ],
+      "step_x": [
+        0
+      ],
+      "step_y": [
+        1
+      ],
+      "productos": [
+        {
+          "label": "P1",
+          "mes": 0,
+          "nombre": "Producto_7"
+        }
+      ]
     }
   }
 }

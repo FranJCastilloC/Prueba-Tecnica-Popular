@@ -212,7 +212,7 @@ function renderAnalisis(el) {
       <div class="section-copy">
         <span class="eyebrow">Journey</span>
         <h2>Trayectoria del cliente</h2>
-        <p>Evolución temporal de volumen acumulado y adopción de productos para los top 10 clientes por volumen.</p>
+        <p>Evolución temporal de volumen acumulado y adopción de productos. Selecciona cualquier cliente de la base.</p>
       </div>
       <div class="journey-selector-wrap story-card">
         <span class="story-label">Seleccionar cliente</span>
