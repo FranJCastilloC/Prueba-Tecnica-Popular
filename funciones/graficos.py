@@ -11,6 +11,15 @@ Submódulos:
 
 from __future__ import annotations
 
+import warnings
+
+warnings.warn(
+    "El uso de gráficos EDA desde 'funciones.graficos' está deprecado. "
+    "Dichas funciones ahora viven directamente en 'ide.ipynb'.",
+    DeprecationWarning,
+    stacklevel=2,
+)
+
 import pandas as pd
 
 # Re-exportaciones — graficos_eda

@@ -7,6 +7,16 @@ Dependencias: matplotlib, seaborn, pandas, numpy, scipy, squarify
 
 from __future__ import annotations
 
+import warnings
+
+warnings.warn(
+    "El módulo 'graficos_eda' está deprecado. Las funciones de graficación de EDA "
+    "han sido migradas directamente dentro de 'ide.ipynb' para facilitar su lectura y revisión "
+    "por parte de los reclutadores.",
+    DeprecationWarning,
+    stacklevel=2,
+)
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt

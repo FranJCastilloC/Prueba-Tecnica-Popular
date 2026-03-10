@@ -88,6 +88,12 @@ class Transaccion:
         """ID del producto (conveniencia para compatibilidad)."""
         return self.producto.id_producto
 
+    @property
+    def monto_usd(self) -> float:
+        """Monto convertido a USD usando tasas de cambio estáticas."""
+        tasas = {"USD": 1.0, "COP": 1/3771.28, "EUR": 1/0.86}
+        return self.monto * tasas.get(self.producto.moneda, 1.0)
+
 
 @dataclass
 class Dominio:

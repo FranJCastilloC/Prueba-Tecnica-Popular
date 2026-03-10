@@ -229,6 +229,145 @@ function renderAnalisis(el) {
       ${panelCard({ title: "Volumen acumulado", question: "¿Cómo crece el volumen del cliente a lo largo del tiempo?",          id: "an-journey-vol",  tag: "Trayectoria", tall: true })}
       ${panelCard({ title: "Adopción de productos", question: "¿Cuándo y en qué orden el cliente incorporó cada producto?",     id: "an-journey-prod", tag: "Trayectoria", tall: true })}
     </div>
+
+    <div class="section-divider"></div>
+
+    ${sectionIntro({
+      eyebrow: "Estrategia",
+      title: "Plan de activación por segmento",
+      description: "Cada cliente es clasificado según su perfil de transacciones y ticket. El impacto proyectado usa los coeficientes reales del modelo OLS.",
+      highlightLabel: "proyección total",
+      highlightText: `+${fmtPct(DATA.estrategia.pct_crecimiento)} sobre volumen actual`,
+      detail: `Impacto proyectado de ${fmtUSD(DATA.estrategia.impacto_total)} si se ejecutan las intervenciones por segmento. Volumen proyectado: ${fmtUSD(DATA.estrategia.volumen_proyectado)}.`,
+    })}
+
+    <div class="kpis" style="grid-template-columns: repeat(4, minmax(0,1fr));">
+      ${kpiCard({ value: fmtUSD(DATA.estrategia.volumen_actual),     label: "Volumen actual",     note: "Base consolidada del periodo",            tone: "blue"  })}
+      ${kpiCard({ value: fmtUSD(DATA.estrategia.impacto_total),      label: "Impacto proyectado", note: "Si se aplican todas las intervenciones",   tone: "mint"  })}
+      ${kpiCard({ value: fmtPct(DATA.estrategia.pct_crecimiento),    label: "% Crecimiento",      note: "Incremento sobre volumen base",            tone: "amber" })}
+      ${kpiCard({ value: fmt(DATA.estrategia.tabla_accionable.length), label: "Clientes a activar", note: "Con brecha >5% bajo lo esperado",        tone: "coral" })}
+    </div>
+
+    <div class="grid-2">
+      ${panelCard({ title: "Impacto por segmento", question: "¿Qué segmento genera más oportunidad de crecimiento?",          id: "an-est-segs",    tag: "Estrategia", tall: true })}
+      ${panelCard({ title: "Proyección de volumen", question: "¿Cuánto crece el negocio si se ejecuta la estrategia?",        id: "an-est-wf",      tag: "Estrategia", tall: true })}
+    </div>
+
+    <div style="margin-top:20px;">
+      ${panelCard({ title: "Clientes a intervenir", question: "¿Quiénes están por debajo de su potencial y en qué segmento caen?", id: "an-est-scatter", tag: "Mapa" })}
+    </div>
+
+    <div class="section-divider"></div>
+
+    <div class="page-intro" style="margin-top: 28px;">
+      <div class="section-copy">
+        <span class="eyebrow">Simulador</span>
+        <h2>Calculadora de impacto</h2>
+        <p>Ajusta los parámetros de intervención y ve en tiempo real el impacto proyectado según los coeficientes del modelo.</p>
+      </div>
+      <div class="story-card" style="display:flex;flex-direction:column;gap:16px;">
+        <span class="story-label">Parámetros de intervención</span>
+
+        <div class="calc-grid">
+          <label class="calc-label">Segmento objetivo</label>
+          <select id="calc-segmento" onchange="calcularImpacto()" class="calc-select">
+            <option value="TODOS">Todos los segmentos</option>
+            <option value="DORMIDO_CON_POTENCIAL">Dormidos con potencial</option>
+            <option value="ACTIVO_BAJO_VALOR">Activos bajo valor</option>
+            <option value="ESTRELLA">Estrellas</option>
+            <option value="CRISIS">En crisis</option>
+          </select>
+          <span></span>
+
+          <label class="calc-label">+ Transacciones por cliente</label>
+          <input type="range" id="calc-txn" min="0" max="10" step="0.5" value="2.5"
+                 oninput="document.getElementById('calc-txn-val').textContent=this.value; calcularImpacto()">
+          <span id="calc-txn-val" class="calc-val">2.5</span>
+
+          <label class="calc-label">+ Ticket por transacción (USD)</label>
+          <input type="range" id="calc-ticket" min="0" max="5000" step="100" value="1200"
+                 oninput="document.getElementById('calc-ticket-val').textContent=fmtUSD(Number(this.value)); calcularImpacto()">
+          <span id="calc-ticket-val" class="calc-val">$1,200</span>
+        </div>
+
+        <div class="calc-result" id="calc-result">
+          <div class="calc-result-row"><span>Clientes afectados</span><strong id="r-clientes">—</strong></div>
+          <div class="calc-result-row"><span>Impacto por cliente</span><strong id="r-unitario">—</strong></div>
+          <div class="calc-result-row"><span>Impacto total</span><strong id="r-total">—</strong></div>
+          <div class="calc-result-row"><span>Volumen proyectado</span><strong id="r-proyectado">—</strong></div>
+          <div class="calc-result-row calc-highlight"><span>Crecimiento</span><strong id="r-crecimiento">—</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    ${(() => {
+      const cs  = DATA.crosssell;
+      const topProd = Object.keys(cs.top_por_producto)[0] || "—";
+      return `
+        ${sectionIntro({
+          eyebrow: "Cross-sell",
+          title: "Oportunidades de producto por cliente",
+          description: "Para cada cliente se identifican los productos del catálogo que aún no tiene. La recomendación prioriza el producto con mayor volumen medio de transacción.",
+          highlightLabel: "potencial identificado",
+          highlightText: `${cs.total_oportunidades} clientes con productos faltantes`,
+          detail: `Ingreso potencial estimado de ${fmtUSD(cs.ingreso_potencial_total)} si se ejecuta la recomendación top de cada cliente.`,
+        })}
+
+        <div class="kpis" style="grid-template-columns: repeat(3, minmax(0,1fr)); max-width: 680px;">
+          ${kpiCard({ value: fmt(cs.total_oportunidades), label: "Oportunidades",       note: "Clientes con al menos 1 producto faltante",      tone: "coral" })}
+          ${kpiCard({ value: fmtUSD(cs.ingreso_potencial_total), label: "Ingreso potencial", note: "Estimado con ~3 txns del producto recomendado", tone: "mint"  })}
+          ${kpiCard({ value: topProd, label: "Mayor brecha",          note: "Producto con más clientes sin él",               tone: "blue"  })}
+        </div>
+
+        <div class="grid-2">
+          ${panelCard({ title: "Matriz cliente–producto", question: "¿Qué productos tiene cada cliente y cuáles le faltan?",            id: "an-cs-heat", tag: "Presencia", tall: true })}
+          ${panelCard({ title: "Productos con mayor brecha", question: "¿Qué productos son más comunes como oportunidad de cross-sell?", id: "an-cs-top",  tag: "Ranking"   })}
+        </div>
+
+      `;
+    })()}
+
+    <div class="section-divider" style="margin-top:24px;"></div>
+
+    <div class="page-intro" style="margin-top: 28px;">
+      <div class="section-copy">
+        <span class="eyebrow">Recomendaciones</span>
+        <h2>¿Cuánto quieres crecer?</h2>
+        <p>Define una meta de volumen y el sistema calcula en tiempo real qué clientes activar y con qué intervención para llegar a ella con el menor número de acciones.</p>
+      </div>
+      <div class="story-card" style="display:flex;flex-direction:column;gap:16px;">
+        <span class="story-label">Meta de volumen</span>
+        <div class="meta-slider-wrap">
+          <div class="meta-slider-labels">
+            <span>${fmtUSD(DATA.estrategia.volumen_actual)}</span>
+            <span id="meta-val" class="meta-current">${fmtUSD(DATA.estrategia.volumen_actual * 1.3)}</span>
+            <span>${fmtUSD(DATA.estrategia.volumen_actual * 2)}</span>
+          </div>
+          <input type="range" id="meta-slider"
+            class="meta-range"
+            min="${DATA.estrategia.volumen_actual}"
+            max="${DATA.estrategia.volumen_actual * 2}"
+            step="${Math.round(DATA.estrategia.volumen_actual * 0.01)}"
+            value="${DATA.estrategia.volumen_actual * 1.3}"
+            oninput="actualizarRecomendaciones(this.value)">
+        </div>
+        <div class="meta-progress-wrap">
+          <div class="meta-progress-bar">
+            <div id="meta-progress-fill" class="meta-progress-fill" style="width:0%"></div>
+          </div>
+          <div class="meta-stats">
+            <span>Actual: <strong>${fmtUSD(DATA.estrategia.volumen_actual)}</strong></span>
+            <span id="meta-gap-label">Brecha: <strong>—</strong></span>
+            <span id="meta-pct-label">Cubierto: <strong>—</strong></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rec-kpis-wrap" id="rec-summary"></div>
+    <div id="rec-tabla-wrap" class="card" style="margin-top:16px;padding:0;overflow:hidden;"></div>
   `;
 
   // Regresión charts
@@ -239,6 +378,21 @@ function renderAnalisis(el) {
 
   // Journey inicial
   updateJourney(firstId);
+
+  // Estrategia charts
+  chartEstrategiaSegmentos("an-est-segs");
+  chartEstrategiaWaterfall("an-est-wf");
+  chartEstrategiaScatter("an-est-scatter");
+
+  // Simulador — inicializar
+  calcularImpacto();
+
+  // Cross-sell charts
+  chartCrosssellHeatmap("an-cs-heat");
+  chartCrosssellTop("an-cs-top");
+
+  // Recomendaciones — inicializar con meta de +30%
+  actualizarRecomendaciones(DATA.estrategia.volumen_actual * 1.3);
 }
 
 function updateJourney(cid) {
@@ -267,4 +421,164 @@ function updateJourney(cid) {
 
   chartJourneyVol("an-journey-vol", cid);
   chartJourneyProd("an-journey-prod", cid);
+}
+
+function calcularImpacto() {
+  const e          = DATA.estrategia;
+  const segmento   = document.getElementById("calc-segmento")?.value || "TODOS";
+  const txn_delta  = parseFloat(document.getElementById("calc-txn")?.value || 0);
+  const tick_delta = parseFloat(document.getElementById("calc-ticket")?.value || 0);
+
+  // Filtrar tabla de clientes accionables
+  const clientes = segmento === "TODOS"
+    ? e.tabla_accionable
+    : e.tabla_accionable.filter(r => r.segmento_oportunidad === segmento);
+
+  const n          = clientes.length;
+  const imp_unit   = e.coef_txn * txn_delta + e.coef_ticket * tick_delta;
+  const imp_total  = imp_unit * n;
+  const vol_proy   = e.volumen_actual + imp_total;
+  const pct_crec   = e.volumen_actual > 0 ? (imp_total / e.volumen_actual) * 100 : 0;
+
+  const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+
+  set("r-clientes",    fmt(n));
+  set("r-unitario",    fmtUSD(imp_unit));
+  set("r-total",       fmtUSD(imp_total));
+  set("r-proyectado",  fmtUSD(vol_proy));
+  set("r-crecimiento", `+${pct_crec.toFixed(1)}%`);
+}
+
+// ── Sistema de recomendaciones por meta ───────────────────────────────────────
+
+function actualizarRecomendaciones(meta) {
+  meta = parseFloat(meta);
+  const actual = DATA.estrategia.volumen_actual;
+  const brecha = meta - actual;
+
+  const metaEl = document.getElementById("meta-val");
+  const gapEl  = document.getElementById("meta-gap-label");
+  const pctEl  = document.getElementById("meta-pct-label");
+  const fillEl = document.getElementById("meta-progress-fill");
+  const sumEl  = document.getElementById("rec-summary");
+  const tabEl  = document.getElementById("rec-tabla-wrap");
+
+  if (metaEl) metaEl.textContent = fmtUSD(meta);
+  if (gapEl)  gapEl.innerHTML  = `Brecha: <strong>${fmtUSD(Math.max(brecha, 0))}</strong>`;
+
+  if (brecha <= 0) {
+    if (fillEl) fillEl.style.width = "100%";
+    if (pctEl)  pctEl.innerHTML = `Cubierto: <strong>100%</strong>`;
+    if (sumEl)  sumEl.innerHTML = `<p style="color:var(--mint);padding:8px 0;font-weight:700">La meta ya está cubierta por el volumen actual.</p>`;
+    if (tabEl)  tabEl.innerHTML = "";
+    return;
+  }
+
+  // ── Construir pool de oportunidades ──────────────────────────────────────
+  const pool = [];
+
+  for (const c of DATA.estrategia.tabla_accionable) {
+    pool.push({
+      id_cliente:  c.id_cliente,
+      tipo:        c.segmento_oportunidad,
+      segmento:    c.segmento,
+      descripcion: _descIntervencion(c.segmento_oportunidad),
+      impacto:     Math.abs(c.gap),
+      fuente:      "activación",
+    });
+  }
+
+  const csIds = new Set(pool.map(p => p.id_cliente));
+  for (const o of DATA.crosssell.oportunidades) {
+    if (csIds.has(o.id_cliente)) continue;
+    pool.push({
+      id_cliente:  o.id_cliente,
+      tipo:        "CROSS_SELL",
+      segmento:    o.segmento,
+      descripcion: `Cross-sell: ${o.top_recomendacion}`,
+      impacto:     o.ingreso_estimado,
+      fuente:      "cross-sell",
+    });
+  }
+
+  pool.sort((a, b) => b.impacto - a.impacto);
+
+  let acumulado = 0;
+  const seleccionados = [];
+  for (const item of pool) {
+    if (acumulado >= brecha) break;
+    acumulado += item.impacto;
+    seleccionados.push({ ...item, acumulado });
+  }
+
+  const pct = Math.min((acumulado / brecha) * 100, 100);
+  if (fillEl) fillEl.style.width = pct + "%";
+  if (pctEl)  pctEl.innerHTML = `Cubierto: <strong>${pct.toFixed(0)}%</strong>`;
+
+  const tipos = {};
+  seleccionados.forEach(s => { tipos[s.fuente] = (tipos[s.fuente] || 0) + 1; });
+
+  if (sumEl) sumEl.innerHTML = `
+    <div class="rec-kpis">
+      ${kpiCard({ value: fmt(seleccionados.length),     label: "Clientes a activar", note: "Para alcanzar la meta definida",       tone: "blue"  })}
+      ${kpiCard({ value: fmtUSD(acumulado),              label: "Impacto total",      note: "Suma de intervenciones seleccionadas", tone: "mint"  })}
+      ${kpiCard({ value: fmt(tipos["activación"] || 0),  label: "Por activación",     note: "Transacciones o ticket",              tone: "amber" })}
+      ${kpiCard({ value: fmt(tipos["cross-sell"] || 0),  label: "Por cross-sell",     note: "Nuevos productos recomendados",       tone: "coral" })}
+    </div>
+  `;
+
+  if (tabEl) tabEl.innerHTML = `
+    <div class="card-header" style="padding:20px 20px 14px;">
+      <div>
+        <div class="card-title"><span class="card-title-text">Plan de intervención priorizado</span></div>
+        <div class="card-question">Contactar en este orden para llegar a la meta con el menor número de acciones</div>
+      </div>
+      <span class="card-tag">Meta: ${fmtUSD(meta)}</span>
+    </div>
+    <div style="overflow-x:auto;padding:0 4px 16px;">
+      <table class="crosssell-table">
+        <thead>
+          <tr>
+            <th>#</th><th>Cliente</th><th>Tipo</th><th>Segmento</th>
+            <th>Intervención</th><th>Impacto est.</th><th>Acumulado</th><th>% Meta</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${seleccionados.map((s, i) => `
+            <tr>
+              <td><strong>${i + 1}</strong></td>
+              <td><strong>${s.id_cliente}</strong></td>
+              <td><span class="cs-badge" style="${_badgeStyle(s.fuente)}">${s.fuente}</span></td>
+              <td>${s.segmento}</td>
+              <td>${s.descripcion}</td>
+              <td><strong>${fmtUSD(s.impacto)}</strong></td>
+              <td>${fmtUSD(s.acumulado)}</td>
+              <td>
+                <div class="mini-bar">
+                  <div style="width:${Math.min(s.acumulado / brecha * 100, 100).toFixed(1)}%"></div>
+                </div>
+              </td>
+            </tr>
+          `).join("")}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
+function _descIntervencion(tipo) {
+  const map = {
+    DORMIDO_CON_POTENCIAL: "Reactivar transacciones",
+    ACTIVO_BAJO_VALOR:     "Subir ticket promedio",
+    ESTRELLA:              "+1 transacción/mes",
+    CRISIS:                "Win-back urgente",
+    NORMAL:                "Seguimiento estándar",
+  };
+  return map[tipo] || tipo.replace(/_/g, " ");
+}
+
+function _badgeStyle(fuente) {
+  return fuente === "cross-sell"
+    ? "background:var(--mint-alpha);color:#2f9078;"
+    : "background:var(--blue-alpha);color:var(--blue);";
 }

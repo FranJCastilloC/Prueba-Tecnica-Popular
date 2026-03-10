@@ -14,6 +14,8 @@ from pathlib import Path
 
 import pandas as pd
 
+from funciones.estrategia import analizar_estrategia, analizar_crosssell
+
 
 def exportar_dashboard_data(
     datos: dict,
@@ -135,8 +137,34 @@ def exportar_dashboard_data(
     with path.open(encoding="utf-8") as f:
         dash_data = json.load(f)
 
-    dash_data["regresion"] = reg_export
-    dash_data["journey"]   = journey_export
+    # ── Estrategia ────────────────────────────────────────────────────────────
+    est = analizar_estrategia(resultado_regresion, datos["tx_full"])
+    estrategia_export = {
+        "resumen_segmentos":  est["resumen_segmentos"],
+        "volumen_actual":     est["volumen_actual"],
+        "volumen_proyectado": est["volumen_proyectado"],
+        "impacto_total":      est["impacto_total"],
+        "pct_crecimiento":    est["pct_crecimiento"],
+        "tabla_accionable":   est["tabla_accionable"],
+        "coef_txn":           est["coef_txn"],
+        "coef_ticket":        est["coef_ticket"],
+    }
+
+    # ── Cross-sell ────────────────────────────────────────────────────────────
+    cs = analizar_crosssell(datos["tx_full"])
+    crosssell_export = {
+        "heatmap":                   cs["heatmap"],
+        "top_por_producto":          cs["top_por_producto"],
+        "volumen_medio_por_producto":cs["volumen_medio_por_producto"],
+        "oportunidades":             cs["oportunidades"][:20],
+        "total_oportunidades":       cs["total_oportunidades"],
+        "ingreso_potencial_total":   cs["ingreso_potencial_total"],
+    }
+
+    dash_data["regresion"]  = reg_export
+    dash_data["journey"]    = journey_export
+    dash_data["estrategia"] = estrategia_export
+    dash_data["crosssell"]  = crosssell_export
 
     with path.open("w", encoding="utf-8") as f:
         json.dump(dash_data, f, ensure_ascii=False, indent=2, default=str)
@@ -144,3 +172,5 @@ def exportar_dashboard_data(
     print(f"✓ {path} actualizado")
     print(f"  R² = {reg_export['r2']}  |  R² adj = {reg_export['r2_adj']}  |  N = {reg_export['n_obs']}")
     print(f"  Clientes journey exportados: {len(journey_export)}")
+    print(f"  Estrategia: impacto proyectado ${est['impacto_total']:,.0f}  (+{est['pct_crecimiento']}%)")
+    print(f"  Cross-sell: {cs['total_oportunidades']} oportunidades · ingreso potencial ${cs['ingreso_potencial_total']:,.0f}")

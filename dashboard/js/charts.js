@@ -704,3 +704,187 @@ function chartJourneyProd(id, cid) {
     legend: { x: 0, y: 1.08, orientation: "h", bgcolor: "transparent" },
   }), PLOTLY_CFG);
 }
+
+// ── Estrategia ────────────────────────────────────────────────────────────────
+
+const SEG_COLORS = {
+  DORMIDO_CON_POTENCIAL: PALETTE.amber,
+  ACTIVO_BAJO_VALOR:     PALETTE.blue,
+  ESTRELLA:              PALETTE.mint,
+  CRISIS:                PALETTE.red,
+  NORMAL:                PALETTE.slate,
+};
+
+function chartEstrategiaSegmentos(id) {
+  const segs   = DATA.estrategia.resumen_segmentos.filter(s => s.n_clientes > 0);
+  const sorted = [...segs].sort((a, b) => b.impacto_total - a.impacto_total);
+
+  Plotly.newPlot(id, [{
+    y: sorted.map(s => s.segmento.replace(/_/g, " ")),
+    x: sorted.map(s => s.impacto_total),
+    type: "bar",
+    orientation: "h",
+    text: sorted.map(s => `${s.n_clientes} clientes · $${(s.impacto_unitario / 1000).toFixed(1)}K/c`),
+    textposition: "inside",
+    textfont: { color: "#fff", size: 11, family: "Manrope" },
+    marker: {
+      color: sorted.map(s => SEG_COLORS[s.segmento] || PALETTE.slate),
+      opacity: 0.85,
+      line: { color: "rgba(255,255,255,0.3)", width: 1 },
+    },
+    hovertemplate: "<b>%{y}</b><br>Impacto total: $%{x:,.0f}<extra></extra>",
+  }], ly({
+    xaxis: { title: "Impacto proyectado (USD)" },
+    margin: { l: 172, r: 24, t: 16, b: 48 },
+    showlegend: false,
+  }), PLOTLY_CFG);
+}
+
+function chartEstrategiaWaterfall(id) {
+  const e = DATA.estrategia;
+
+  Plotly.newPlot(id, [{
+    type: "waterfall",
+    orientation: "v",
+    measure: ["absolute", "relative", "total"],
+    x: ["Volumen actual", "Impacto estrategia", "Volumen proyectado"],
+    y: [e.volumen_actual, e.impacto_total, e.volumen_proyectado],
+    text: [
+      `$${(e.volumen_actual / 1e6).toFixed(2)}M`,
+      `+$${(e.impacto_total / 1e3).toFixed(0)}K`,
+      `$${(e.volumen_proyectado / 1e6).toFixed(2)}M`,
+    ],
+    textposition: "outside",
+    textfont: { size: 12, family: "Sora", color: "#18332c" },
+    increasing: { marker: { color: PALETTE.mint } },
+    totals:     { marker: { color: PALETTE.blue } },
+    connector:  { line: { color: "rgba(24,51,44,0.15)", width: 1.5, dash: "dot" } },
+    hovertemplate: "%{x}<br>$%{y:,.0f}<extra></extra>",
+  }], ly({
+    yaxis: { title: "Volumen (USD)", tickformat: ",.0s" },
+    margin: { l: 56, r: 24, t: 40, b: 48 },
+    showlegend: false,
+  }), PLOTLY_CFG);
+}
+
+function chartEstrategiaScatter(id) {
+  const tabla = DATA.estrategia.tabla_accionable;
+  if (!tabla || tabla.length === 0) {
+    document.getElementById(id).innerHTML =
+      `<p style="color:var(--muted);padding:24px">Sin clientes con brecha significativa.</p>`;
+    return;
+  }
+
+  const segs   = [...new Set(tabla.map(r => r.segmento_oportunidad))];
+  const maxGap = Math.max(...tabla.map(r => Math.abs(r.gap)));
+
+  const traces = segs.map(seg => {
+    const rows = tabla.filter(r => r.segmento_oportunidad === seg);
+    return {
+      x: rows.map(r => r.n_transacciones),
+      y: rows.map(r => r.ticket_mean),
+      mode: "markers+text",
+      type: "scatter",
+      name: seg.replace(/_/g, " "),
+      text: rows.map(r => `C${r.id_cliente}`),
+      textposition: "top center",
+      textfont: { size: 9, color: "#18332c" },
+      marker: {
+        color: SEG_COLORS[seg] || PALETTE.slate,
+        size: rows.map(r => Math.max((Math.abs(r.gap) / maxGap) * 40, 10)),
+        opacity: 0.78,
+        line: { color: "rgba(255,255,255,0.6)", width: 1 },
+      },
+      hovertemplate: "Cliente %{text}<br>Txns: %{x}<br>Ticket: $%{y:,.0f}<br>Gap: $%{customdata:,.0f}<extra></extra>",
+      customdata: rows.map(r => r.gap),
+    };
+  });
+
+  Plotly.newPlot(id, traces, ly({
+    xaxis: { title: "# Transacciones" },
+    yaxis: { title: "Ticket promedio (USD)" },
+    legend: { x: 0, y: 1.08, orientation: "h", bgcolor: "transparent" },
+  }), PLOTLY_CFG);
+}
+
+// ── Cross-sell ────────────────────────────────────────────────────────────────
+
+function chartCrosssellHeatmap(id) {
+  const hm = DATA.crosssell.heatmap;
+
+  Plotly.newPlot(id, [{
+    type: "heatmap",
+    z: hm.values,
+    x: hm.productos,
+    y: hm.clientes,
+    colorscale: [[0, "rgba(93,142,247,0.06)"], [1, PALETTE.blue]],
+    showscale: false,
+    xgap: 2,
+    ygap: 1,
+    hovertemplate: "%{y} — %{x}<br>%{z === 1 ? 'Tiene' : 'No tiene'}<extra></extra>",
+    hoverongaps: false,
+  }], {
+    ...PLOTLY_LAYOUT,
+    height: 560,
+    margin: { l: 46, r: 12, t: 16, b: 80 },
+    xaxis: {
+      ...PLOTLY_LAYOUT.xaxis,
+      tickangle: 40,
+      tickfont: { size: 10, color: "#5d6d69" },
+    },
+    yaxis: {
+      ...PLOTLY_LAYOUT.yaxis,
+      tickfont: { size: 8, color: "#5d6d69" },
+      autorange: "reversed",
+    },
+  }, PLOTLY_CFG);
+}
+
+function chartCrosssellTop(id) {
+  const top  = DATA.crosssell.top_por_producto;
+  const vmedio = DATA.crosssell.volumen_medio_por_producto;
+
+  const prods  = Object.keys(top);
+  const counts = prods.map(p => top[p]);
+  const vols   = prods.map(p => vmedio[p] || 0);
+  const colors = prods.map((_, i) => i % 2 === 0 ? PALETTE.blue : PALETTE.mint);
+
+  Plotly.newPlot(id, [
+    {
+      y: prods,
+      x: counts,
+      type: "bar",
+      orientation: "h",
+      name: "Clientes sin este producto",
+      text: counts.map(c => `${c} clientes`),
+      textposition: "inside",
+      textfont: { color: "#fff", size: 10, family: "Manrope" },
+      marker: { color: colors, opacity: 0.85 },
+      hovertemplate: "%{y}<br>Sin el producto: %{x} clientes<extra></extra>",
+    },
+    {
+      y: prods,
+      x: vols,
+      type: "scatter",
+      mode: "markers",
+      name: "Volumen medio/txn",
+      xaxis: "x2",
+      marker: { color: PALETTE.amber, size: 9, symbol: "diamond" },
+      hovertemplate: "%{y}<br>Vol. medio: $%{x:,.0f}<extra></extra>",
+    },
+  ], ly({
+    xaxis:  { title: "Clientes sin el producto", domain: [0, 0.65] },
+    xaxis2: {
+      title: "Volumen medio por txn (USD)",
+      overlaying: "x",
+      side: "top",
+      domain: [0, 0.65],
+      gridcolor: "transparent",
+      tickfont: { color: "#5d6d69" },
+      titlefont: { color: "#334743" },
+    },
+    margin:     { l: 112, r: 24, t: 40, b: 48 },
+    legend:     { x: 0.68, y: 0.98, bgcolor: "transparent" },
+    showlegend: true,
+  }), PLOTLY_CFG);
+}
