@@ -1,7 +1,11 @@
 import ReactECharts from 'echarts-for-react'
-import { PENETRATION_FREQUENCY, SPEARMAN } from '../data/penetration'
+import { useData } from '../providers/DataProvider'
 
 export default function ScatterPenetration() {
+  const data = useData()
+  const PENETRATION_FREQUENCY = data.penetration.PENETRATION_FREQUENCY
+  const SPEARMAN = data.penetration.SPEARMAN
+
   const option = {
     backgroundColor: 'transparent',
     tooltip: {

@@ -1,9 +1,12 @@
 import ReactECharts from 'echarts-for-react'
-import { PRODUCT_RANKING } from '../data/businessOverview'
-import { PRODUCT_TYPE_COLORS } from '../data/kpis'
+import { useData } from '../providers/DataProvider'
 import { fmtUSD } from '../utils/formatters'
 
 export default function ProductBubble() {
+  const data = useData()
+  const PRODUCT_RANKING = data.business_overview.PRODUCT_RANKING
+  const PRODUCT_TYPE_COLORS = data.kpis.PRODUCT_TYPE_COLORS
+
   // Build series per product type
   const types = [...new Set(PRODUCT_RANKING.map((p) => p.tipo))]
   const series = types.map((tipo) => {
@@ -12,7 +15,7 @@ export default function ProductBubble() {
       name: tipo,
       type: 'scatter',
       data: prods.map((p) => [p.tasa * 100, p.volumen, p.n_txn, p.nombre]),
-      symbolSize: (val) => Math.max(10, Math.sqrt(val[2]) * 8),
+      symbolSize: (val) => Math.max(8, Math.sqrt(val[2]) * 3),
       itemStyle: { color: PRODUCT_TYPE_COLORS[tipo] || '#94a3b8', opacity: 0.85 },
       label: {
         show: true,

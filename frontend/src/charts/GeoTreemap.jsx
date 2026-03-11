@@ -1,8 +1,10 @@
 import ReactECharts from 'echarts-for-react'
-import { GEO } from '../data/businessOverview'
+import { useData } from '../providers/DataProvider'
 import { fmtUSD } from '../utils/formatters'
 
 export default function GeoTreemap() {
+  const data = useData()
+  const GEO = data.business_overview.GEO
   const total = GEO.reduce((a, c) => a + c.volumen, 0)
 
   const option = {

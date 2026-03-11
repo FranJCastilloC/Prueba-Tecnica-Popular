@@ -1,8 +1,10 @@
 import ReactECharts from 'echarts-for-react'
-import { SEGMENT_PRODUCT_HEATMAP } from '../data/scenarios'
+import { useData } from '../providers/DataProvider'
 import { fmtUSD } from '../utils/formatters'
 
 export default function SegmentProductHeatmap() {
+  const apiData = useData()
+  const SEGMENT_PRODUCT_HEATMAP = apiData.scenarios.SEGMENT_PRODUCT_HEATMAP
   const { tipos, segmentos, valores } = SEGMENT_PRODUCT_HEATMAP
 
   // Flatten to [segIdx, tipoIdx, value]

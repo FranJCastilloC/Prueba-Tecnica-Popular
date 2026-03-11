@@ -6,10 +6,13 @@ import ParetoChart from '../charts/ParetoChart'
 import TopClientsBar from '../charts/TopClientsBar'
 import TrendChart from '../charts/TrendChart'
 import GeoTreemap from '../charts/GeoTreemap'
-import { HIGHLIGHTS } from '../data/kpis'
+import { useData } from '../providers/DataProvider'
 import { fmtUSD } from '../utils/formatters'
 
 export default function S04_CommercialExploration({ onNext, onPrev }) {
+  const data = useData()
+  const HIGHLIGHTS = data.kpis.HIGHLIGHTS
+
   return (
     <motion.section className="flex flex-col gap-8">
       <ChapterHeader
@@ -17,15 +20,15 @@ export default function S04_CommercialExploration({ onNext, onPrev }) {
         title="Exploración Comercial"
         description="Identificamos la concentración del valor, los clientes que mueven el negocio y los patrones geográficos y temporales más relevantes."
         storyLabel="Clave del capítulo"
-        storyText="El 29% de los clientes genera el 80% del volumen"
-        storyDetail="Argentina lidera por volumen USD ($451,939 · 23 clientes). La concentración es moderada — no extrema."
+        storyText={`El ${HIGHLIGHTS.pareto80_clients} de los clientes genera el 80% del volumen`}
+        storyDetail={`Argentina lidera por volumen USD (${fmtUSD(HIGHLIGHTS.top_country_volume)} · clientes top). La concentración es moderada — no extrema.`}
       />
 
       {/* Insight strip */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-        <InsightCard label="País líder"      value="Argentina"    text={`${fmtUSD(451939)} · 23 clientes · 134 txn`} tone="neutral" />
-        <InsightCard label="Pareto 80%"      value="~29 clientes" text="Concentran el 80% del volumen total"          tone="warning" />
-        <InsightCard label="Mejor trimestre" value="Q3 2023"      text={`${fmtUSD(303779)} — pico de volumen`}        tone="positive" />
+        <InsightCard label="País líder"      value={HIGHLIGHTS.top_country}    text={`${fmtUSD(HIGHLIGHTS.top_country_volume)} · clientes top`} tone="neutral" />
+        <InsightCard label="Pareto 80%"      value={`~${HIGHLIGHTS.pareto80_clients} clientes`} text="Concentran el 80% del volumen total" tone="warning" />
+        <InsightCard label="Mejor trimestre" value={HIGHLIGHTS.best_quarter}   text="Pico de volumen trimestral" tone="positive" />
       </div>
 
       {/* Charts row 1 */}
@@ -68,8 +71,8 @@ export default function S04_CommercialExploration({ onNext, onPrev }) {
       <div className="glass-card-accent p-5">
         <p className="text-xs font-semibold uppercase tracking-widest text-cyan-400 mb-2">Interpretación</p>
         <p className="text-slate-300 text-sm leading-relaxed">
-          La base tiene una concentración moderada — no extrema. Los 29 clientes Pareto son prioritarios
-          pero los restantes 71 también generan volumen significativo. Esta estructura sugiere que una
+          La base tiene una concentración moderada — no extrema. Los {HIGHLIGHTS.pareto80_clients} clientes Pareto son prioritarios
+          pero los restantes también generan volumen significativo. Esta estructura sugiere que una
           estrategia de cross-sell sobre los clientes medios puede tener impacto sustancial sin depender
           exclusivamente del top tier.
         </p>

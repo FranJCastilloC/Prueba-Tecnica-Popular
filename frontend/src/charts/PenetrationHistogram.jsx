@@ -1,7 +1,9 @@
 import ReactECharts from 'echarts-for-react'
-import { PENETRATION_HISTOGRAM } from '../data/penetration'
+import { useData } from '../providers/DataProvider'
 
 export default function PenetrationHistogram() {
+  const data = useData()
+  const PENETRATION_HISTOGRAM = data.penetration.PENETRATION_HISTOGRAM
   const COLORS = ['#fb7185','#fbbf24','#fbbf24','#34d399','#34d399','#22d3ee','#22d3ee','#a78bfa']
 
   const option = {
@@ -52,10 +54,10 @@ export default function PenetrationHistogram() {
           symbol: 'none',
           data: [
             {
-              name: 'Media 3.7',
-              xAxis: '4 prod.',
+              name: 'Media 2.76',
+              xAxis: '3 prod.',
               lineStyle: { color: '#22d3ee', type: 'dashed', width: 1.5 },
-              label: { formatter: 'Media ≈ 3.7', color: '#22d3ee', fontSize: 10 },
+              label: { formatter: 'Media ≈ 2.76', color: '#22d3ee', fontSize: 10 },
             },
           ],
         },

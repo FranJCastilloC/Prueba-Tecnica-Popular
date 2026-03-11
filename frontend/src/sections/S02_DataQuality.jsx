@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion'
 import ChapterHeader from '../components/ChapterHeader'
 import DataQualityBadge from '../components/DataQualityBadge'
-import { DATA_QUALITY } from '../data/quality'
+import { useData } from '../providers/DataProvider'
 
 export default function S02_DataQuality({ onNext, onPrev }) {
-  const { datasets, summary } = DATA_QUALITY
+  const data = useData()
+  const { datasets, summary } = data.quality.DATA_QUALITY
 
   return (
     <motion.section className="flex flex-col gap-8">

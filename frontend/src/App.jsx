@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import Navigation from './components/Navigation'
+import { DataProvider, useData } from './providers/DataProvider'
 
 // Sections
 import S01_Landing              from './sections/S01_Landing'
@@ -29,8 +30,21 @@ const SECTION_VARIANTS = {
   exit:    { opacity: 0, y: -12, transition: { duration: 0.2 } },
 }
 
-export default function App() {
+function AppContent() {
+  const data = useData()
   const [currentChapter, setCurrentChapter] = useState(0)
+
+  if (!data) {
+    return (
+      <div className="flex items-center justify-center min-h-screen" style={{ background: 'var(--bg-primary)' }}>
+        <div className="text-center">
+          <div className="text-cyan-400 text-sm animate-pulse mb-2">Cargando análisis…</div>
+          <div className="text-slate-600 text-xs">Ejecutando modelo Python</div>
+        </div>
+      </div>
+    )
+  }
+
   const { component: ActiveSection } = CHAPTERS[currentChapter]
 
   const navigate = (index) => {
@@ -47,7 +61,6 @@ export default function App() {
         onNavigate={navigate}
       />
 
-      {/* Main content — offset for sidebar */}
       <main className="flex-1 ml-14 md:ml-56 min-h-screen overflow-x-hidden pb-16 md:pb-0">
         <AnimatePresence mode="wait">
           <motion.div
@@ -68,5 +81,13 @@ export default function App() {
         </AnimatePresence>
       </main>
     </div>
+  )
+}
+
+export default function App() {
+  return (
+    <DataProvider>
+      <AppContent />
+    </DataProvider>
   )
 }

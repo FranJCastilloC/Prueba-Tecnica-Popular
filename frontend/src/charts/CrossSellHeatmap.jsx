@@ -1,7 +1,9 @@
 import ReactECharts from 'echarts-for-react'
-import { ADOPTION_MATRIX } from '../data/crossSell'
+import { useData } from '../providers/DataProvider'
 
 export default function CrossSellHeatmap() {
+  const apiData = useData()
+  const ADOPTION_MATRIX = apiData.cross_sell.ADOPTION_MATRIX
   const { products, values } = ADOPTION_MATRIX
 
   // Build flat data array for ECharts heatmap: [x, y, value]

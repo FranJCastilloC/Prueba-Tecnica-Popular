@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import KPICard from '../components/KPICard'
-import { KPIs } from '../data/kpis'
+import { useData } from '../providers/DataProvider'
 import { fmtUSD, fmtNum } from '../utils/formatters'
 
 const DATASETS = [
@@ -11,15 +11,18 @@ const DATASETS = [
   { label: '17',  desc: 'meses',         icon: '📅' },
 ]
 
-const KPI_CARDS = [
-  { value: fmtUSD(KPIs.volumen_total),    label: 'Volumen Total',       note: 'Convertido a USD',                         tone: 'cyan',    delay: 0.05 },
-  { value: fmtNum(KPIs.n_transacciones),  label: 'Transacciones',       note: '2023 – 2024',                              tone: 'emerald', delay: 0.10 },
-  { value: fmtNum(KPIs.n_clientes),       label: 'Clientes Activos',    note: 'Chile · Argentina · México · Colombia',    tone: 'amber',   delay: 0.15 },
-  { value: fmtNum(KPIs.n_productos),      label: 'Productos',           note: '4 tipos de producto',                      tone: 'violet',  delay: 0.20 },
-  { value: fmtUSD(KPIs.ticket_promedio, true), label: 'Ticket Promedio','note': 'Por transacción en USD',                 tone: 'rose',    delay: 0.25 },
-]
-
 export default function S01_Landing({ onNext }) {
+  const data = useData()
+  const KPIs = data.kpis.KPIs
+
+  const KPI_CARDS = [
+    { value: fmtUSD(KPIs.volumen_total),    label: 'Volumen Total',       note: 'Convertido a USD',                         tone: 'cyan',    delay: 0.05 },
+    { value: fmtNum(KPIs.n_transacciones),  label: 'Transacciones',       note: '2023 – 2024',                              tone: 'emerald', delay: 0.10 },
+    { value: fmtNum(KPIs.n_clientes),       label: 'Clientes Activos',    note: 'Chile · Argentina · México · Colombia',    tone: 'amber',   delay: 0.15 },
+    { value: fmtNum(KPIs.n_produs),         label: 'Productos',           note: '4 tipos de producto',                      tone: 'violet',  delay: 0.20 },
+    { value: fmtUSD(KPIs.ticket_promedio, true), label: 'Ticket Promedio', note: 'Por transacción en USD',                  tone: 'rose',    delay: 0.25 },
+  ]
+
   return (
     <motion.section
       initial={{ opacity: 0 }}

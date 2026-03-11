@@ -1,8 +1,11 @@
 import ReactECharts from 'echarts-for-react'
-import { KPIs } from '../data/kpis'
+import { useData } from '../providers/DataProvider'
 import { fmtUSD } from '../utils/formatters'
 
 export default function ProjectionWaterfall({ scenario }) {
+  const data = useData()
+  const KPIs = data.kpis.KPIs
+
   if (!scenario) return null
 
   const base   = KPIs.volumen_total

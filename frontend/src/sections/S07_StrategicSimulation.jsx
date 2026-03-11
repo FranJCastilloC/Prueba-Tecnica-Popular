@@ -7,12 +7,15 @@ import ChartCard from '../components/ChartCard'
 import ScenarioBar from '../charts/ScenarioBar'
 import ProjectionWaterfall from '../charts/ProjectionWaterfall'
 import SegmentProductHeatmap from '../charts/SegmentProductHeatmap'
-import { SCENARIOS } from '../data/scenarios'
+import { useData } from '../providers/DataProvider'
 import { fmtUSD, fmtPct } from '../utils/formatters'
 
-const SCENARIO_LIST = Object.values(SCENARIOS)
-
 export default function S07_StrategicSimulation({ onNext, onPrev }) {
+  const data = useData()
+  const SCENARIOS = data.scenarios.SCENARIOS
+  const KPIs = data.kpis.KPIs
+  const SCENARIO_LIST = Object.values(SCENARIOS)
+
   const [activeKey, setActiveKey] = useState('base')
   const scenario = SCENARIOS[activeKey]
 
@@ -21,10 +24,10 @@ export default function S07_StrategicSimulation({ onNext, onPrev }) {
       <ChapterHeader
         eyebrow="Capítulo 06 — ¿Qué pasa si ejecutamos?"
         title="Simulación Estratégica de Cross-sell"
-        description="Convertimos el análisis en una herramienta de decisión. Tres escenarios modelan el impacto de una campaña de cross-sell sobre los 35 clientes elegibles."
+        description="Convertimos el análisis en una herramienta de decisión. Tres escenarios modelan el impacto de una campaña de cross-sell sobre los clientes elegibles."
         storyLabel="Escenario Base"
-        storyText="+$44,688 en volumen incremental · +12.42% uplift"
-        storyDetail="9.7 adopciones esperadas sobre 35 clientes elegibles. Sin adquirir nuevos clientes."
+        storyText={`+${fmtUSD(SCENARIOS.base?.incremental ?? 0)} en volumen incremental · +${SCENARIOS.base?.uplift_pct ?? 0}% uplift`}
+        storyDetail={`${SCENARIOS.base?.adoptions ?? 0} adopciones esperadas sobre ${data.cross_sell.CROSSSELL_SUMMARY.eligible_clients} clientes elegibles. Sin adquirir nuevos clientes.`}
       />
 
       {/* Scenario selector */}
@@ -53,13 +56,13 @@ export default function S07_StrategicSimulation({ onNext, onPrev }) {
           <KPICard
             value={`${scenario.adoptions}`}
             label="Adopciones esperadas"
-            note={`De ${35} clientes elegibles`}
+            note={`De ${data.cross_sell.CROSSSELL_SUMMARY.eligible_clients} clientes elegibles`}
             tone={scenario.colorClass}
           />
           <KPICard
             value={fmtUSD(scenario.incremental)}
             label="Vol. Incremental"
-            note="Sobre la base actual de $2.54M"
+            note={`Sobre la base actual de ${fmtUSD(KPIs.volumen_total)}`}
             tone={scenario.colorClass}
           />
           <KPICard

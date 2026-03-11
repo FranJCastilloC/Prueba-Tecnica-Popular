@@ -1,14 +1,14 @@
 import ReactECharts from 'echarts-for-react'
-import { PARETO } from '../data/businessOverview'
+import { useData } from '../providers/DataProvider'
 import { fmtUSD } from '../utils/formatters'
 
 export default function ParetoChart() {
-  // Find where 80% is crossed
+  const data = useData()
+  const PARETO = data.business_overview.PARETO
+
+  const n = PARETO.id_cliente.length
+  const clientNumbers = PARETO.id_cliente.map((_, i) => i + 1)
   const idx80 = PARETO.pct_acum.findIndex((p) => p >= 80)
-  const labels = PARETO.id_cliente.map((id, i) => `C${id}`)
-  const top30Labels = labels.slice(0, 30)
-  const top30Vol    = PARETO.volumen.slice(0, 30)
-  const top30Pct    = PARETO.pct_acum.slice(0, 30)
 
   const option = {
     backgroundColor: 'transparent',
@@ -19,55 +19,65 @@ export default function ParetoChart() {
       textStyle: { color: '#f1f5f9', fontSize: 12 },
       formatter: (params) => {
         const i = params[0].dataIndex
-        return `<b>Cliente ${PARETO.id_cliente[i]}</b><br/>Volumen: ${fmtUSD(PARETO.volumen[i])}<br/>% Acumulado: ${PARETO.pct_acum[i].toFixed(1)}%`
+        return `<b>Cliente #${i + 1}</b> (ID ${PARETO.id_cliente[i]})<br/>Volumen: ${fmtUSD(PARETO.volumen[i])}<br/>% Acumulado: ${PARETO.pct_acum[i].toFixed(1)}%`
       },
     },
-    grid: { left: 12, right: 12, bottom: 40, top: 16, containLabel: true },
+    grid: { left: 16, right: 16, bottom: 36, top: 16, containLabel: true },
     xAxis: {
-      type: 'category',
-      data: top30Labels,
-      axisLabel: { color: '#64748b', fontSize: 9, rotate: 45 },
+      type: 'value',
+      name: 'Clientes (ordenados por volumen)',
+      nameLocation: 'middle',
+      nameGap: 24,
+      nameTextStyle: { color: '#64748b', fontSize: 11 },
+      min: 0,
+      max: n,
+      axisLabel: {
+        color: '#64748b',
+        fontSize: 10,
+        formatter: (v) => `${Math.round(v)}`,
+      },
       axisLine: { lineStyle: { color: '#334155' } },
+      splitLine: { lineStyle: { color: '#1e293b' } },
     },
-    yAxis: [
-      {
-        type: 'value',
-        axisLabel: { color: '#64748b', fontSize: 10, formatter: (v) => `$${(v/1000).toFixed(0)}K` },
-        splitLine: { lineStyle: { color: '#1e293b' } },
-      },
-      {
-        type: 'value',
-        min: 0, max: 100,
-        axisLabel: { color: '#64748b', fontSize: 10, formatter: (v) => `${v}%` },
-        splitLine: { show: false },
-      },
-    ],
+    yAxis: {
+      type: 'value',
+      name: '% acumulado del volumen',
+      nameLocation: 'middle',
+      nameGap: 40,
+      nameTextStyle: { color: '#64748b', fontSize: 11 },
+      min: 0,
+      max: 100,
+      interval: 20,
+      axisLabel: { color: '#64748b', fontSize: 10, formatter: '{value}%' },
+      splitLine: { lineStyle: { color: '#1e293b' } },
+    },
     series: [
       {
-        type: 'bar',
-        data: top30Vol,
-        yAxisIndex: 0,
-        barMaxWidth: 30,
-        itemStyle: {
-          color: (p) => p.dataIndex < idx80 ? '#22d3ee' : '#334155',
-          borderRadius: [3, 3, 0, 0],
-        },
-      },
-      {
         type: 'line',
-        data: top30Pct,
-        yAxisIndex: 1,
-        smooth: true,
+        data: clientNumbers.map((x, i) => [x, PARETO.pct_acum[i]]),
+        smooth: 0.4,
         symbol: 'none',
-        lineStyle: { color: '#fbbf24', width: 2 },
+        lineStyle: { color: '#ef8e80', width: 2.5 },
+        areaStyle: {
+          color: {
+            type: 'linear',
+            x: 0, y: 0, x2: 0, y2: 1,
+            colorStops: [
+              { offset: 0, color: 'rgba(239,142,128,0.35)' },
+              { offset: 1, color: 'rgba(239,142,128,0.08)' },
+            ],
+          },
+        },
         markLine: {
+          silent: true,
           symbol: 'none',
           data: [{ yAxis: 80 }],
-          lineStyle: { color: '#fb7185', type: 'dashed', width: 1 },
+          lineStyle: { color: '#fb7185', type: 'dashed', width: 1.5 },
           label: {
             formatter: '80%',
             color: '#fb7185',
-            fontSize: 10,
+            fontSize: 11,
+            position: 'insideEndTop',
           },
         },
       },

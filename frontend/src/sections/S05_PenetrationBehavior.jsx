@@ -5,9 +5,12 @@ import ChartCard from '../components/ChartCard'
 import ScatterPenetration from '../charts/ScatterPenetration'
 import PenetrationHistogram from '../charts/PenetrationHistogram'
 import TicketImpactBar from '../charts/TicketImpactBar'
-import { SPEARMAN } from '../data/penetration'
+import { useData } from '../providers/DataProvider'
 
 export default function S05_PenetrationBehavior({ onNext, onPrev }) {
+  const data = useData()
+  const SPEARMAN = data.penetration.SPEARMAN
+
   return (
     <motion.section className="flex flex-col gap-8">
       <ChapterHeader

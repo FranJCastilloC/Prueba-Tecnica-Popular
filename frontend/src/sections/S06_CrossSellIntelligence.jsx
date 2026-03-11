@@ -5,10 +5,13 @@ import ChartCard from '../components/ChartCard'
 import CrossSellHeatmap from '../charts/CrossSellHeatmap'
 import TopEligibleTable from '../charts/TopEligibleTable'
 import TicketImpactBar from '../charts/TicketImpactBar'
-import { CROSSSELL_SUMMARY } from '../data/crossSell'
+import { useData } from '../providers/DataProvider'
 import { fmtUSD, fmtPct } from '../utils/formatters'
 
 export default function S06_CrossSellIntelligence({ onNext, onPrev }) {
+  const data = useData()
+  const CROSSSELL_SUMMARY = data.cross_sell.CROSSSELL_SUMMARY
+
   return (
     <motion.section className="flex flex-col gap-8">
       <ChapterHeader
@@ -24,7 +27,7 @@ export default function S06_CrossSellIntelligence({ onNext, onPrev }) {
       <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
         <InsightCard label="Clientes elegibles"       value={`${CROSSSELL_SUMMARY.eligible_clients}`}       text="Con ≤2 productos actuales"                         tone="neutral" />
         <InsightCard label="Mayor prob. condicional"  value="P(Tarjeta|Préstamo) = 86.7%"                   text="Señal más fuerte de la matriz de adopción"         tone="positive" />
-        <InsightCard label="Ingreso potencial (Base)" value={fmtUSD(CROSSSELL_SUMMARY.ingreso_potencial_base)} text="Escenario base · 35 elegibles"                tone="positive" />
+        <InsightCard label="Ingreso potencial (Base)" value={fmtUSD(CROSSSELL_SUMMARY.ingreso_potencial_base)} text="Escenario base · elegibles"                    tone="positive" />
       </div>
 
       {/* Adoption matrix heatmap - full width */}

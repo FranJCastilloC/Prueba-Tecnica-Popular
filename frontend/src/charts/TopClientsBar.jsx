@@ -1,10 +1,13 @@
 import ReactECharts from 'echarts-for-react'
-import { TOP_CLIENTS } from '../data/businessOverview'
+import { useData } from '../providers/DataProvider'
 import { fmtUSD } from '../utils/formatters'
 
 const SEG_COLORS = { PYME: '#34d399', Corporativo: '#fbbf24', Retail: '#22d3ee' }
 
 export default function TopClientsBar() {
+  const data = useData()
+  const TOP_CLIENTS = data.business_overview.TOP_CLIENTS
+
   const sorted  = [...TOP_CLIENTS].sort((a, b) => a.volumen - b.volumen)
   const labels  = sorted.map((c) => `Cliente ${c.id}`)
   const values  = sorted.map((c) => c.volumen)

@@ -1,7 +1,9 @@
 import ReactECharts from 'echarts-for-react'
-import { TICKET_IMPACT } from '../data/penetration'
+import { useData } from '../providers/DataProvider'
 
 export default function TicketImpactBar() {
+  const data = useData()
+  const TICKET_IMPACT = data.penetration.TICKET_IMPACT
   const sorted = [...TICKET_IMPACT].sort((a, b) => b.uplift - a.uplift)
 
   const option = {

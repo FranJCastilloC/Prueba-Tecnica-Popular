@@ -1,8 +1,11 @@
 import ReactECharts from 'echarts-for-react'
-import { SEGMENTS } from '../data/kpis'
+import { useData } from '../providers/DataProvider'
 import { fmtUSD } from '../utils/formatters'
 
 export default function SegmentDonut() {
+  const data = useData()
+  const SEGMENTS = data.kpis.SEGMENTS
+
   const option = {
     backgroundColor: 'transparent',
     tooltip: {

@@ -1,8 +1,10 @@
 import ReactECharts from 'echarts-for-react'
-import { SCENARIOS } from '../data/scenarios'
+import { useData } from '../providers/DataProvider'
 import { fmtUSD } from '../utils/formatters'
 
 export default function ScenarioBar() {
+  const data = useData()
+  const SCENARIOS = data.scenarios.SCENARIOS
   const scenarioList = Object.values(SCENARIOS)
 
   const option = {

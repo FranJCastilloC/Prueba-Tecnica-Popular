@@ -1,4 +1,4 @@
-import { ELIGIBLE_CLIENTS, CROSSSELL_SUMMARY } from '../data/crossSell'
+import { useData } from '../providers/DataProvider'
 import { fmtUSD } from '../utils/formatters'
 
 const SEG_CLASSES = {
@@ -8,6 +8,10 @@ const SEG_CLASSES = {
 }
 
 export default function TopEligibleTable() {
+  const data = useData()
+  const ELIGIBLE_CLIENTS = data.cross_sell.ELIGIBLE_CLIENTS
+  const CROSSSELL_SUMMARY = data.cross_sell.CROSSSELL_SUMMARY
+
   return (
     <div className="flex flex-col gap-3">
       {/* Table */}
