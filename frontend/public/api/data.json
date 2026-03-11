@@ -1,0 +1,1593 @@
+{
+  "kpis": {
+    "KPIs": {
+      "volumen_total": 1592897.57,
+      "n_transacciones": 500,
+      "n_clientes": 100,
+      "n_produs": 10,
+      "ticket_promedio": 3185.8
+    },
+    "SEGMENTS": [
+      {
+        "segmento": "PYME",
+        "volumen": 602391.98,
+        "n_clientes": 35,
+        "pct": 37.82,
+        "color": "#22d3ee"
+      },
+      {
+        "segmento": "Corporativo",
+        "volumen": 539475.52,
+        "n_clientes": 33,
+        "pct": 33.87,
+        "color": "#34d399"
+      },
+      {
+        "segmento": "Retail",
+        "volumen": 451030.07,
+        "n_clientes": 32,
+        "pct": 28.32,
+        "color": "#f472b6"
+      }
+    ],
+    "COUNTRIES": [
+      {
+        "pais": "Argentina",
+        "volumen": 451938.9,
+        "n_clientes": 23,
+        "ticket": 3372.68,
+        "n_txn": 134,
+        "color": "#34d399"
+      },
+      {
+        "pais": "México",
+        "volumen": 435598.42,
+        "n_clientes": 30,
+        "ticket": 2983.55,
+        "n_txn": 146,
+        "color": "#22d3ee"
+      },
+      {
+        "pais": "Chile",
+        "volumen": 386897.69,
+        "n_clientes": 23,
+        "ticket": 3423.87,
+        "n_txn": 113,
+        "color": "#fbbf24"
+      },
+      {
+        "pais": "Colombia",
+        "volumen": 318462.55,
+        "n_clientes": 24,
+        "ticket": 2976.29,
+        "n_txn": 107,
+        "color": "#f472b6"
+      }
+    ],
+    "PRODUCT_TYPE_COLORS": {
+      "Tarjeta de Crédito": "#22d3ee",
+      "Cuenta Corriente": "#fbbf24",
+      "Cuenta de Ahorros": "#34d399",
+      "Préstamo": "#f472b6"
+    },
+    "PRODUCTS": [
+      {
+        "id": 7,
+        "nombre": "Producto_7",
+        "tipo": "Cuenta Corriente",
+        "tasa": 0.16,
+        "moneda": "EUR",
+        "volumen": 296594.01,
+        "n_txn": 52,
+        "pct": 18.62
+      },
+      {
+        "id": 10,
+        "nombre": "Producto_10",
+        "tipo": "Tarjeta de Crédito",
+        "tasa": 0.05,
+        "moneda": "USD",
+        "volumen": 287983.46,
+        "n_txn": 59,
+        "pct": 18.08
+      },
+      {
+        "id": 1,
+        "nombre": "Producto_1",
+        "tipo": "Tarjeta de Crédito",
+        "tasa": 0.14,
+        "moneda": "EUR",
+        "volumen": 282358.38,
+        "n_txn": 48,
+        "pct": 17.73
+      },
+      {
+        "id": 3,
+        "nombre": "Producto_3",
+        "tipo": "Cuenta de Ahorros",
+        "tasa": 0.23,
+        "moneda": "USD",
+        "volumen": 260350.82,
+        "n_txn": 51,
+        "pct": 16.34
+      },
+      {
+        "id": 4,
+        "nombre": "Producto_4",
+        "tipo": "Cuenta Corriente",
+        "tasa": 0.24,
+        "moneda": "USD",
+        "volumen": 241423.32,
+        "n_txn": 53,
+        "pct": 15.16
+      },
+      {
+        "id": 5,
+        "nombre": "Producto_5",
+        "tipo": "Tarjeta de Crédito",
+        "tasa": 0.04,
+        "moneda": "USD",
+        "volumen": 223915.96,
+        "n_txn": 41,
+        "pct": 14.06
+      },
+      {
+        "id": 6,
+        "nombre": "Producto_6",
+        "tipo": "Préstamo",
+        "tasa": 0.05,
+        "moneda": "COP",
+        "volumen": 79.52,
+        "n_txn": 57,
+        "pct": 0.0
+      },
+      {
+        "id": 9,
+        "nombre": "Producto_9",
+        "tipo": "Cuenta de Ahorros",
+        "tasa": 0.14,
+        "moneda": "COP",
+        "volumen": 72.9,
+        "n_txn": 57,
+        "pct": 0.0
+      },
+      {
+        "id": 2,
+        "nombre": "Producto_2",
+        "tipo": "Cuenta de Ahorros",
+        "tasa": 0.15,
+        "moneda": "COP",
+        "volumen": 64.96,
+        "n_txn": 45,
+        "pct": 0.0
+      },
+      {
+        "id": 8,
+        "nombre": "Producto_8",
+        "tipo": "Tarjeta de Crédito",
+        "tasa": 0.2,
+        "moneda": "COP",
+        "volumen": 54.23,
+        "n_txn": 37,
+        "pct": 0.0
+      }
+    ],
+    "REGRESSION": {
+      "r2": 0.5353,
+      "r2_adj": 0.5305,
+      "n_obs": 100,
+      "coef_txn": 3598.01,
+      "coef_ticket": -412.22,
+      "volumen_actual": 1592898.0,
+      "volumen_proyectado": 1952699.0,
+      "pct_crecimiento": 22.59
+    },
+    "HIGHLIGHTS": {
+      "pareto80_clients": 54,
+      "top_country": "Argentina",
+      "top_country_volume": 451938.9,
+      "top_country_share": 28.37,
+      "top_segment": "PYME",
+      "top_segment_share": 37.82,
+      "top_produto_type": "Tarjeta de Crédito",
+      "top_produto_type_pct": 49.87,
+      "avg_produs_per_client": 3.93,
+      "best_quarter": "2023Q1"
+    }
+  },
+  "business_overview": {
+    "PARETO": {
+      "id_cliente": [
+        1054,
+        1075,
+        1074,
+        1029,
+        1084,
+        1052,
+        1025,
+        1085,
+        1072,
+        1070,
+        1057,
+        1056,
+        1095,
+        1065,
+        1022,
+        1091,
+        1083,
+        1039,
+        1097,
+        1079,
+        1011,
+        1060,
+        1094,
+        1055,
+        1080,
+        1059,
+        1012,
+        1030,
+        1100,
+        1049,
+        1063,
+        1098,
+        1044,
+        1076,
+        1099,
+        1078,
+        1038,
+        1089,
+        1021,
+        1066,
+        1003,
+        1061,
+        1073,
+        1068,
+        1050,
+        1051,
+        1013,
+        1086,
+        1046,
+        1010,
+        1005,
+        1096,
+        1037,
+        1082,
+        1031,
+        1088,
+        1093,
+        1016,
+        1036,
+        1092,
+        1077,
+        1009,
+        1064,
+        1041,
+        1034,
+        1067,
+        1004,
+        1058,
+        1018,
+        1020,
+        1090,
+        1081,
+        1087,
+        1026,
+        1047,
+        1045,
+        1043,
+        1032,
+        1019,
+        1014,
+        1053,
+        1007,
+        1069,
+        1033,
+        1023,
+        1015,
+        1002,
+        1042,
+        1006,
+        1048,
+        1008,
+        1040,
+        1017,
+        1062,
+        1071,
+        1024,
+        1001,
+        1027,
+        1035,
+        1028
+      ],
+      "volumen": [
+        56524.56,
+        46880.2,
+        41876.2,
+        40131.04,
+        39946.21,
+        37651.15,
+        37311.76,
+        35344.8,
+        34881.73,
+        33438.04,
+        32612.03,
+        29781.7,
+        28896.53,
+        27933.16,
+        27837.65,
+        27194.5,
+        26225.79,
+        26099.31,
+        25975.9,
+        25664.15,
+        23698.72,
+        23202.12,
+        22260.42,
+        22163.84,
+        21821.06,
+        21655.24,
+        21096.44,
+        20571.56,
+        20404.15,
+        20260.76,
+        19875.92,
+        19597.4,
+        19290.73,
+        19268.1,
+        18903.66,
+        18210.94,
+        17196.78,
+        16184.36,
+        15945.94,
+        15844.47,
+        15827.87,
+        15778.78,
+        15451.63,
+        15291.17,
+        15107.1,
+        15022.05,
+        14752.79,
+        14581.13,
+        14434.07,
+        14103.02,
+        13982.64,
+        13933.13,
+        13518.97,
+        13234.0,
+        13035.17,
+        12789.39,
+        11862.98,
+        11840.62,
+        11640.98,
+        11393.35,
+        11126.48,
+        11073.12,
+        10841.06,
+        10752.22,
+        10378.98,
+        9647.25,
+        9494.89,
+        9453.28,
+        9429.07,
+        9055.76,
+        8932.35,
+        8486.18,
+        8078.05,
+        7683.35,
+        7257.01,
+        7164.97,
+        7006.62,
+        6874.77,
+        6477.27,
+        6291.61,
+        6212.37,
+        5897.88,
+        5890.04,
+        5664.45,
+        5307.98,
+        4832.95,
+        4634.84,
+        4114.15,
+        3861.17,
+        3766.92,
+        2775.26,
+        2103.75,
+        2057.62,
+        1219.45,
+        830.56,
+        646.51,
+        230.67,
+        103.52,
+        2.55,
+        0.78
+      ],
+      "pct_acum": [
+        3.55,
+        6.49,
+        9.12,
+        11.64,
+        14.15,
+        16.51,
+        18.85,
+        21.07,
+        23.26,
+        25.36,
+        27.41,
+        29.28,
+        31.09,
+        32.85,
+        34.59,
+        36.3,
+        37.95,
+        39.59,
+        41.22,
+        42.83,
+        44.32,
+        45.77,
+        47.17,
+        48.56,
+        49.93,
+        51.29,
+        52.62,
+        53.91,
+        55.19,
+        56.46,
+        57.71,
+        58.94,
+        60.15,
+        61.36,
+        62.54,
+        63.69,
+        64.77,
+        65.78,
+        66.78,
+        67.78,
+        68.77,
+        69.76,
+        70.73,
+        71.69,
+        72.64,
+        73.59,
+        74.51,
+        75.43,
+        76.33,
+        77.22,
+        78.1,
+        78.97,
+        79.82,
+        80.65,
+        81.47,
+        82.27,
+        83.02,
+        83.76,
+        84.49,
+        85.21,
+        85.9,
+        86.6,
+        87.28,
+        87.95,
+        88.61,
+        89.21,
+        89.81,
+        90.4,
+        90.99,
+        91.56,
+        92.12,
+        92.66,
+        93.16,
+        93.65,
+        94.1,
+        94.55,
+        94.99,
+        95.42,
+        95.83,
+        96.22,
+        96.61,
+        96.98,
+        97.35,
+        97.71,
+        98.04,
+        98.35,
+        98.64,
+        98.9,
+        99.14,
+        99.37,
+        99.55,
+        99.68,
+        99.81,
+        99.89,
+        99.94,
+        99.98,
+        99.99,
+        100.0,
+        100.0,
+        100.0
+      ]
+    },
+    "QUARTERLY": [
+      {
+        "quarter": "2023Q1",
+        "volumen": 325198.07,
+        "n_txn": 90
+      },
+      {
+        "quarter": "2023Q2",
+        "volumen": 302543.23,
+        "n_txn": 91
+      },
+      {
+        "quarter": "2023Q3",
+        "volumen": 282583.85,
+        "n_txn": 92
+      },
+      {
+        "quarter": "2023Q4",
+        "volumen": 294754.47,
+        "n_txn": 92
+      },
+      {
+        "quarter": "2024Q1",
+        "volumen": 252389.23,
+        "n_txn": 91
+      },
+      {
+        "quarter": "2024Q2",
+        "volumen": 135428.72,
+        "n_txn": 44
+      }
+    ],
+    "GEO": [
+      {
+        "pais": "Argentina",
+        "volumen": 451938.9,
+        "n_clientes": 23,
+        "ticket": 3372.68,
+        "n_txn": 134,
+        "color": "#34d399"
+      },
+      {
+        "pais": "México",
+        "volumen": 435598.42,
+        "n_clientes": 30,
+        "ticket": 2983.55,
+        "n_txn": 146,
+        "color": "#22d3ee"
+      },
+      {
+        "pais": "Chile",
+        "volumen": 386897.69,
+        "n_clientes": 23,
+        "ticket": 3423.87,
+        "n_txn": 113,
+        "color": "#fbbf24"
+      },
+      {
+        "pais": "Colombia",
+        "volumen": 318462.55,
+        "n_clientes": 24,
+        "ticket": 2976.29,
+        "n_txn": 107,
+        "color": "#f472b6"
+      }
+    ],
+    "TOP_CLIENTS": [
+      {
+        "id": 1054,
+        "volumen": 56524.56,
+        "pais": "Argentina",
+        "segmento": "PYME"
+      },
+      {
+        "id": 1075,
+        "volumen": 46880.2,
+        "pais": "Argentina",
+        "segmento": "Retail"
+      },
+      {
+        "id": 1074,
+        "volumen": 41876.2,
+        "pais": "Chile",
+        "segmento": "Retail"
+      },
+      {
+        "id": 1029,
+        "volumen": 40131.04,
+        "pais": "Chile",
+        "segmento": "PYME"
+      },
+      {
+        "id": 1084,
+        "volumen": 39946.21,
+        "pais": "Colombia",
+        "segmento": "Retail"
+      },
+      {
+        "id": 1052,
+        "volumen": 37651.15,
+        "pais": "Argentina",
+        "segmento": "PYME"
+      },
+      {
+        "id": 1025,
+        "volumen": 37311.76,
+        "pais": "Chile",
+        "segmento": "Corporativo"
+      },
+      {
+        "id": 1085,
+        "volumen": 35344.8,
+        "pais": "México",
+        "segmento": "PYME"
+      },
+      {
+        "id": 1072,
+        "volumen": 34881.73,
+        "pais": "Chile",
+        "segmento": "PYME"
+      },
+      {
+        "id": 1070,
+        "volumen": 33438.04,
+        "pais": "Argentina",
+        "segmento": "Corporativo"
+      },
+      {
+        "id": 1057,
+        "volumen": 32612.03,
+        "pais": "Chile",
+        "segmento": "Corporativo"
+      },
+      {
+        "id": 1056,
+        "volumen": 29781.7,
+        "pais": "Argentina",
+        "segmento": "Corporativo"
+      },
+      {
+        "id": 1095,
+        "volumen": 28896.53,
+        "pais": "México",
+        "segmento": "Corporativo"
+      },
+      {
+        "id": 1065,
+        "volumen": 27933.16,
+        "pais": "Argentina",
+        "segmento": "Retail"
+      },
+      {
+        "id": 1022,
+        "volumen": 27837.65,
+        "pais": "Colombia",
+        "segmento": "Retail"
+      }
+    ],
+    "PRODUCT_RANKING": [
+      {
+        "id": 7,
+        "nombre": "Producto_7",
+        "tipo": "Cuenta Corriente",
+        "tasa": 0.16,
+        "moneda": "EUR",
+        "volumen": 296594.01,
+        "n_txn": 52,
+        "pct": 18.62
+      },
+      {
+        "id": 10,
+        "nombre": "Producto_10",
+        "tipo": "Tarjeta de Crédito",
+        "tasa": 0.05,
+        "moneda": "USD",
+        "volumen": 287983.46,
+        "n_txn": 59,
+        "pct": 18.08
+      },
+      {
+        "id": 1,
+        "nombre": "Producto_1",
+        "tipo": "Tarjeta de Crédito",
+        "tasa": 0.14,
+        "moneda": "EUR",
+        "volumen": 282358.38,
+        "n_txn": 48,
+        "pct": 17.73
+      },
+      {
+        "id": 3,
+        "nombre": "Producto_3",
+        "tipo": "Cuenta de Ahorros",
+        "tasa": 0.23,
+        "moneda": "USD",
+        "volumen": 260350.82,
+        "n_txn": 51,
+        "pct": 16.34
+      },
+      {
+        "id": 4,
+        "nombre": "Producto_4",
+        "tipo": "Cuenta Corriente",
+        "tasa": 0.24,
+        "moneda": "USD",
+        "volumen": 241423.32,
+        "n_txn": 53,
+        "pct": 15.16
+      },
+      {
+        "id": 5,
+        "nombre": "Producto_5",
+        "tipo": "Tarjeta de Crédito",
+        "tasa": 0.04,
+        "moneda": "USD",
+        "volumen": 223915.96,
+        "n_txn": 41,
+        "pct": 14.06
+      },
+      {
+        "id": 6,
+        "nombre": "Producto_6",
+        "tipo": "Préstamo",
+        "tasa": 0.05,
+        "moneda": "COP",
+        "volumen": 79.52,
+        "n_txn": 57,
+        "pct": 0.0
+      },
+      {
+        "id": 9,
+        "nombre": "Producto_9",
+        "tipo": "Cuenta de Ahorros",
+        "tasa": 0.14,
+        "moneda": "COP",
+        "volumen": 72.9,
+        "n_txn": 57,
+        "pct": 0.0
+      },
+      {
+        "id": 2,
+        "nombre": "Producto_2",
+        "tipo": "Cuenta de Ahorros",
+        "tasa": 0.15,
+        "moneda": "COP",
+        "volumen": 64.96,
+        "n_txn": 45,
+        "pct": 0.0
+      },
+      {
+        "id": 8,
+        "nombre": "Producto_8",
+        "tipo": "Tarjeta de Crédito",
+        "tasa": 0.2,
+        "moneda": "COP",
+        "volumen": 54.23,
+        "n_txn": 37,
+        "pct": 0.0
+      }
+    ],
+    "STRATEGIC_SEGMENTS": [
+      {
+        "nombre": "DORMIDO CON POTENCIAL",
+        "n": 21,
+        "ticket_prom": 14397,
+        "color": "#fbbf24"
+      },
+      {
+        "nombre": "ACTIVO BAJO VALOR",
+        "n": 14,
+        "ticket_prom": 3820,
+        "color": "#f472b6"
+      },
+      {
+        "nombre": "ESTRELLA",
+        "n": 24,
+        "ticket_prom": 12450,
+        "color": "#34d399"
+      },
+      {
+        "nombre": "CRISIS",
+        "n": 27,
+        "ticket_prom": 2180,
+        "color": "#fb7185"
+      },
+      {
+        "nombre": "NORMAL",
+        "n": 14,
+        "ticket_prom": 5920,
+        "color": "#94a3b8"
+      }
+    ]
+  },
+  "penetration": {
+    "PENETRATION_HISTOGRAM": [
+      {
+        "n_productos": 1,
+        "n_clientes": 4,
+        "label": "1 producto"
+      },
+      {
+        "n_productos": 2,
+        "n_clientes": 14,
+        "label": "2 productos"
+      },
+      {
+        "n_productos": 3,
+        "n_clientes": 19,
+        "label": "3 productos"
+      },
+      {
+        "n_productos": 4,
+        "n_clientes": 30,
+        "label": "4 productos"
+      },
+      {
+        "n_productos": 5,
+        "n_clientes": 18,
+        "label": "5 productos"
+      },
+      {
+        "n_productos": 6,
+        "n_clientes": 12,
+        "label": "6 productos"
+      },
+      {
+        "n_productos": 7,
+        "n_clientes": 2,
+        "label": "7 productos"
+      },
+      {
+        "n_productos": 8,
+        "n_clientes": 1,
+        "label": "8 productos"
+      }
+    ],
+    "PENETRATION_FREQUENCY": [
+      {
+        "n_productos": 1,
+        "avg_txn": 1.0,
+        "n_clientes": 4
+      },
+      {
+        "n_productos": 2,
+        "avg_txn": 2.36,
+        "n_clientes": 14
+      },
+      {
+        "n_productos": 3,
+        "avg_txn": 3.84,
+        "n_clientes": 19
+      },
+      {
+        "n_productos": 4,
+        "avg_txn": 5.03,
+        "n_clientes": 30
+      },
+      {
+        "n_productos": 5,
+        "avg_txn": 6.17,
+        "n_clientes": 18
+      },
+      {
+        "n_productos": 6,
+        "avg_txn": 8.33,
+        "n_clientes": 12
+      },
+      {
+        "n_productos": 7,
+        "avg_txn": 8.0,
+        "n_clientes": 2
+      },
+      {
+        "n_productos": 8,
+        "avg_txn": 12.0,
+        "n_clientes": 1
+      }
+    ],
+    "SPEARMAN": {
+      "rho": 0.8802,
+      "p_value": 0.0,
+      "label": "Correlación fuerte y significativa",
+      "interpretation": "Clientes con más productos transaccionan significativamente más"
+    },
+    "TICKET_IMPACT": [
+      {
+        "tipo": "Tarjeta de Crédito",
+        "uplift": 1559,
+        "p_value": 0.0012,
+        "significant": true,
+        "media_tiene": 3348,
+        "media_no_tiene": 1788,
+        "n_tiene": 85,
+        "n_no_tiene": 15,
+        "interpretation": ""
+      },
+      {
+        "tipo": "Cuenta Corriente",
+        "uplift": 393,
+        "p_value": 0.0904,
+        "significant": false,
+        "media_tiene": 3243,
+        "media_no_tiene": 2851,
+        "n_tiene": 67,
+        "n_no_tiene": 33,
+        "interpretation": ""
+      },
+      {
+        "tipo": "Préstamo",
+        "uplift": -748,
+        "p_value": 0.0507,
+        "significant": false,
+        "media_tiene": 2702,
+        "media_no_tiene": 3450,
+        "n_tiene": 45,
+        "n_no_tiene": 55,
+        "interpretation": ""
+      },
+      {
+        "tipo": "Cuenta de Ahorros",
+        "uplift": -803,
+        "p_value": 0.0458,
+        "significant": true,
+        "media_tiene": 2945,
+        "media_no_tiene": 3748,
+        "n_tiene": 79,
+        "n_no_tiene": 21,
+        "interpretation": ""
+      }
+    ],
+    "SCATTER_PRODUCTS_VOL": {
+      "n_productos": [
+        3,
+        2,
+        3,
+        4,
+        5,
+        5,
+        1,
+        3,
+        4,
+        5,
+        6,
+        6,
+        4,
+        4,
+        3,
+        4,
+        4,
+        2,
+        2,
+        3,
+        6,
+        4,
+        2,
+        2,
+        5,
+        3,
+        3,
+        1,
+        6,
+        6,
+        5,
+        2,
+        2,
+        3,
+        1,
+        3,
+        3,
+        4,
+        5,
+        3,
+        2,
+        3,
+        3,
+        4,
+        3,
+        4,
+        4,
+        4,
+        5,
+        2,
+        4,
+        4,
+        2,
+        8,
+        4,
+        7,
+        5,
+        2,
+        3,
+        4,
+        4,
+        1,
+        5,
+        4,
+        6,
+        3,
+        5,
+        4,
+        2,
+        5,
+        4,
+        6,
+        4,
+        5,
+        6,
+        4,
+        4,
+        5,
+        6,
+        2,
+        4,
+        4,
+        3,
+        6,
+        6,
+        4,
+        4,
+        5,
+        3,
+        3,
+        4,
+        2,
+        4,
+        5,
+        5,
+        5,
+        7,
+        5,
+        6,
+        4
+      ],
+      "volumen": [
+        230.67,
+        4634.84,
+        15827.87,
+        9494.89,
+        13982.64,
+        3861.17,
+        5897.88,
+        2775.26,
+        11073.12,
+        14103.02,
+        23698.72,
+        21096.44,
+        14752.79,
+        6291.61,
+        4832.95,
+        11840.62,
+        2057.62,
+        9429.07,
+        6477.27,
+        9055.76,
+        15945.94,
+        27837.65,
+        5307.98,
+        646.51,
+        37311.76,
+        7683.35,
+        103.52,
+        0.78,
+        40131.04,
+        20571.56,
+        13035.17,
+        6874.77,
+        5664.45,
+        10378.98,
+        2.55,
+        11640.98,
+        13518.97,
+        17196.78,
+        26099.31,
+        2103.75,
+        10752.22,
+        4114.15,
+        7006.62,
+        19290.73,
+        7164.97,
+        14434.07,
+        7257.01,
+        3766.92,
+        20260.76,
+        15107.1,
+        15022.05,
+        37651.15,
+        6212.37,
+        56524.56,
+        22163.84,
+        29781.7,
+        32612.03,
+        9453.28,
+        21655.24,
+        23202.12,
+        15778.78,
+        1219.45,
+        19875.92,
+        10841.06,
+        27933.16,
+        15844.47,
+        9647.25,
+        15291.17,
+        5890.04,
+        33438.04,
+        830.56,
+        34881.73,
+        15451.63,
+        41876.2,
+        46880.2,
+        19268.1,
+        11126.48,
+        18210.94,
+        25664.15,
+        21821.06,
+        8486.18,
+        13234.0,
+        26225.79,
+        39946.21,
+        35344.8,
+        14581.13,
+        8078.05,
+        12789.39,
+        16184.36,
+        8932.35,
+        27194.5,
+        11393.35,
+        11862.98,
+        22260.42,
+        28896.53,
+        13933.13,
+        25975.9,
+        19597.4,
+        18903.66,
+        20404.15
+      ],
+      "segmento": [
+        "Retail",
+        "Corporativo",
+        "PYME",
+        "PYME",
+        "PYME",
+        "Retail",
+        "Corporativo",
+        "Retail",
+        "Retail",
+        "PYME",
+        "Corporativo",
+        "Retail",
+        "Corporativo",
+        "Retail",
+        "PYME",
+        "Corporativo",
+        "Corporativo",
+        "Retail",
+        "PYME",
+        "Retail",
+        "Corporativo",
+        "Retail",
+        "Corporativo",
+        "Corporativo",
+        "Corporativo",
+        "Corporativo",
+        "PYME",
+        "Corporativo",
+        "PYME",
+        "Corporativo",
+        "PYME",
+        "Retail",
+        "PYME",
+        "Retail",
+        "Retail",
+        "PYME",
+        "Retail",
+        "PYME",
+        "PYME",
+        "PYME",
+        "Retail",
+        "PYME",
+        "Retail",
+        "PYME",
+        "Retail",
+        "Corporativo",
+        "Retail",
+        "Corporativo",
+        "PYME",
+        "Retail",
+        "PYME",
+        "PYME",
+        "Retail",
+        "PYME",
+        "Retail",
+        "Corporativo",
+        "Corporativo",
+        "PYME",
+        "PYME",
+        "PYME",
+        "Corporativo",
+        "Corporativo",
+        "Retail",
+        "PYME",
+        "Retail",
+        "PYME",
+        "Retail",
+        "Corporativo",
+        "Retail",
+        "Corporativo",
+        "Retail",
+        "PYME",
+        "PYME",
+        "Retail",
+        "Retail",
+        "Corporativo",
+        "Retail",
+        "PYME",
+        "Corporativo",
+        "Corporativo",
+        "Corporativo",
+        "PYME",
+        "Corporativo",
+        "Retail",
+        "PYME",
+        "PYME",
+        "PYME",
+        "Corporativo",
+        "Corporativo",
+        "Retail",
+        "Corporativo",
+        "Corporativo",
+        "PYME",
+        "PYME",
+        "Corporativo",
+        "PYME",
+        "Corporativo",
+        "Retail",
+        "Corporativo",
+        "Retail"
+      ]
+    }
+  },
+  "cross_sell": {
+    "ADOPTION_MATRIX": {
+      "products": [
+        "Cuenta Corriente",
+        "Cuenta de Ahorros",
+        "Préstamo",
+        "Tarjeta de Crédito"
+      ],
+      "values": [
+        [
+          null,
+          0.8209,
+          0.4328,
+          0.8507
+        ],
+        [
+          0.6962,
+          null,
+          0.4304,
+          0.8481
+        ],
+        [
+          0.6444,
+          0.7556,
+          null,
+          0.8667
+        ],
+        [
+          0.6706,
+          0.7882,
+          0.4588,
+          null
+        ]
+      ]
+    },
+    "ELIGIBLE_CLIENTS": [
+      {
+        "id": 1074,
+        "segmento": "Retail",
+        "pais": "Chile",
+        "n_productos": 2,
+        "next_product": "Cuenta Corriente",
+        "prob": 0.6962,
+        "ingreso_estimado": 2143.88,
+        "score": 0.7024
+      },
+      {
+        "id": 1083,
+        "segmento": "Corporativo",
+        "pais": "Argentina",
+        "n_productos": 2,
+        "next_product": "Cuenta Corriente",
+        "prob": 0.6962,
+        "ingreso_estimado": 1281.81,
+        "score": 0.6739
+      },
+      {
+        "id": 1022,
+        "segmento": "Retail",
+        "pais": "Colombia",
+        "n_productos": 2,
+        "next_product": "Cuenta Corriente",
+        "prob": 0.6962,
+        "ingreso_estimado": 2043.04,
+        "score": 0.6429
+      },
+      {
+        "id": 1055,
+        "segmento": "Retail",
+        "pais": "México",
+        "n_productos": 2,
+        "next_product": "Cuenta de Ahorros",
+        "prob": 0.8209,
+        "ingreso_estimado": 1690.64,
+        "score": 0.6306
+      },
+      {
+        "id": 1089,
+        "segmento": "Corporativo",
+        "pais": "Colombia",
+        "n_productos": 2,
+        "next_product": "Tarjeta de Crédito",
+        "prob": 0.8507,
+        "ingreso_estimado": 2648.81,
+        "score": 0.5985
+      },
+      {
+        "id": 1050,
+        "segmento": "Retail",
+        "pais": "Argentina",
+        "n_productos": 1,
+        "next_product": "Cuenta de Ahorros",
+        "prob": 0.7882,
+        "ingreso_estimado": 2070.53,
+        "score": 0.5426
+      },
+      {
+        "id": 1073,
+        "segmento": "PYME",
+        "pais": "Argentina",
+        "n_productos": 2,
+        "next_product": "Cuenta Corriente",
+        "prob": 0.6962,
+        "ingreso_estimado": 1089.67,
+        "score": 0.5394
+      },
+      {
+        "id": 1080,
+        "segmento": "Corporativo",
+        "pais": "México",
+        "n_productos": 2,
+        "next_product": "Cuenta Corriente",
+        "prob": 0.6962,
+        "ingreso_estimado": 2076.53,
+        "score": 0.5261
+      },
+      {
+        "id": 1041,
+        "segmento": "Retail",
+        "pais": "Chile",
+        "n_productos": 2,
+        "next_product": "Cuenta de Ahorros",
+        "prob": 0.8209,
+        "ingreso_estimado": 1093.56,
+        "score": 0.5131
+      },
+      {
+        "id": 1094,
+        "segmento": "PYME",
+        "pais": "México",
+        "n_productos": 2,
+        "next_product": "Cuenta de Ahorros",
+        "prob": 0.7882,
+        "ingreso_estimado": 1086.97,
+        "score": 0.4947
+      }
+    ],
+    "CROSSSELL_SUMMARY": {
+      "eligible_clients": 35,
+      "vol_actual_elegibles": 359860.78,
+      "ingreso_potencial_conservador": 12244.0,
+      "ingreso_potencial_base": 44688.0,
+      "ingreso_potencial_agresivo": 99688.0,
+      "top_recommended_product": "Tarjeta de Crédito",
+      "pct_recommend_tarjeta": 37.14
+    },
+    "RECOMMENDATION_DIST": [
+      {
+        "tipo": "Cuenta Corriente",
+        "n_recomendados": 10,
+        "vol_incremental": 12443.07,
+        "delta_ticket": 196.32
+      },
+      {
+        "tipo": "Cuenta de Ahorros",
+        "n_recomendados": 12,
+        "vol_incremental": 13630.08,
+        "delta_ticket": 0.0
+      },
+      {
+        "tipo": "Tarjeta de Crédito",
+        "n_recomendados": 13,
+        "vol_incremental": 18614.75,
+        "delta_ticket": 779.59
+      }
+    ]
+  },
+  "scenarios": {
+    "SCENARIOS": {
+      "conservador": {
+        "key": "conservador",
+        "label": "Conservador",
+        "description": "Adopción 20% · Captura 25% del uplift",
+        "factor_adopcion": 0.2,
+        "adoptions": 5.5,
+        "incremental": 12244.0,
+        "uplift_pct": 3.4,
+        "color": "#22d3ee",
+        "colorClass": "cyan",
+        "volumen_proyectado": 1605142.0
+      },
+      "base": {
+        "key": "base",
+        "label": "Base",
+        "description": "Adopción 35% · Captura 50% del uplift",
+        "factor_adopcion": 0.35,
+        "adoptions": 9.7,
+        "incremental": 44688.0,
+        "uplift_pct": 12.42,
+        "color": "#34d399",
+        "colorClass": "emerald",
+        "volumen_proyectado": 1637585.0
+      },
+      "agresivo": {
+        "key": "agresivo",
+        "label": "Agresivo",
+        "description": "Adopción 50% · Captura 75% del uplift",
+        "factor_adopcion": 0.5,
+        "adoptions": 13.8,
+        "incremental": 99688.0,
+        "uplift_pct": 27.7,
+        "color": "#fbbf24",
+        "colorClass": "amber",
+        "volumen_proyectado": 1692586.0
+      }
+    },
+    "SEGMENT_PRODUCT_HEATMAP": {
+      "tipos": [
+        "Cuenta Corriente",
+        "Cuenta de Ahorros",
+        "Préstamo",
+        "Tarjeta de Crédito"
+      ],
+      "segmentos": [
+        "Corporativo",
+        "PYME",
+        "Retail"
+      ],
+      "valores": [
+        [
+          189725.47,
+          224103.9,
+          124187.96
+        ],
+        [
+          76974.05,
+          128185.51,
+          55329.13
+        ],
+        [
+          29.55,
+          26.95,
+          23.03
+        ],
+        [
+          272746.45,
+          250075.62,
+          271489.96
+        ]
+      ]
+    }
+  },
+  "quality": {
+    "DATA_QUALITY": {
+      "datasets": [
+        {
+          "name": "transacciones.csv",
+          "icon": "🔄",
+          "rows": 500,
+          "columns": 8,
+          "description": "Historial completo de operaciones financieras",
+          "checks": [
+            {
+              "label": "Valores nulos",
+              "pass": true,
+              "detail": "0 nulos en todas las celdas"
+            },
+            {
+              "label": "Filas duplicadas",
+              "pass": true,
+              "detail": "0 duplicados detectados"
+            },
+            {
+              "label": "Integridad referencial",
+              "pass": true,
+              "detail": "Todos los id_cliente e id_producto son válidos"
+            },
+            {
+              "label": "Rango de fechas",
+              "pass": true,
+              "detail": "2023-01-01 → 2024-05-14"
+            },
+            {
+              "label": "Rango de montos",
+              "pass": true,
+              "detail": "$61.96 – $9,963.99 · Sin outliers extremos"
+            }
+          ]
+        },
+        {
+          "name": "clientes.csv",
+          "icon": "👥",
+          "rows": 100,
+          "columns": 6,
+          "description": "Perfil demográfico y segmentación de clientes",
+          "checks": [
+            {
+              "label": "Valores nulos",
+              "pass": true,
+              "detail": "0 nulos"
+            },
+            {
+              "label": "IDs duplicados",
+              "pass": true,
+              "detail": "0 duplicados · IDs 1001–1100"
+            },
+            {
+              "label": "Segmentos válidos",
+              "pass": true,
+              "detail": "3 segmentos: Corporativo, PYME, Retail"
+            },
+            {
+              "label": "Países válidos",
+              "pass": true,
+              "detail": "4 países: Argentina, Chile, Colombia, México"
+            }
+          ]
+        },
+        {
+          "name": "catalogo_productos.csv",
+          "icon": "📦",
+          "rows": 10,
+          "columns": 5,
+          "description": "Catálogo de productos financieros disponibles",
+          "checks": [
+            {
+              "label": "Valores nulos",
+              "pass": true,
+              "detail": "0 nulos"
+            },
+            {
+              "label": "IDs duplicados",
+              "pass": true,
+              "detail": "0 duplicados"
+            },
+            {
+              "label": "Tipos de producto",
+              "pass": true,
+              "detail": "4 tipos bien definidos"
+            },
+            {
+              "label": "Monedas soportadas",
+              "pass": true,
+              "detail": "USD, EUR, COP — conversión automática"
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "total_checks": 13,
+        "passed": 13,
+        "failed": 0,
+        "overall_score": 100,
+        "verdict": "Base de datos íntegra y lista para análisis"
+      }
+    }
+  }
+}
