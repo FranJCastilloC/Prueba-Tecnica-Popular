@@ -10,7 +10,7 @@ export const SCENARIOS = {
     uplift_pct:       3.40,
     color:           '#22d3ee',
     colorClass:      'cyan',
-    volumen_proyectado: 2535915 + 12244,
+    volumen_proyectado: 1592898 + 12244,
   },
   base: {
     key:             'base',
@@ -22,7 +22,7 @@ export const SCENARIOS = {
     uplift_pct:      12.42,
     color:           '#34d399',
     colorClass:      'emerald',
-    volumen_proyectado: 2535915 + 44688,
+    volumen_proyectado: 1592898 + 44688,
   },
   agresivo: {
     key:             'agresivo',
@@ -34,7 +34,7 @@ export const SCENARIOS = {
     uplift_pct:      27.70,
     color:           '#fbbf24',
     colorClass:      'amber',
-    volumen_proyectado: 2535915 + 99688,
+    volumen_proyectado: 1592898 + 99688,
   },
 }
 
@@ -43,15 +43,17 @@ export const SEGMENT_PRODUCT_HEATMAP = {
   tipos: ['Tarjeta de Crédito', 'Cuenta de Ahorros', 'Cuenta Corriente', 'Préstamo'],
   segmentos: ['Corporativo', 'PYME', 'Retail'],
   // valores[tipo_idx][segmento_idx] = volumen en USD
+  // CORRECCIÓN: Préstamo es en COP → ~$0 USD. Distribución proporcional a segmentos reales.
+  // Corporativo=$539,476 · PYME=$602,392 · Retail=$451,030
   valores: [
-    // Tarjeta de Crédito:
-    [318655.04, 311642.18, 328951.70],
-    // Cuenta de Ahorros:
-    [273322.84, 278652.44, 228291.65],
-    // Cuenta Corriente:
-    [172310.24, 208681.92, 115502.01],
-    // Préstamo:
-    [111430.34, 101629.87,  86844.91],
+    // Tarjeta de Crédito (~43% de volumen no-Préstamo por segmento):
+    [231500, 258400, 193600],
+    // Cuenta de Ahorros (~35% de volumen no-Préstamo por segmento):
+    [188300, 210200, 157400],
+    // Cuenta Corriente (~22% de volumen no-Préstamo por segmento):
+    [119800, 133700, 100100],
+    // Préstamo (COP → ~$0 USD):
+    [30, 34, 26],
   ],
 }
 

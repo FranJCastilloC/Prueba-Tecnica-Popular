@@ -18,14 +18,14 @@ export default function S04_CommercialExploration({ onNext, onPrev }) {
         description="Identificamos la concentración del valor, los clientes que mueven el negocio y los patrones geográficos y temporales más relevantes."
         storyLabel="Clave del capítulo"
         storyText="El 29% de los clientes genera el 80% del volumen"
-        storyDetail={`Cliente ${HIGHLIGHTS.top_client_id} lidera con ${fmtUSD(HIGHLIGHTS.top_client_volume)}. La concentración es alta pero la distribución es sana.`}
+        storyDetail="Argentina lidera por volumen USD ($451,939 · 23 clientes). La concentración es moderada — no extrema."
       />
 
       {/* Insight strip */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-        <InsightCard label="Top cliente"        value={`#${HIGHLIGHTS.top_client_id}`}       text={fmtUSD(HIGHLIGHTS.top_client_volume)} tone="neutral" />
-        <InsightCard label="Pareto 80%"         value="29 clientes"                           text="Concentran el 80% del volumen total"   tone="warning" />
-        <InsightCard label="Mejor trimestre"    value="Q3 2023"                               text={`${fmtUSD(483592)} — pico de volumen`} tone="positive" />
+        <InsightCard label="País líder"      value="Argentina"    text={`${fmtUSD(451939)} · 23 clientes · 134 txn`} tone="neutral" />
+        <InsightCard label="Pareto 80%"      value="~29 clientes" text="Concentran el 80% del volumen total"          tone="warning" />
+        <InsightCard label="Mejor trimestre" value="Q3 2023"      text={`${fmtUSD(303779)} — pico de volumen`}        tone="positive" />
       </div>
 
       {/* Charts row 1 */}

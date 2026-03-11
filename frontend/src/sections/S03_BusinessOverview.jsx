@@ -27,7 +27,7 @@ export default function S03_BusinessOverview({ onNext, onPrev }) {
         description="Una vista completa de la distribución del portafolio: quiénes son los clientes, dónde están, qué productos tienen y cómo evolucionó el negocio."
         storyLabel="Hallazgo central"
         storyText={`${HIGHLIGHTS.pareto80_clients} clientes concentran el 80% del volumen`}
-        storyDetail={`México lidera con ${fmtUSD(HIGHLIGHTS.top_country_volume)} (${fmtPct(HIGHLIGHTS.top_country_share)}). PYME es el segmento dominante con ${fmtPct(HIGHLIGHTS.top_segment_share)}.`}
+        storyDetail={`Argentina lidera con ${fmtUSD(HIGHLIGHTS.top_country_volume)} (${fmtPct(HIGHLIGHTS.top_country_share)}). PYME es el segmento dominante con ${fmtPct(HIGHLIGHTS.top_segment_share)}.`}
       />
 
       {/* KPI strip */}
@@ -37,9 +37,9 @@ export default function S03_BusinessOverview({ onNext, onPrev }) {
 
       {/* Insight strip */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-        <InsightCard label="Segmento líder"  value="PYME"     text="35.51% del volumen total" tone="positive" />
-        <InsightCard label="País líder"      value="México"   text={`${fmtUSD(734726)} · 30 clientes · 146 transacciones`} tone="neutral" />
-        <InsightCard label="Mejor trimestre" value="Q3 2023"  text={`${fmtUSD(483592)} — pico de actividad`} tone="positive" />
+        <InsightCard label="Segmento líder"  value="PYME"      text={`${fmtPct(HIGHLIGHTS.top_segment_share)} del volumen total en USD`} tone="positive" />
+        <InsightCard label="País líder"      value="Argentina" text={`${fmtUSD(HIGHLIGHTS.top_country_volume)} · 23 clientes`}           tone="neutral" />
+        <InsightCard label="Mejor trimestre" value="Q3 2023"   text={`${fmtUSD(303779)} — pico de actividad`}                            tone="positive" />
       </div>
 
       {/* Charts row 1 */}

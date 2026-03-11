@@ -82,7 +82,7 @@ export default function S08_ExecutiveClose({ onPrev, isLast }) {
         description="El análisis partió de datos limpios y terminó en una simulación con impacto cuantificado. Estos son los hallazgos que importan."
         storyLabel="Resumen ejecutivo en 40 segundos"
         storyText="Datos limpios → Negocio mapeado → Palancas identificadas → Impacto simulado"
-        storyDetail="Una estrategia dirigida puede generar entre +$12K y +$100K en volumen incremental sobre la base actual de $2.54M"
+        storyDetail="Una estrategia dirigida puede generar entre +$12K y +$100K en volumen incremental sobre la base actual de $1.59M"
       />
 
       {/* 4 findings */}
@@ -126,7 +126,7 @@ export default function S08_ExecutiveClose({ onPrev, isLast }) {
             Segmento prioritario
           </p>
           <p className="text-2xl font-bold text-white">PYME</p>
-          <p className="text-xs text-slate-400 mt-1">35.51% del volumen · Líder en penetración de Ahorros · Mayor potencial de cross-sell</p>
+          <p className="text-xs text-slate-400 mt-1">37.82% del volumen · Segmento con mayor potencial de cross-sell identificado</p>
         </div>
         <div className="glass-card-accent p-5 border border-cyan-400/20">
           <p className="text-xs font-semibold uppercase tracking-widest text-cyan-400 mb-2">
@@ -139,8 +139,8 @@ export default function S08_ExecutiveClose({ onPrev, isLast }) {
           <p className="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-2">
             Mercado más valioso
           </p>
-          <p className="text-2xl font-bold text-white">México</p>
-          <p className="text-xs text-slate-400 mt-1">{fmtUSD(734726)} · 30 clientes · Ticket $5,032 · Mayor volumen absoluto</p>
+          <p className="text-2xl font-bold text-white">Argentina</p>
+          <p className="text-xs text-slate-400 mt-1">{fmtUSD(451939)} · 23 clientes · Ticket $3,373 · Líder por volumen USD</p>
         </div>
       </motion.div>
 

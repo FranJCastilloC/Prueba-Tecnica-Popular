@@ -16,7 +16,7 @@ export default function S06_CrossSellIntelligence({ onNext, onPrev }) {
         title="Inteligencia de Cross-sell"
         description="¿A quién conviene ofrecerle algo más? ¿Y qué producto recomendar? La probabilidad condicional entre productos da la respuesta."
         storyLabel="Recomendación principal"
-        storyText="Tarjeta de Crédito: el mejor siguiente producto en el 74% de los casos"
+        storyText={`Tarjeta de Crédito: top recomendación · ${CROSSSELL_SUMMARY.pct_recommend_tarjeta}% de los elegibles (13 de 35)`}
         storyDetail={`P(Tarjeta de Crédito | Préstamo) = 86.7% — la probabilidad condicional más alta de la matriz. ${CROSSSELL_SUMMARY.eligible_clients} clientes elegibles identificados.`}
       />
 

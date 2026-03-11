@@ -22,7 +22,7 @@ export default function S05_PenetrationBehavior({ onNext, onPrev }) {
       {/* Insight strip */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
         <InsightCard label="Correlación Spearman" value={`ρ = ${SPEARMAN.rho}`}    text="Productos ↔ Frecuencia · p < 0.001 ★"     tone="positive" />
-        <InsightCard label="Media de penetración" value="3.7 productos"             text="Por cliente activo"                        tone="neutral"  />
+        <InsightCard label="Media de penetración" value="2.76 productos"            text="Por cliente activo (rango 1–4)"            tone="neutral"  />
         <InsightCard label="Producto tractor"     value="Tarjeta de Crédito"        text="+$1,559 en ticket · Significativo ★"       tone="positive" />
       </div>
 
