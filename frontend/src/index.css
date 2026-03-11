@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+/* ─── Design Tokens ──────────────────────────────────────────── */
+:root {
+  --bg-primary:    #0f172a;
+  --bg-secondary:  #1e293b;
+  --bg-card:       #1e293b;
+  --bg-hover:      #243044;
+  --accent-cyan:   #22d3ee;
+  --accent-emerald:#34d399;
+  --accent-amber:  #fbbf24;
+  --accent-rose:   #fb7185;
+  --accent-violet: #a78bfa;
+  --text-primary:  #f1f5f9;
+  --text-secondary:#94a3b8;
+  --text-muted:    #64748b;
+  --border:        rgba(148,163,184,0.12);
+  --border-accent: rgba(34,211,238,0.15);
+}
+
+/* ─── Base ───────────────────────────────────────────────────── */
+html, body, #root {
+  height: 100%;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Glass Card ─────────────────────────────────────────────── */
+.glass-card {
+  background: rgba(30, 41, 59, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.glass-card-accent {
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border-accent);
+  border-radius: 12px;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+/* ─── Tabular numbers ────────────────────────────────────────── */
+.num { font-variant-numeric: tabular-nums; }
+
+/* ─── KPI tone borders ───────────────────────────────────────── */
+.kpi-cyan    { border-top: 2px solid #22d3ee; }
+.kpi-emerald { border-top: 2px solid #34d399; }
+.kpi-amber   { border-top: 2px solid #fbbf24; }
+.kpi-rose    { border-top: 2px solid #fb7185; }
+.kpi-slate   { border-top: 2px solid #64748b; }
+.kpi-violet  { border-top: 2px solid #a78bfa; }
+
+/* ─── ECharts container must have explicit height ────────────── */
+.echart-container { width: 100%; min-height: 1px; }
+
+/* ─── Scenario pill states ───────────────────────────────────── */
+.pill-active-cyan    { background: #22d3ee; color: #0f172a; }
+.pill-active-emerald { background: #34d399; color: #0f172a; }
+.pill-active-amber   { background: #fbbf24; color: #0f172a; }
+.pill-inactive       { background: transparent; color: #94a3b8; border: 1px solid rgba(148,163,184,0.2); }
+.pill-inactive:hover { background: rgba(148,163,184,0.08); color: #f1f5f9; }
+
+/* ─── Stat badge (data quality) ──────────────────────────────── */
+.badge-pass { color: #34d399; }
+.badge-fail { color: #fb7185; }
