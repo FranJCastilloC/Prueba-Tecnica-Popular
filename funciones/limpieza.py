@@ -420,7 +420,7 @@ def auditoria_completa(
 # =========================================================
 
 if __name__ == '__main__':
-    from funciones.campos import normalizar_dtypes
+    from funciones.domain.campos import normalizar_dtypes
 
     _DATA_PATH = 'data'
     clientes = normalizar_dtypes(pd.read_csv(f'{_DATA_PATH}/clientes.csv'), 'clientes')
