@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment
+.env
+.venv/
+venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
+~$*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Data artifacts (optional - remove if you want to track them)
+# simulacion_cross_sell.xlsx
+
+# Gemini/Claude agent config
+.gemini/
+.claude/
